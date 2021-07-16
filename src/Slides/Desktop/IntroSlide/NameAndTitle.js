@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import TitleAnimation from "./TitleAnimation.js";
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +9,8 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: white;
+  background-color: gray;
+  text-color: white;
 `;
 
 class NameAndTitle extends Component {
@@ -16,7 +18,9 @@ class NameAndTitle extends Component {
     return (
       <Container>
         <h2>Hello, I'm Alex Kevakian</h2>
-        <p>I am a Frontend Developer</p>
+        <p>
+          I am a <TitleAnimation />
+        </p>
       </Container>
     );
   }
