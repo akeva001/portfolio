@@ -3,26 +3,37 @@ import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
 
 const TextContainer = styled.section`
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
+  flex: 1;
   flex-flow: column nowrap;
-  /* border: 1px dashed black; */
   height: 100vh;
-  width: 100%;
-  background-color: grey;
+  //width: 50%;
+  //background-color: grey;
+  justify-content: center;
+  //align-items: center;
+  flex-direction: column;
 `;
-
+const TextBox = styled.div`
+  //background-color: red;
+  width: 50vw;
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+`;
 class TextContent extends Component {
   render() {
     const { projectName, projectDesc, roles, projectType } = this.props;
     return (
       <TextContainer>
-        <span>{projectName}</span>
-        <span>{roles}</span>
-        <span>{projectDesc}</span>
-        <span>{projectType}</span>
+        <TextBox>
+          <span>{projectName}</span>
+          <span>{roles}</span>
+          <span>{projectDesc}</span>
+          <span>{projectType}</span>
+        </TextBox>
       </TextContainer>
     );
   }

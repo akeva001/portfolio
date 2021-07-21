@@ -60,6 +60,7 @@ const Animation = styled.div`
   animation-fill-mode: forwards;
   opacity: 0;
   letter-spacing: 1px;
+  z-index: 1;
 `;
 
 const First = styled.span`

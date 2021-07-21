@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import TextContent from "./TextContent";
+import ImageContent from "./ImageContent";
 
 const Container = styled.div`
   display: flex;
@@ -28,18 +29,31 @@ class Experience extends Component {
       },
     ];
   }
+
   renderText() {
     return (
-      <TextContent
-        projectName={this.experienceDetails[0].projectName}
-        projectDesc={this.experienceDetails[0].projectDesc}
-        projectType={this.experienceDetails[0].projectType}
-        roles={this.experienceDetails[0].roles}
-      />
+      <div>
+        {this.experienceDetails.map((experiences) => (
+          <div key={experiences}>
+            {" "}
+            <TextContent
+              projectName={experiences.projectName}
+              projectDesc={experiences.projectDesc}
+              projectType={experiences.projectType}
+              roles={experiences.roles}
+            />{" "}
+          </div>
+        ))}
+      </div>
     );
   }
   render() {
-    return <Container>{this.renderText()}</Container>;
+    return (
+      <Container>
+        {this.renderText()}
+        <ImageContent />
+      </Container>
+    );
   }
 }
 
