@@ -5,22 +5,25 @@ import TitleAnimation from "./TitleAnimation.js";
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  flex-flow: column nowrap;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color: gray;
-  text-color: white;
+  //max-width: 1280px;
+  font-size: 36px;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 100;
+    color: black;
+  }
 `;
 
 class NameAndTitle extends Component {
   render() {
     return (
       <Container>
-        <h2>Hello, I'm Alex Kevakian</h2>
-        <p>
-          I am a <TitleAnimation />
-        </p>
+        <TitleAnimation />
       </Container>
     );
   }
