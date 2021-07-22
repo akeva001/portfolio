@@ -23,7 +23,7 @@ export const NavLink = styled(Link)`
   margin-left: 24px;
 
   &.active {
-    color: #15cdfc;
+    color: grey;
   }
 `;
 export const Bars = styled(FaBars)`

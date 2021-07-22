@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import TitleAnimation from "./TitleAnimation.js";
+import Me from "../../../Assets/Images/Me/Me2.jpg";
 
 const Container = styled.div`
   display: flex;
@@ -17,12 +18,16 @@ const Container = styled.div`
     font-weight: 100;
     color: black;
   }
+  img {
+    border-radius: 50%;
+    height: 25%;
 `;
 
 class NameAndTitle extends Component {
   render() {
     return (
       <Container>
+        <img src={Me} />
         <TitleAnimation />
       </Container>
     );

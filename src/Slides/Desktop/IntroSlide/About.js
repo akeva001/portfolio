@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Container = styled.section`
-  height: 40vh;
+  height: 60vh;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -20,7 +20,7 @@ class About extends Component {
   render() {
     return (
       <Container>
-        <AboutMeDescription>Front-end developer</AboutMeDescription>
+        <AboutMeDescription>About Me</AboutMeDescription>
       </Container>
     );
   }

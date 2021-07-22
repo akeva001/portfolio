@@ -25,11 +25,15 @@ const TextBox = styled.div`
 `;
 class TextContent extends Component {
   render() {
-    const { projectName, projectDesc, roles, projectType } = this.props;
+    const { projectName, image, link, projectDesc, roles, projectType } =
+      this.props;
     return (
       <TextContainer>
         <TextBox>
           <span>{projectName}</span>
+          <a href={link}>
+            <img src={image} height="50vh" />
+          </a>
           <span>{roles}</span>
           <span>{projectDesc}</span>
           <span>{projectType}</span>
@@ -40,6 +44,8 @@ class TextContent extends Component {
 }
 TextContent.propTypes = {
   projectName: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
   projectDesc: PropTypes.string.isRequired,
   projectType: PropTypes.string.isRequired,
   roles: PropTypes.array.isRequired,
