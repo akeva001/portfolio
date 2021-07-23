@@ -1,44 +1,67 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
+import device from "../../../Assets/Scaling/DisplaySizes.js";
 import PropTypes from "prop-types";
 
-const TextContainer = styled.section`
-  display: flex;
-  flex: 1;
-  flex-flow: column nowrap;
-  height: 100vh;
-  //width: 50%;
-  //background-color: grey;
-  justify-content: center;
+const TextContainer = styled.div`
+  //display: flex;
+  // flex: 1;
+  // flex-flow: column nowrap;
+  //height: 100vh;
+  width: 100%;
+  background: red;
+  //justify-content: center;
   //align-items: center;
-  flex-direction: column;
+  //padding-left: 100px;
+  // flex-direction: column;
 `;
 const TextBox = styled.div`
-  //background-color: red;
-  width: 50vw;
+  color: black;
+  //width: 50%;
+  //max-width: 50vh;
   display: flex;
-  flex: 1;
-  flex-flow: column nowrap;
+  //flex: 1;
+  //flex-flow: column nowrap;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 100px;
+  //justify-content: center;
+  //align-self: center;
+  font-size: 30px;
+`;
+const ProjectName = styled.div`
+  font-family: "AvenirHeavy";
+  @media ${device.laptop} {
+    font-size: 70px;
+  }
+  @media ${device.laptopL} {
+    font-size: 80px;
+  }
+  @media ${device.desktop} {
+    font-size: 120px;
+  }
+`;
+const Button = styled.div`
+  display: flex;
 `;
 class TextContent extends Component {
   render() {
-    const { projectName, image, link, projectDesc, roles, projectType } =
-      this.props;
+    const {
+      projectName,
+      image,
+      link,
+      projectDesc,
+      roles,
+      projectType,
+    } = this.props;
     return (
-      <TextContainer>
-        <TextBox>
+      <TextBox>
+        <ProjectName>
           <span>{projectName}</span>
-          <a href={link}>
-            <img src={image} height="50vh" />
-          </a>
-          <span>{roles}</span>
-          <span>{projectDesc}</span>
-          <span>{projectType}</span>
-        </TextBox>
-      </TextContainer>
+        </ProjectName>
+
+        <span>{roles}</span>
+        <span>{projectDesc}</span>
+        <span>{projectType}</span>
+      </TextBox>
     );
   }
 }

@@ -8,23 +8,28 @@ const Container = styled.section`
   overflow: hidden;
 `;
 
-const AboutMeDescription = styled.div`
+const ContactTitle = styled.div.attrs({})`
   align-items: center;
   font-family: "AvenirLight";
   text-align: left;
   margin-left: 30%;
   margin-right: 5%;
   font-size: 45px;
+  
+  
+  
+  
+  }
 `;
 
-class About extends Component {
+class Contact extends Component {
   render() {
     return (
       <Container>
-        <AboutMeDescription>About Me</AboutMeDescription>
+        <ContactTitle>CONTACT</ContactTitle>
       </Container>
     );
   }
 }
 
-export default About;
+export default Contact;
