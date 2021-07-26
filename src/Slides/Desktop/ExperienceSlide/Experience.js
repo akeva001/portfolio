@@ -8,6 +8,7 @@ import RMateImage1 from "../../../Assets/Images/RMate/iPhone1.png";
 import RMateImage2 from "../../../Assets/Images/RMate/iPhone2.png";
 import RMateImage3 from "../../../Assets/Images/RMate/iPhone3.png";
 import NotflixImage1 from "../../../Assets/Images/Notflix/Mac1.png";
+import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const Container = styled.div`
   display: flex;
@@ -37,13 +38,15 @@ const ExperienceContainer = styled.div`
 `;
 const InfoContainer = styled.div`
   color: #fff;
-  @media screen and (max-width: 768px) {
-    padding: 100px 0;
-  }
-  height: 100%;
+  // @media screen and (max-width: 768px) {
+  //   padding: 100px 0;
+  // }
+  //height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
 `;
 const InfoWrapper = styled.div`
-  display: grid;
+  display: flex;
   z-index: 1;
   //height: 860px;
   width: 100%;
@@ -56,49 +59,68 @@ const InfoWrapper = styled.div`
 const InfoRow = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
-  align-items: center;
-  //grid-gap: 1000px;
+  //grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  //grid-gap: 16px;
+  //lign-items: center;
+  //grid-gap: 100px;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
+  //background-color: blue;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
 `;
 
 const Column1 = styled.div`
-  margin-bottom: 15px;
+  display: flex;
+  //margin-bottom: 15px;
   padding: 0 15 px;
   grid-area: col1;
   //background-color: green;
-  //width: 50vh;
+  width: 100%;
+  height: 100%;
+  //max-width: 700px;
+  justify-content: center;
+  padding: 30px;
 `;
 const Column2 = styled.div`
+  display: flex;
   margin-bottom: 15px;
   padding: 0 15 px;
   grid-area: col2;
-  //background-color: green;
+  //background-color: brown;
+  justify-content: center;
+  //overflow: hidden;
 `;
 
 const TextWrapper = styled.div`
   //display: flex;
-  //flex-direction: row;
-  flex: 1;
-  max-width: 700px;
+  flex-direction: row;
+  //flex: 1;
+  max-width: 500px;
   //padding-top: 0;
-  padding-left: 100px;
-  padding-right: 100px;
+  //padding-left: 100px;
+  //padding-right: 100px;
   //padding-bottom: 60px;
   //background-color: red;
-  //width: 100%;
-  //justify-content: center;
-  //align-self: center;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+  //background-color: grey;
+  border-radius: 5%;
+  padding: 15px;
+  box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
 `;
 const ImgWrap = styled.div`
   position: relative;
-  max-width: 700px;
-  //height: 100%;
+  max-width: 100%;
+  height: 100%;
+  background-color: red;
 `;
 
 class Experience extends Component {
@@ -120,7 +142,7 @@ class Experience extends Component {
       {
         id: "proj2",
         projectName: "Notflix",
-        projectDesc: "Netflix/Youtube hybrid web app",
+        projectDesc: "Netflix/Youtube hybrid web app. ",
         projectType: "Web App",
         roles: ["Front-end Developer"],
         image: GithubImage,
@@ -132,7 +154,7 @@ class Experience extends Component {
     ];
   }
 
-  renderImage() {
+  renderContent() {
     return (
       <>
         {this.experienceDetails.map((experiences) => (
@@ -156,9 +178,7 @@ class Experience extends Component {
                     </TextWrapper>
                   </Column1>
                   <Column2>
-                    <ImgWrap>
-                      <ImageContent deviceImages={experiences.deviceImages} />
-                    </ImgWrap>
+                    <ImageContent deviceImages={experiences.deviceImages} />
                   </Column2>
                 </InfoRow>
               </InfoWrapper>
@@ -170,7 +190,7 @@ class Experience extends Component {
   }
 
   render() {
-    return <div>{this.renderImage()}</div>;
+    return <div>{this.renderContent()}</div>;
   }
 }
 

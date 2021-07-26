@@ -8,12 +8,11 @@ const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding 0 30px;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
+  //padding 0 30px;
+  height: 100%;
+  //position: relative;
+  //z-index: 1;
   //padding-top: 100px;
-
 `;
 class Hero extends Component {
   render() {

@@ -9,7 +9,7 @@ const TextContainer = styled.div`
   // flex-flow: column nowrap;
   //height: 100vh;
   width: 100%;
-  background: red;
+  background-color: red;
   //justify-content: center;
   //align-items: center;
   //padding-left: 100px;
@@ -44,14 +44,8 @@ const Button = styled.div`
 `;
 class TextContent extends Component {
   render() {
-    const {
-      projectName,
-      image,
-      link,
-      projectDesc,
-      roles,
-      projectType,
-    } = this.props;
+    const { projectName, image, link, projectDesc, roles, projectType } =
+      this.props;
     return (
       <TextBox>
         <ProjectName>

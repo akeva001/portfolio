@@ -11,12 +11,12 @@ function App() {
   return (
     <Router>
       <React.Fragment>
-        <MediaQuery query="(min-device-width: 1224px)">
-          <Navbar />
-          <DesktopTitle />
-          <DesktopExperience />
-          <DesktopContact />
-        </MediaQuery>
+        {/* <MediaQuery query="(min-device-width: 1224px)"> */}
+        <Navbar />
+        <DesktopTitle />
+        <DesktopExperience />
+        <DesktopContact />
+        {/* </MediaQuery> */}
       </React.Fragment>
     </Router>
   );

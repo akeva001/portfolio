@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Container = styled.section`
-  height: 40vh;
+  display: flex;
+  height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;

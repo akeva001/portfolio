@@ -19,22 +19,33 @@ const ImageContainer = styled.div`
   //overflow: hidden;
 `;
 const ImageBox1 = styled.img`
+  @media ${device.mobileS} {
+    height: 300px;
+  }
+  @media ${device.mobileM} {
+    height: 400px;
+  }
+  @media ${device.mobileL} {
+    height: 600px;
+  }
   @media ${device.laptop} {
-    height: 700px;
+    height: 600px;
   }
   @media ${device.laptopL} {
-    height: 800px;
+    height: 900px;
   }
   @media ${device.desktop} {
-    height: 1000px;
+    height: 1100px;
   }
+
   //display: flex;
   //justify-content: center;
   //align-self: center;
-  // background-color: black;
+  //background-color: black;
   // margin: 0 0 10px 0;
   // padding-right: 0;
-  //width: 100%;
+  //max-width: 50vh;
+  //height: 100%;
   //margin: 0 0 10px 0;
   //padding: 60px;
   //overflow: hidden;
@@ -42,8 +53,8 @@ const ImageBox1 = styled.img`
 const ImageBox = styled.div`
   //background-color: blue;
   //width: 100%;
-  max-width: 1000px;
-  display: flex;
+  //max-width: 1000px;
+  //display: flex;
   //flex: 1;
   //flex-flow: row nowrap;
   //flex-direction: row;
@@ -55,11 +66,7 @@ class ImageContent extends Component {
   render() {
     const { deviceImages } = this.props;
 
-    return (
-      <ImageBox>
-        <ImageBox1 src={deviceImages} height="700vh" />
-      </ImageBox>
-    );
+    return <ImageBox1 src={deviceImages} />;
   }
 }
 
