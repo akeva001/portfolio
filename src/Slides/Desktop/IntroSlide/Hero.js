@@ -9,10 +9,11 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   //padding 0 30px;
-  height: 100%;
+  min-height: 100vh;
   //position: relative;
   //z-index: 1;
   //padding-top: 100px;
+  flex-direction: column;
 `;
 class Hero extends Component {
   render() {

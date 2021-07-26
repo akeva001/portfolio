@@ -61,7 +61,8 @@ const Animation = styled.div`
   opacity: 0;
   letter-spacing: 1px;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 `;
 
 const First = styled.span`
