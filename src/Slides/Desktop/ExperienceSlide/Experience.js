@@ -41,9 +41,10 @@ const InfoContainer = styled.div`
   // @media screen and (max-width: 768px) {
   //   padding: 100px 0;
   // }
-  //height: 100vh;
+  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  //background-color: black;
 `;
 const InfoWrapper = styled.div`
   display: flex;
@@ -82,7 +83,7 @@ const Column1 = styled.div`
   padding: 0 15 px;
   grid-area: col1;
   //background-color: green;
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   //max-width: 700px;
   justify-content: center;
@@ -128,7 +129,7 @@ class Experience extends Component {
     super(props);
     this.experienceDetails = [
       {
-        id: "proj1",
+        id: "experience",
         projectName: "RMate",
         projectDesc:
           "IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
@@ -137,7 +138,7 @@ class Experience extends Component {
         image: AppStoreImage,
         deviceImages: [RMateImage2],
         link: "https://apps.apple.com/us/app/rmate/id1418361482",
-        imgStart: true,
+        imgStart: false,
       },
       {
         id: "proj2",

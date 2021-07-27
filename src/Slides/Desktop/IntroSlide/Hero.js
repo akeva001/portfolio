@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import NameAndTitle from "./NameAndTitle";
 import About from "./About";
 import styled from "styled-components";
@@ -15,6 +15,7 @@ const HeroContainer = styled.div`
   //padding-top: 100px;
   flex-direction: column;
 `;
+
 class Hero extends Component {
   render() {
     return (
