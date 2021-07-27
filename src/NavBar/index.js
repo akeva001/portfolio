@@ -1,27 +1,38 @@
 import React from "react";
-import { Nav, NavLink, Bars, NavMenu } from "./NavbarElements";
+import { FaBars } from "react-icons/fa";
+import {
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  MobileIcon,
+  NavMenu,
+  NavItem,
+  NavLinks,
+} from "./NavbarElements";
 
 const Navbar = () => {
   return (
-    <div>
+    <>
       <Nav>
-        <NavLink to="/">
-          <hi>Logo</hi>
-        </NavLink>
-        <Bars />
-        <NavMenu>
-          <NavLink to="/about" activeStyle>
-            About
-          </NavLink>
-          <NavLink to="/experience" activeStyle>
-            Experience
-          </NavLink>
-          <NavLink to="/contact" activeStyle>
-            Contact
-          </NavLink>
-        </NavMenu>
+        <NavbarContainer>
+          <NavLogo to="/">AK</NavLogo>
+          <MobileIcon>
+            <FaBars />
+          </MobileIcon>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to="about">About</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="experience">Experience</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="Contact">Contact</NavLinks>
+            </NavItem>
+          </NavMenu>
+        </NavbarContainer>
       </Nav>
-    </div>
+    </>
   );
 };
 

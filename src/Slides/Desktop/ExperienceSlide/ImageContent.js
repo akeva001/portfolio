@@ -32,10 +32,10 @@ const ImageBox1 = styled.img`
     height: 600px;
   }
   @media ${device.laptopL} {
-    height: 900px;
+    height: 700px;
   }
   @media ${device.desktop} {
-    height: 1100px;
+    height: 900px;
   }
 
   //display: flex;

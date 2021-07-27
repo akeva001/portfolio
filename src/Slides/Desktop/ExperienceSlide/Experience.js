@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import TextContent from "./TextContent";
 import ImageContent from "./ImageContent";
-import GithubImage from "../../../Assets/Images/Sites/Git.png";
+import NotflixLink from "../../../Assets/Images/Sites/ExternalLink.png";
 import AppStoreImage from "../../../Assets/Images/Sites/AppStore.png";
 import RMateImage1 from "../../../Assets/Images/RMate/iPhone1.png";
 import RMateImage2 from "../../../Assets/Images/RMate/iPhone2.png";
@@ -41,21 +41,24 @@ const InfoContainer = styled.div`
   // @media screen and (max-width: 768px) {
   //   padding: 100px 0;
   // }
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
+  //min-height: 100vh;
+  //max-width: 1849px;
+  //box-sizing: border-box;
   //background-color: black;
 `;
 const InfoWrapper = styled.div`
   display: flex;
   z-index: 1;
   //height: 860px;
-  width: 100%;
+  //width: 100%;
   //max-width: 100px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 0 100px;
   justify-content: center;
+  //background-color: red;
+  max-width: 1849px;
+  align-self: center;
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -88,6 +91,7 @@ const Column1 = styled.div`
   //max-width: 700px;
   justify-content: center;
   padding: 30px;
+  //min-width: 40vh;
 `;
 const Column2 = styled.div`
   display: flex;
@@ -97,6 +101,7 @@ const Column2 = styled.div`
   //background-color: brown;
   justify-content: center;
   //overflow: hidden;
+  min-width: 40vh;
 `;
 
 const TextWrapper = styled.div`
@@ -146,10 +151,10 @@ class Experience extends Component {
         projectDesc: "Netflix/Youtube hybrid web app. ",
         projectType: "Web App",
         roles: ["Front-end Developer"],
-        image: GithubImage,
+        image: NotflixLink,
         deviceImages: [NotflixImage1],
-        link: ["https://github.com/kadey001/Notflix"],
-        link2: "https://notflix.tech",
+        link2: ["https://github.com/kadey001/Notflix"],
+        link: "https://notflix.tech",
         imgStart: false,
       },
     ];
