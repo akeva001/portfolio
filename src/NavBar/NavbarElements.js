@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa";
 export const Nav = styled.nav`
   background: #000;
   height: 80px;
-  // margin-top: -80px;
+  //margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -30,14 +30,14 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `;
 
-export const NavLogo = styled(LinkRouter)`
+export const NavLogo = styled(LinkScroll)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  //margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
 `;
@@ -50,9 +50,10 @@ export const MobileIcon = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    transfor: translate(-100%, 60%);
+    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
+    color: #fff;
   }
 `;
 
@@ -67,7 +68,13 @@ export const NavMenu = styled.ul`
     display: none;
   }
 `;
+export const NavRightPlaceholder = styled.div`
+  display: flex;
 
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 export const NavItem = styled.li`
   height: 80px;
 `;
@@ -82,6 +89,6 @@ export const NavLinks = styled(LinkScroll)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #01bf71;
+    color: grey;
   }
 `;

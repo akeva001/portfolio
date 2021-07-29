@@ -16,19 +16,14 @@ const HeroContainer = styled.div`
   flex-direction: column;
 `;
 
-class Hero extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <HeroContainer>
-          <NameAndTitle />
-        </HeroContainer>
-        <HeroContainer>
-          <About />
-        </HeroContainer>
-      </React.Fragment>
-    );
-  }
-}
+const Hero = () => {
+  return (
+    <>
+      <HeroContainer id={"home"}>
+        <NameAndTitle />
+      </HeroContainer>
+    </>
+  );
+};
 
 export default Hero;

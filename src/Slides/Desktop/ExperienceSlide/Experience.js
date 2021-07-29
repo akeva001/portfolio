@@ -21,6 +21,12 @@ const Container = styled.div`
   justify-content: center;
   overflow: hidden;
 `;
+const ImageBox = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 50px;
+`;
 const ExperienceContainer = styled.div`
   background: grey;
   display: grid;
@@ -38,17 +44,20 @@ const ExperienceContainer = styled.div`
 `;
 const InfoContainer = styled.div`
   color: #fff;
-  // @media screen and (max-width: 768px) {
-  //   padding: 100px 0;
-  // }
-  //min-height: 100vh;
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+  min-height: calc(100vh - 80px);
   //max-width: 1849px;
   //box-sizing: border-box;
-  //background-color: black;
+  //background-color: blue;
+  //margin-top: 80px;
+  //box-sizing: border-box;
 `;
 const InfoWrapper = styled.div`
   display: flex;
   z-index: 1;
+  flex-direction: column;
   //height: 860px;
   //width: 100%;
   //max-width: 100px;
@@ -59,6 +68,7 @@ const InfoWrapper = styled.div`
   //background-color: red;
   max-width: 1849px;
   align-self: center;
+  padding-top: 50px;
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -75,7 +85,7 @@ const InfoRow = styled.div`
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
   //background-color: blue;
-  width: 100vw;
+  //width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
 `;
@@ -87,21 +97,24 @@ const Column1 = styled.div`
   grid-area: col1;
   //background-color: green;
   min-width: 100%;
-  height: 100%;
+  //min-height: 100%;
   //max-width: 700px;
   justify-content: center;
+  align-items: center;
   padding: 30px;
   //min-width: 40vh;
 `;
 const Column2 = styled.div`
   display: flex;
-  margin-bottom: 15px;
+  //margin-bottom: 15px;
+  align-items: center;
   padding: 0 15 px;
   grid-area: col2;
   //background-color: brown;
   justify-content: center;
   //overflow: hidden;
   min-width: 40vh;
+  //min-height: 100%;
 `;
 
 const TextWrapper = styled.div`
@@ -120,7 +133,7 @@ const TextWrapper = styled.div`
   //background-color: grey;
   border-radius: 5%;
   padding: 15px;
-  box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
+  //box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
 `;
 const ImgWrap = styled.div`
   position: relative;
@@ -134,7 +147,6 @@ class Experience extends Component {
     super(props);
     this.experienceDetails = [
       {
-        id: "experience",
         projectName: "RMate",
         projectDesc:
           "IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
@@ -146,7 +158,6 @@ class Experience extends Component {
         imgStart: false,
       },
       {
-        id: "proj2",
         projectName: "Notflix",
         projectDesc: "Netflix/Youtube hybrid web app. ",
         projectType: "Web App",
@@ -165,7 +176,7 @@ class Experience extends Component {
       <>
         {this.experienceDetails.map((experiences) => (
           <div>
-            <InfoContainer key={experiences}>
+            <InfoContainer key={experiences} id={"experience"}>
               <InfoWrapper>
                 <InfoRow imgStart={experiences.imgStart}>
                   <Column1>
@@ -178,9 +189,11 @@ class Experience extends Component {
                         image={experiences.image}
                         link={experiences.link}
                       />
-                      <a href={experiences.link}>
-                        <img src={experiences.image} height={"100px"} />
-                      </a>
+                      <ImageBox>
+                        <a href={experiences.link}>
+                          <img src={experiences.image} height={"100px"} />
+                        </a>
+                      </ImageBox>
                     </TextWrapper>
                   </Column1>
                   <Column2>

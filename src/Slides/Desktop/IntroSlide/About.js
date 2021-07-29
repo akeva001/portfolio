@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Container = styled.section`
-  height: 40vh;
+  min-height: calc(100vh - 80px);
   width: 100%;
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
+  //margin-top: 80px;
+  //background: red;
+  margin: 0;
 `;
 
 const AboutMeDescription = styled.div`
@@ -20,7 +23,7 @@ const AboutMeDescription = styled.div`
 class About extends Component {
   render() {
     return (
-      <Container>
+      <Container id={"about"}>
         <AboutMeDescription>About Me</AboutMeDescription>
       </Container>
     );

@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 const Container = styled.section`
   display: flex;
-  height: 100vh;
+  min-height: calc(100vh - 80px);
   width: 100%;
   position: relative;
   overflow: hidden;
+  //background: green;
 `;
 
 const ContactTitle = styled.div.attrs({})`
@@ -16,9 +17,7 @@ const ContactTitle = styled.div.attrs({})`
   margin-left: 30%;
   margin-right: 5%;
   font-size: 45px;
-  
-  
-  
+
   
   }
 `;
@@ -26,7 +25,7 @@ const ContactTitle = styled.div.attrs({})`
 class Contact extends Component {
   render() {
     return (
-      <Container>
+      <Container id={"contact"}>
         <ContactTitle>CONTACT</ContactTitle>
       </Container>
     );
