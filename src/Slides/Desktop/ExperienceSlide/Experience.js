@@ -133,7 +133,7 @@ const TextWrapper = styled.div`
   //background-color: grey;
   border-radius: 5%;
   padding: 15px;
-  //box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
 `;
 const ImgWrap = styled.div`
   position: relative;
@@ -190,7 +190,11 @@ class Experience extends Component {
                         link={experiences.link}
                       />
                       <ImageBox>
-                        <a href={experiences.link}>
+                        <a
+                          style={{ display: "table-cell" }}
+                          href={experiences.link}
+                          target="_blank"
+                        >
                           <img src={experiences.image} height={"100px"} />
                         </a>
                       </ImageBox>
