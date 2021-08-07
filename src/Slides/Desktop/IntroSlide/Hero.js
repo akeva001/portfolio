@@ -12,7 +12,7 @@ const HeroContainer = styled.div`
   min-height: 100vh;
   //position: relative;
   //z-index: 1;
-  //padding-top: 100px;
+  padding-bottom: 100px;
   flex-direction: column;
 `;
 

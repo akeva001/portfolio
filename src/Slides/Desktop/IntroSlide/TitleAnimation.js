@@ -4,8 +4,11 @@ import styled, { keyframes } from "styled-components";
 export default function TitleAnimation() {
   return (
     <Animation>
-      <h2>Hello! My name is Alex Kevakian</h2>
-      <First>I am a </First>
+      <secondSpanName>
+        <h2>Alex Kevakian</h2>
+      </secondSpanName>
+
+      {/* <First>I am a </First> */}
       <Slide>
         <Second>Frontend Developer</Second>
       </Slide>
@@ -13,15 +16,27 @@ export default function TitleAnimation() {
   );
 }
 
-const secondSpan = keyframes`
+const secondSpanName = keyframes`
     0%{
-        transform: translateX(-100%);
+        transform: translateY(-150%);
     }
     60%{
-        transform: translateX(-100%);
+        transform: translateY(-150%);
     }
     100%{
-        transform: translateX(0%);
+        transform: translateY(0%);
+    }
+`;
+
+const secondSpan = keyframes`
+    0%{
+        transform: translateY(150%);
+    }
+    60%{
+        transform: translateY(150%);
+    }
+    100%{
+        transform: translateY(0%);
     }
 `;
 const fadeIn = keyframes`
@@ -63,6 +78,8 @@ const Animation = styled.div`
   z-index: 1;
   padding-top: 50px;
   padding-bottom: 100px;
+  //font-family: "Rubik", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 
 const First = styled.span`
@@ -71,7 +88,7 @@ const First = styled.span`
   z-index: 1;
   position: relative;
   animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  animation-name: ${firstSpan};
+  animation-name: ${secondSpanName};
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 `;

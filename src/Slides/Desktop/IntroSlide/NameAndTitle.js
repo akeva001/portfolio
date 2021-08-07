@@ -24,7 +24,7 @@ const Img = styled.img`
   border-radius: 50%;
   max-height: 250px;
   //max-width: 250px;
-  box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   //box-sizing: border-box;
   //flex-shrink: 0;
   //float: right;

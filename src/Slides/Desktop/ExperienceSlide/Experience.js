@@ -8,6 +8,7 @@ import RMateImage1 from "../../../Assets/Images/RMate/iPhone1.png";
 import RMateImage2 from "../../../Assets/Images/RMate/iPhone2.png";
 import RMateImage3 from "../../../Assets/Images/RMate/iPhone3.png";
 import NotflixImage1 from "../../../Assets/Images/Notflix/Mac1.png";
+import FoodImage from "../../../Assets/Images/FoodRecipeEngine/Food.png";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const Container = styled.div`
@@ -42,23 +43,26 @@ const ExperienceContainer = styled.div`
   //z-index: 1;
   //overlow: auto;
 `;
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: black;
+  padding-top: 50px;
+`;
 const InfoContainer = styled.div`
   color: #fff;
   @media screen and (max-width: 768px) {
     padding: 0;
   }
-  min-height: calc(100vh - 80px);
-  //max-width: 1849px;
-  //box-sizing: border-box;
-  //background-color: blue;
-  //margin-top: 80px;
-  //box-sizing: border-box;
+  height: 100%;
+  align-self: center;
 `;
 const InfoWrapper = styled.div`
   display: flex;
   z-index: 1;
   flex-direction: column;
-  //height: 860px;
+  //height: 100vh;
   //width: 100%;
   //max-width: 100px;
   margin-right: auto;
@@ -80,7 +84,7 @@ const InfoRow = styled.div`
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 900px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
@@ -88,6 +92,7 @@ const InfoRow = styled.div`
   //width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
+  //padding: 50px;
 `;
 
 const Column1 = styled.div`
@@ -96,13 +101,13 @@ const Column1 = styled.div`
   padding: 0 15 px;
   grid-area: col1;
   //background-color: green;
-  min-width: 100%;
+  //min-width: 40vh;
   //min-height: 100%;
   //max-width: 700px;
   justify-content: center;
   align-items: center;
   padding: 30px;
-  //min-width: 40vh;
+  //min-width: 50vh;
 `;
 const Column2 = styled.div`
   display: flex;
@@ -113,7 +118,7 @@ const Column2 = styled.div`
   //background-color: brown;
   justify-content: center;
   //overflow: hidden;
-  min-width: 40vh;
+  //min-width: 20vh;
   //min-height: 100%;
 `;
 
@@ -121,19 +126,14 @@ const TextWrapper = styled.div`
   //display: flex;
   flex-direction: row;
   //flex: 1;
-  max-width: 500px;
-  //padding-top: 0;
-  //padding-left: 100px;
-  //padding-right: 100px;
-  //padding-bottom: 60px;
-  //background-color: red;
+  max-width: 600px;
   width: 100%;
   justify-content: center;
   align-self: center;
-  //background-color: grey;
-  border-radius: 5%;
-  padding: 15px;
-  box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 const ImgWrap = styled.div`
   position: relative;
@@ -155,7 +155,7 @@ class Experience extends Component {
         image: AppStoreImage,
         deviceImages: [RMateImage2],
         link: "https://apps.apple.com/us/app/rmate/id1418361482",
-        imgStart: false,
+        imgStart: true,
       },
       {
         projectName: "Notflix",
@@ -168,16 +168,25 @@ class Experience extends Component {
         link: "https://notflix.tech",
         imgStart: false,
       },
+      {
+        projectName: "Food Recipe Analysis Engine",
+        projectDesc: "Search food recipies.",
+        projectType: "Web App",
+        roles: ["Front-end Developer"],
+        deviceImages: [FoodImage],
+        imgStart: true,
+      },
     ];
   }
 
   renderContent() {
     return (
       <>
-        {this.experienceDetails.map((experiences) => (
-          <div>
-            <InfoContainer key={experiences} id={"experience"}>
-              <InfoWrapper>
+        <InfoContainer id={"experience"}>
+          {/* <HeaderContainer>Experience</HeaderContainer> */}
+          {this.experienceDetails.map((experiences) => (
+            <div>
+              <InfoWrapper key={experiences}>
                 <InfoRow imgStart={experiences.imgStart}>
                   <Column1>
                     <TextWrapper>
@@ -205,9 +214,9 @@ class Experience extends Component {
                   </Column2>
                 </InfoRow>
               </InfoWrapper>
-            </InfoContainer>
-          </div>
-        ))}
+            </div>
+          ))}
+        </InfoContainer>
       </>
     );
   }

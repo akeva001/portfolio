@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import styled from "styled-components";
 import iPhoneImage from "../../../Assets/Images/RMate/iPhone2.png";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
@@ -20,19 +20,25 @@ const ImageContainer = styled.div`
 `;
 const ImageBox1 = styled.img`
   @media ${device.mobileS} {
-    height: 300px;
+    height: 500px;
   }
   @media ${device.mobileM} {
-    height: 400px;
+    height: 500px;
   }
   @media ${device.mobileL} {
-    height: 600px;
+    height: 500px;
+  }
+  @media ${device.tablet} {
+    height: 500px;
   }
   @media ${device.laptop} {
     height: 600px;
   }
-  @media ${device.laptopL} {
+  @media ${device.laptopM} {
     height: 700px;
+  }
+  @media ${device.laptopL} {
+    height: 800px;
   }
   @media ${device.desktop} {
     height: 900px;

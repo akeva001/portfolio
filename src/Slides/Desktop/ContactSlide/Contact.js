@@ -4,27 +4,38 @@ import GithubImg from "../../../Assets/Images/Sites/Git.png";
 import LinkedinImg from "../../../Assets/Images/Sites/linkedin-logo.png";
 import EmailImg from "../../../Assets/Images/Sites/email.png";
 import ResumeImg from "../../../Assets/Images/Sites/resume.png";
+import EmailForm from "../../../EmailForm";
 
 const Container = styled.section`
   display: flex;
-  min-height: calc(50vh - 80px);
+  //position: relative;
+  //in-height: calc(100vh - 80px);
+  //min-height: 100vh;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
+  height: calc(100vh - 80px);
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   //background: green;
+  //margin-bottom: 100px;
 `;
 
 const ContactWrapper = styled.div`
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 12px;
   align-items: center;
-  justify-content: space-evenly;
+  align-self: center;
+  //justify-content: space-between;
   font-family: "AvenirLight";
-  //text-align: left;
-  //margin-left: 30%;
+  text-align: center;
+  //margin-left: 1%;
   //margin-right: 5%;
   font-size: 45px;
-  min-width:1000px;
+  min-width:40vw;
+  height:50%;
+  padding-bottom: 30px;
 
   
   }
@@ -34,6 +45,7 @@ class Contact extends Component {
   render() {
     return (
       <Container id={"contact"}>
+        <EmailForm />
         <ContactWrapper>
           <a
             style={{ display: "table-cell" }}
@@ -49,8 +61,20 @@ class Contact extends Component {
           >
             <img src={LinkedinImg} height={"100px"} />
           </a>
-          <img src={EmailImg} height={"100px"} />
-          <img src={ResumeImg} height={"100px"} />
+          <a
+            style={{ display: "table-cell" }}
+            href={"mailto:" + "alexkevakian@gmail.com"}
+            target="_blank"
+          >
+            <img src={EmailImg} height={"100px"} />
+          </a>
+          <a
+            style={{ display: "table-cell" }}
+            href={"https://www.linkedin.com/in/alexkevakian/"}
+            target="_blank"
+          >
+            <img src={ResumeImg} height={"100px"} margin-right={"110px"} />
+          </a>
         </ContactWrapper>
       </Container>
     );

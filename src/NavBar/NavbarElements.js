@@ -77,6 +77,7 @@ export const NavRightPlaceholder = styled.div`
 `;
 export const NavItem = styled.li`
   height: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 
 export const NavLinks = styled(LinkScroll)`
