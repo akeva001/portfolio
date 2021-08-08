@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             duration={500}
             spy={true}
             exact="true"
-            offset={-80}
+            offset={-44}
           >
             About
           </SidebarLink>
@@ -35,7 +35,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             duration={500}
             spy={true}
             exact="true"
-            offset={-80}
+            offset={-44}
           >
             Experience
           </SidebarLink>
@@ -46,7 +46,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             duration={500}
             spy={true}
             exact="true"
-            offset={-80}
+            offset={-44}
           >
             Contact
           </SidebarLink>

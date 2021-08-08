@@ -46,6 +46,7 @@ export const SidebarMenu = styled.div`
   }
 `;
 export const SidebarLink = styled(LinkScroll)`
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;

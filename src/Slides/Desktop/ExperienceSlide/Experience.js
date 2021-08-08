@@ -13,12 +13,7 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const Container = styled.div`
   display: flex;
-  //z-index: 1;
-
-  //box-sizing: border-box;
-  //flex-direction: column;
   flex-flow: column;
-  // height: 100vh;
   justify-content: center;
   overflow: hidden;
 `;
@@ -32,16 +27,9 @@ const ExperienceContainer = styled.div`
   background: grey;
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
-  //flex: 1;
-  //flex-direction: row;
-  //justify-content: space-evenly;
   align-items: center;
-  //padding 0 30px;
   height: 100vh;
   width: 100%;
-  //position: relative;
-  //z-index: 1;
-  //overlow: auto;
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -55,32 +43,29 @@ const InfoContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 0;
   }
-  height: 100%;
+  //height: 50%;
   align-self: center;
 `;
 const InfoWrapper = styled.div`
-  display: flex;
-  z-index: 1;
-  flex-direction: column;
-  //height: 100vh;
-  //width: 100%;
-  //max-width: 100px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 0 100px;
+  display: block;
+  //z-index: 1;
+  //flex-direction: column;
+  //margin-right: auto;
+  //margin-left: auto;
+  //padding-right: 0 100px;
   justify-content: center;
-  //background-color: red;
-  max-width: 1849px;
+  max-width: 1380px;
   align-self: center;
-  padding-top: 50px;
+  //padding-top: 50px;
+  background: red;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  margin-bottom: 30px;
 `;
 const InfoRow = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
-  //grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-  //grid-gap: 16px;
-  //lign-items: center;
-  //grid-gap: 100px;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
@@ -88,44 +73,38 @@ const InfoRow = styled.div`
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
-  //background-color: blue;
-  //width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
-  //padding: 50px;
+  //max-width: 85rem;
+  //margin-left: 2%;
+  //margin-right: 2%;
+  padding: 70px 0px 65px;
+  //justify-content: space-evenly;
+  align-self: center;
+  //background: blue;
+  background-color: rgb(242, 242, 242);
 `;
 
 const Column1 = styled.div`
   display: flex;
-  //margin-bottom: 15px;
-  padding: 0 15 px;
   grid-area: col1;
-  //background-color: green;
-  //min-width: 40vh;
-  //min-height: 100%;
-  //max-width: 700px;
   justify-content: center;
   align-items: center;
   padding: 30px;
-  //min-width: 50vh;
+  //width: 50vw;
 `;
 const Column2 = styled.div`
   display: flex;
-  //margin-bottom: 15px;
   align-items: center;
-  padding: 0 15 px;
   grid-area: col2;
-  //background-color: brown;
   justify-content: center;
-  //overflow: hidden;
-  //min-width: 20vh;
-  //min-height: 100%;
+  //padding-left: ${({ extraPadding }) => (extraPadding ? "50px" : "0px")};
+  //margin-left: 50px;
+  //width: 50vw;
 `;
 
 const TextWrapper = styled.div`
-  //display: flex;
   flex-direction: row;
-  //flex: 1;
   max-width: 600px;
   width: 100%;
   justify-content: center;
@@ -133,7 +112,7 @@ const TextWrapper = styled.div`
   padding: 25px;
   border-radius: 10px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 const ImgWrap = styled.div`
   position: relative;
@@ -148,6 +127,7 @@ class Experience extends Component {
     this.experienceDetails = [
       {
         projectName: "RMate",
+        year: "July 2019-Present",
         projectDesc:
           "IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
         projectType: "iOS/Android App",
@@ -155,26 +135,29 @@ class Experience extends Component {
         image: AppStoreImage,
         deviceImages: [RMateImage2],
         link: "https://apps.apple.com/us/app/rmate/id1418361482",
-        imgStart: true,
+        imgStart: false,
+        extrapadding: true,
       },
       {
         projectName: "Notflix",
-        projectDesc: "Netflix/Youtube hybrid web app. ",
+        projectDesc:
+          "Netflix/Youtube hybrid web app. IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
         projectType: "Web App",
         roles: ["Front-end Developer"],
         image: NotflixLink,
         deviceImages: [NotflixImage1],
         link2: ["https://github.com/kadey001/Notflix"],
         link: "https://notflix.tech",
-        imgStart: false,
+        imgStart: true,
       },
       {
         projectName: "Food Recipe Analysis Engine",
-        projectDesc: "Search food recipies.",
+        projectDesc:
+          "Search food recipies. IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
         projectType: "Web App",
         roles: ["Front-end Developer"],
         deviceImages: [FoodImage],
-        imgStart: true,
+        imgStart: false,
       },
     ];
   }
@@ -192,6 +175,7 @@ class Experience extends Component {
                     <TextWrapper>
                       <TextContent
                         projectName={experiences.projectName}
+                        projectYear={experiences.year}
                         projectDesc={experiences.projectDesc}
                         projectType={experiences.projectType}
                         roles={experiences.roles}

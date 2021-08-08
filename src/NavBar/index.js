@@ -21,7 +21,7 @@ const Navbar = ({ toggle }) => {
             smooth={true}
             duration={600}
             spy={true}
-            offset={-80}
+            offset={-44}
           >
             AK{" "}
           </NavLogo>
@@ -36,7 +36,7 @@ const Navbar = ({ toggle }) => {
                 duration={600}
                 spy={true}
                 //activeClass={active}
-                offset={-80}
+                offset={-44}
               >
                 About
               </NavLinks>
@@ -48,7 +48,7 @@ const Navbar = ({ toggle }) => {
                 duration={600}
                 spy={true}
                 //activeClass={active}
-                offset={-80}
+                offset={-44}
               >
                 Experience
               </NavLinks>
@@ -60,7 +60,7 @@ const Navbar = ({ toggle }) => {
                 duration={600}
                 spy={true}
                 //activeClass={active}
-                offset={-80}
+                offset={-44}
               >
                 Contact
               </NavLinks>

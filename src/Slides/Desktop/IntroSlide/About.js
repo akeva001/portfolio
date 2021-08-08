@@ -8,39 +8,29 @@ const InfoContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 0;
   }
-  height: calc(100vh - 80px);
+  min-height: 100vh;
   //height: 100vh;
-  //max-width: 1849px;
-  //box-sizing: border-box;
-  //background-color: blue;
-  //margin-top: 80px;
-  //box-sizing: border-box;
+
   justify-content: center;
+  flex-direction: column;
 `;
 const InfoWrapper = styled.div`
-  display: flex;
-  z-index: 1;
-  flex-direction: column;
-  //height: calc(100vh - 80px);
-  //width: 100%;
-  //max-width: 100px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 0 100px;
+  display: block;
   justify-content: center;
-  //background-color: red;
-  //width: 1849px;
+  max-width: 1380px;
   align-self: center;
   //padding-top: 50px;
-  color: black;
-  border-radius: 10px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background: red;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  margin-bottom: 30px;
+  width: 100%;
 `;
 const InfoRow = styled.div`
-  display: flex;
+  display: grid;
   grid-auto-columns: minmax(auto, 1fr);
-  //grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
   //grid-gap: 16px;
   //align-items: center;
   justify-content: center;
@@ -48,15 +38,18 @@ const InfoRow = styled.div`
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 900px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
-  //background-color: green;
-  //width: 100vw;
-  //width: 1849px;
-  //box-sizing: border-box;
-  //overflow: hidden;
+  box-sizing: border-box;
+  overflow: hidden;
+  //padding: 70px 0px 65px;
+  //justify-content: space-evenly;
+  //align-self: center;
+  //background: blue;
+  //background-color: rgb(242, 242, 242);
+  width: 100%;
 `;
 const InfoRow2 = styled.div`
   display: grid;
@@ -86,9 +79,10 @@ const Column1 = styled.div`
   padding: 0 15 px;
   grid-area: col1;
   //background-color: black;
-  justify-content: space-evenly;
+  //justify-content: space-between;
   align-items: center;
   //height: 100%;
+  //padding: 30px;
 `;
 const Column2 = styled.div`
   display: flex;
@@ -96,6 +90,7 @@ const Column2 = styled.div`
   padding: 0 15 px;
   grid-area: col2;
   justify-content: center;
+  //padding: 30px;
 `;
 const SchoolName = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -108,13 +103,16 @@ const SchoolName = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 100px;
+    font-size: 30px;
   }
 `;
 const Title = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
   padding-top: 2%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
   @media ${device.laptop} {
     font-size: 30px;
   }
@@ -122,7 +120,7 @@ const Title = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 100px;
+    font-size: 30px;
   }
 `;
 
@@ -136,39 +134,42 @@ const Major = styled.div`
     font-size: 25px;
   }
   @media ${device.desktop} {
-    font-size: 50px;
+    font-size: 30px;
   }
 `;
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 500px;
+  //max-width: 600px;
   //background-color: red;
   width: 100%;
   justify-content: center;
   align-self: center;
-  //background-color: grey;
-  padding: 15px;
-  margin-top: 30px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  padding: 35px;
+  //margin-top: 30px;
+  // border-radius: 10px;
+  // box-sizing: border-box;
+  // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgb(242, 242, 242);
+  color: black;
+  height: 100vh;
 `;
 const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 1000px;
-  //background-color: red;
+  //max-width: 600px;
   justify-content: center;
   align-self: center;
-  //background-color: grey;
-  border-radius: 5%;
-  padding: 15px;
+  //border-radius: 5%;
+  padding: 35px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: bold;
-  padding-top: 2%;
+  // border-radius: 10px;
+  // box-sizing: border-box;
+  // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgb(242, 242, 242);
+  color: black;
   @media ${device.laptop} {
     font-size: 30px;
   }
@@ -176,7 +177,7 @@ const AboutWrapper = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 100px;
+    font-size: 30px;
   }
 `;
 class About extends Component {
@@ -184,29 +185,27 @@ class About extends Component {
     return (
       <InfoContainer id={"about"}>
         <InfoWrapper>
-          <Column1>
-            <AboutWrapper>
-              During my final years as an undergraduate student in Computer
-              Science, I discovered my obsession for Front-end development. If I
-              was not studying or completing course work, I was developing new
-              and elegant features for our mobile application RMate, while
-              maintaining my part time job as a tennis coach.
-            </AboutWrapper>
-          </Column1>
-          <Column2>
-            <TextWrapper>
-              <Title>Education</Title>
-              <SchoolName>University of California, Riverside</SchoolName>
-              <Major>B.S., Computer Science • 2014-2018</Major>
+          <InfoRow>
+            <Column1>
+              <AboutWrapper>
+                During my final years as an undergraduate student in Computer
+                Science, I discovered my obsession for Front-end development. If
+                I was not studying or completing course work, I was developing
+                new and elegant features for our mobile application RMate, while
+                maintaining my part time job as a tennis coach.
+              </AboutWrapper>
+            </Column1>
+            <Column2>
+              <TextWrapper>
+                <Title>Education</Title>
+                <SchoolName>University of California, Riverside</SchoolName>
+                <Major>B.S., Computer Science • 2014-2018</Major>
 
-              <SchoolName>Glendale Community College</SchoolName>
-              <Major>Computer Science • 2018-2021</Major>
-            </TextWrapper>
-
-            <TextWrapper>
-              <Title>Skills</Title>
-            </TextWrapper>
-          </Column2>
+                <SchoolName>Glendale Community College</SchoolName>
+                <Major>Computer Science • 2018-2021</Major>
+              </TextWrapper>
+            </Column2>
+          </InfoRow>
         </InfoWrapper>
       </InfoContainer>
     );

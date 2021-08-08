@@ -15,8 +15,8 @@ const StyledFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 20px;
+  //height: 100vh;
+  padding: 0 30px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 
@@ -121,7 +121,7 @@ function ContactForm() {
     <>
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
-          <h2>Contact</h2>
+          <h2 style={{ paddingBottom: "30px" }}>Contact</h2>
           <label htmlFor="name">Name</label>
           <StyledInput
             type="text"

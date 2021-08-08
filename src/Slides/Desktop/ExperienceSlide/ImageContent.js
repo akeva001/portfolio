@@ -5,17 +5,17 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 import PropTypes from "prop-types";
 
 const ImageContainer = styled.div`
-  //display: flex;
-  //flex: 1;
+  display: flex;
+  flex: 1;
   //flex-flow: column nowrap;
   //height: 100vh;
-  width: 100%;
-  // background-color: grey;
-  //justify-content: center;
+  //background-color: grey;
+  //width: 50vw;
+  justify-content: center;
   //align-items: center;
   //flex-direction: column;
   //background: green;
-
+  //width: 90vh;
   //overflow: hidden;
 `;
 const ImageBox1 = styled.img`
@@ -26,10 +26,10 @@ const ImageBox1 = styled.img`
     height: 500px;
   }
   @media ${device.mobileL} {
-    height: 500px;
+    height: 550px;
   }
   @media ${device.tablet} {
-    height: 500px;
+    height: 550px;
   }
   @media ${device.laptop} {
     height: 600px;
@@ -44,9 +44,9 @@ const ImageBox1 = styled.img`
     height: 900px;
   }
 
-  //display: flex;
-  //justify-content: center;
-  //align-self: center;
+  display: flex;
+  justify-content: center;
+  align-self: center;
   //background-color: black;
   // margin: 0 0 10px 0;
   // padding-right: 0;
@@ -72,7 +72,11 @@ class ImageContent extends Component {
   render() {
     const { deviceImages } = this.props;
 
-    return <ImageBox1 src={deviceImages} />;
+    return (
+      <ImageContainer>
+        <ImageBox1 src={deviceImages} />
+      </ImageContainer>
+    );
   }
 }
 

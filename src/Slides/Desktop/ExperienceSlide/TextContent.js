@@ -4,31 +4,20 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 import PropTypes from "prop-types";
 
 const TextContainer = styled.div`
-  //display: flex;
-  // flex: 1;
-  // flex-flow: column nowrap;
-  //height: 100vh;
-  width: 100%;
+  max-width: 100%;
   background-color: red;
-  //justify-content: center;
-  //align-items: center;
-  //padding-left: 100px;
-  // flex-direction: column;
 `;
 const TextBox = styled.div`
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
   color: black;
-  //width: 50%;
-  //max-width: 50vh;
   display: flex;
-  //flex: 1;
-  //flex-flow: column nowrap;
   flex-direction: column;
-  //justify-content: center;
-  //align-self: center;
   font-size: 30px;
 `;
 const ProjectName = styled.div`
-  font-family: "AvenirHeavy";
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
   @media ${device.laptop} {
     font-size: 70px;
   }
@@ -44,12 +33,20 @@ const Button = styled.div`
 `;
 class TextContent extends Component {
   render() {
-    const { projectName, image, link, projectDesc, roles, projectType } =
-      this.props;
+    const {
+      projectName,
+      projectYear,
+      image,
+      link,
+      projectDesc,
+      roles,
+      projectType,
+    } = this.props;
     return (
       <TextBox>
         <ProjectName>
           <span>{projectName}</span>
+          <span style={{ fontSize: "30px" }}>{projectYear}</span>
         </ProjectName>
 
         <span>{roles}</span>
@@ -61,6 +58,7 @@ class TextContent extends Component {
 }
 TextContent.propTypes = {
   projectName: PropTypes.string.isRequired,
+  projectYear: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   projectDesc: PropTypes.string.isRequired,

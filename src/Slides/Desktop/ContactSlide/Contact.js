@@ -13,12 +13,9 @@ const Container = styled.section`
   //min-height: 100vh;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  height: calc(100vh - 80px);
-  position: relative;
-  //overflow: hidden;
-  //background: green;
-  //margin-bottom: 100px;
+  //width: 100%;
+  min-height: calc(100vh - 44px);
+  //position: relative;
 `;
 
 const ContactWrapper = styled.div`
@@ -27,17 +24,11 @@ const ContactWrapper = styled.div`
   grid-gap: 12px;
   align-items: center;
   align-self: center;
-  //justify-content: space-between;
   font-family: "AvenirLight";
   text-align: center;
-  //margin-left: 1%;
-  //margin-right: 5%;
   font-size: 45px;
   min-width:40vw;
-  height:50%;
-  padding-bottom: 30px;
-
-  
+  padding-top: 40px;
   }
 `;
 

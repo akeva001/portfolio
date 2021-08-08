@@ -4,8 +4,8 @@ import { Link as LinkScroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 
 export const Nav = styled.nav`
-  background: #000;
-  height: 80px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 44px;
   //margin-top: -80px;
   display: flex;
   justify-content: center;
@@ -54,6 +54,7 @@ export const MobileIcon = styled.div`
     font-size: 1.8rem;
     cursor: pointer;
     color: #fff;
+    height: 14px;
   }
 `;
 
