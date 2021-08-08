@@ -14,6 +14,8 @@ const HeroContainer = styled.div`
   //z-index: 1;
   padding-bottom: 100px;
   flex-direction: column;
+  background-color: rgb(242, 242, 242);
+  margin-bottom: 30px;
 `;
 
 const Hero = () => {

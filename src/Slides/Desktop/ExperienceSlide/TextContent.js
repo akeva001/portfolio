@@ -25,7 +25,7 @@ const ProjectName = styled.div`
     font-size: 80px;
   }
   @media ${device.desktop} {
-    font-size: 120px;
+    font-size: 90px;
   }
 `;
 const Button = styled.div`

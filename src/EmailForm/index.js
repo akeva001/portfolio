@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 
 const sharedStyles = css`
-  background-color: #eee;
+  //background-color: #eee;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -24,10 +24,10 @@ const StyledForm = styled.form`
   width: 100%;
   max-width: 700px;
   padding: 40px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  //background-color: #fff;
+  // border-radius: 10px;
+  // box-sizing: border-box;
+  // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   margin-top: 50px;
   h2 {
     display: flex;
@@ -42,7 +42,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledTextArea = styled.textarea`
-  background-color: #eee;
+  //background-color: #eee;
   width: 100%;
   min-height: 100px;
   resize: none;

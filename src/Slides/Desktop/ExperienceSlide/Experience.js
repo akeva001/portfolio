@@ -151,7 +151,7 @@ class Experience extends Component {
         imgStart: true,
       },
       {
-        projectName: "Food Recipe Analysis Engine",
+        projectName: "Food Recipe",
         projectDesc:
           "Search food recipies. IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
         projectType: "Web App",

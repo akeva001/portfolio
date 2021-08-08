@@ -8,14 +8,16 @@ import EmailForm from "../../../EmailForm";
 
 const Container = styled.section`
   display: flex;
-  //position: relative;
-  //in-height: calc(100vh - 80px);
-  //min-height: 100vh;
   justify-content: center;
   flex-direction: column;
   //width: 100%;
   min-height: calc(100vh - 44px);
+  max-width: 1380px;
   //position: relative;
+  background-color: rgb(242, 242, 242);
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const ContactWrapper = styled.div`
@@ -27,7 +29,7 @@ const ContactWrapper = styled.div`
   font-family: "AvenirLight";
   text-align: center;
   font-size: 45px;
-  min-width:40vw;
+  min-width:25vw;
   padding-top: 40px;
   }
 `;
