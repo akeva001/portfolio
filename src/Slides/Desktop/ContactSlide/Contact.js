@@ -10,14 +10,12 @@ const Container = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  //width: 100%;
   min-height: calc(100vh - 44px);
-  max-width: 1380px;
-  //position: relative;
   background-color: rgb(242, 242, 242);
   align-self: center;
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  padding-bottom: 100px;
+  //margin-right: auto;
 `;
 
 const ContactWrapper = styled.div`
@@ -29,7 +27,7 @@ const ContactWrapper = styled.div`
   font-family: "AvenirLight";
   text-align: center;
   font-size: 45px;
-  min-width:25vw;
+  min-width:35vw;
   padding-top: 40px;
   }
 `;

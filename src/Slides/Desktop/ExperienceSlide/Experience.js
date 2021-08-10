@@ -48,15 +48,9 @@ const InfoContainer = styled.div`
 `;
 const InfoWrapper = styled.div`
   display: block;
-  //z-index: 1;
-  //flex-direction: column;
-  //margin-right: auto;
-  //margin-left: auto;
-  //padding-right: 0 100px;
   justify-content: center;
   max-width: 1380px;
   align-self: center;
-  //padding-top: 50px;
   background: red;
   margin-left: auto;
   margin-right: auto;
@@ -69,7 +63,7 @@ const InfoRow = styled.div`
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1200px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }

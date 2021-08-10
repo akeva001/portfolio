@@ -16,6 +16,10 @@ const HeroContainer = styled.div`
   flex-direction: column;
   background-color: rgb(242, 242, 242);
   margin-bottom: 30px;
+  // max-width: 1380px;
+  // align-self: center;
+  // margin-right: auto;
+  // margin-left: auto;
 `;
 
 const Hero = () => {
