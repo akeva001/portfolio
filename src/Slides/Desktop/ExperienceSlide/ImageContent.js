@@ -16,17 +16,17 @@ const ImageContainer = styled.div`
   //flex-direction: column;
   //background: green;
   //width: 90vh;
-  //overflow: hidden;
+  overflow: hidden;
 `;
 const ImageBox1 = styled.img`
   @media ${device.mobileS} {
-    height: 500px;
+    height: 300px;
   }
   @media ${device.mobileM} {
-    height: 500px;
+    height: 350px;
   }
   @media ${device.mobileL} {
-    height: 500px;
+    height: 450px;
   }
   @media ${device.tablet} {
     height: 550px;
@@ -38,7 +38,7 @@ const ImageBox1 = styled.img`
     height: 700px;
   }
   @media ${device.laptopL} {
-    height: 800px;
+    height: 700px;
   }
   @media ${device.desktop} {
     height: 900px;

@@ -40,6 +40,17 @@ const Sidebar = ({ isOpen, toggle }) => {
             Experience
           </SidebarLink>
           <SidebarLink
+            to="projects"
+            onClick={toggle}
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-44}
+          >
+            Projects
+          </SidebarLink>
+          <SidebarLink
             to="contact"
             onClick={toggle}
             smooth={true}

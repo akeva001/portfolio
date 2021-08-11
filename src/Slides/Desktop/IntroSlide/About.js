@@ -23,8 +23,8 @@ const InfoWrapper = styled.div`
   max-width: 1380px;
   align-self: center;
   //background: red;
-  //margin-left: auto;
-  //margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   //min-height: 50vh;
   //background: blue;
@@ -71,7 +71,7 @@ const Column1 = styled.div`
   padding: 0 15 px;
   grid-area: col1;
   align-items: center;
-  height: 100%;
+  //height: 100%;
 `;
 const Column2 = styled.div`
   display: flex;
@@ -80,7 +80,7 @@ const Column2 = styled.div`
   grid-area: col2;
   justify-content: center;
   //padding-top: 30px;
-  height: 100%;
+  //height: 100%;
 `;
 const SchoolName = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -148,7 +148,7 @@ const AboutWrapper = styled.div`
   background-color: rgb(242, 242, 242);
   color: black;
   margin-bottom: 30px;
-  padding: 100px;
+  padding: 30px;
   @media ${device.laptop} {
     font-size: 30px;
   }
@@ -178,12 +178,17 @@ class About extends Component {
           <InfoRow2>
             <Column1>
               <TextWrapper>
-                <Title>Skills</Title>
+                <Title>Education</Title>
+                <SchoolName>University of California, Riverside</SchoolName>
+                <Major>B.S., Computer Science • 2018-2021</Major>
+
+                <SchoolName>Glendale Community College</SchoolName>
+                <Major>Computer Science • 2014-2018</Major>
               </TextWrapper>
             </Column1>
             <Column2>
               <TextWrapper>
-                <Title>Education</Title>
+                <Title>Skills</Title>
                 <SchoolName>University of California, Riverside</SchoolName>
                 <Major>B.S., Computer Science • 2018-2021</Major>
 

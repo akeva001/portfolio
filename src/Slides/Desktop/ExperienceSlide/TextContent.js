@@ -4,8 +4,9 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 import PropTypes from "prop-types";
 
 const TextContainer = styled.div`
-  max-width: 100%;
-  background-color: red;
+  width: 100%;
+  //background-color: red;
+  //height: 100vh;
 `;
 const TextBox = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
@@ -13,11 +14,44 @@ const TextBox = styled.div`
   color: black;
   display: flex;
   flex-direction: column;
-  font-size: 30px;
+  //max-height: 50vh;
+  @media ${device.mobileS} {
+    font-size: 20px;
+  }
+  @media ${device.mobileM} {
+    font-size: 20px;
+  }
+  @media ${device.mobileL} {
+    font-size: 20px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+  @media ${device.laptop} {
+    font-size: 30px;
+  }
+  @media ${device.laptopL} {
+    font-size: 30px;
+  }
+  @media ${device.desktop} {
+    font-size: 25px;
+  }
 `;
 const ProjectName = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 25px;
+  }
+  @media ${device.mobileL} {
+    font-size: 50px;
+  }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
   @media ${device.laptop} {
     font-size: 70px;
   }
