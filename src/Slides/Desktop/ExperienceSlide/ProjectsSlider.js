@@ -19,14 +19,6 @@ const ImageBox = styled.div`
   width: 100%;
   //padding-top: 50px;
 `;
-const ExperienceContainer = styled.div`
-  background: grey;
-  display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-`;
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -76,7 +68,8 @@ const InfoWrapper = styled.div`
   overflow: hidden;
   //margin-bottom: 30px;
   background-color: rgb(242, 242, 242);
-  max-width: 1380px;
+  //max-width: 1380px;
+  //margin: 30px;
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -101,9 +94,6 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
-  //padding: 20px;
-  //width: 50vw;
-  //height: 50vh;
   @media ${device.mobileS} {
     padding: 20px;
   }
@@ -168,16 +158,7 @@ const TextWrapper = styled.div`
   justify-content: center;
   align-self: center;
   padding: 15px;
-  //border-radius: 10px;
-  box-sizing: border-box;
-  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  max-width: 700px;
-`;
-const ImgWrap = styled.div`
-  position: relative;
-  max-width: 100%;
-  height: 100%;
-  background-color: red;
+  //max-width: 700px;
 `;
 const Slide = styled.div`
   max-width: 1380px;
@@ -186,13 +167,24 @@ const Slide = styled.div`
   opacity: 0;
   transition-duration: 1s ease;
   //height: calc(100vh - 44px);
+  // margin-left: 30px;
+  // margin-right: 30px;
 
   ${({ active }) =>
     active &&
     `
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1.08);
+    //transition-duration: 1s;
+    //transform: scale(1.08);
+    overflow: hidden;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+    
+    
   `}
 `;
 const RightArrow = styled.div`
@@ -245,35 +237,33 @@ const ProjectsSlider = ({ slides }) => {
         {SliderData.map((projects, index) => (
           <Slide key={projects} active={index === current ? true : false}>
             {index === current && (
-              <InfoWrapper>
-                <InfoRow imgStart={projects.imgStart}>
-                  <Column1>
-                    <TextWrapper>
-                      <TextContent
-                        projectName={projects.projectName}
-                        projectYear={projects.year}
-                        projectDesc={projects.projectDesc}
-                        projectType={projects.projectType}
-                        roles={projects.roles}
-                        image={projects.image}
-                        link={projects.link}
-                      />
-                      <ImageBox>
-                        <a
-                          style={{ display: "table-cell" }}
-                          href={projects.link}
-                          target="_blank"
-                        >
-                          <img src={projects.image} height={"60px"} />
-                        </a>
-                      </ImageBox>
-                    </TextWrapper>
-                  </Column1>
-                  <Column2>
-                    <ImageContent deviceImages={projects.deviceImages} />
-                  </Column2>
-                </InfoRow>
-              </InfoWrapper>
+              <InfoRow imgStart={projects.imgStart}>
+                <Column1>
+                  <TextWrapper>
+                    <TextContent
+                      projectName={projects.projectName}
+                      projectYear={projects.year}
+                      projectDesc={projects.projectDesc}
+                      projectType={projects.projectType}
+                      roles={projects.roles}
+                      image={projects.image}
+                      link={projects.link}
+                    />
+                    <ImageBox>
+                      <a
+                        style={{ display: "table-cell" }}
+                        href={projects.link}
+                        target="_blank"
+                      >
+                        <img src={projects.image} height={"60px"} />
+                      </a>
+                    </ImageBox>
+                  </TextWrapper>
+                </Column1>
+                <Column2>
+                  <ImageContent deviceImages={projects.deviceImages} />
+                </Column2>
+              </InfoRow>
             )}
           </Slide>
         ))}

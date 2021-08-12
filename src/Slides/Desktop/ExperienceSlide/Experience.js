@@ -23,14 +23,6 @@ const ImageBox = styled.div`
   width: 100%;
   padding-top: 20px;
 `;
-const ExperienceContainer = styled.div`
-  background: grey;
-  display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-`;
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -50,8 +42,6 @@ const InfoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  //min-height: 100vh;
-  //background: black;
 `;
 
 const InfoWrapper = styled.div`
@@ -60,12 +50,24 @@ const InfoWrapper = styled.div`
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
+  //overflow: hidden;
   //margin-bottom: 30px;
   background-color: rgb(242, 242, 242);
-  max-width: 1490px;
-
-  min-height: calc(100vh - 44px);
+  max-width: 1380px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+  //min-height: calc(100vh - 44px);
+  // @media ${device.mobileS} {
+  //   height: calc(100vh - 44px);
+  // }
+  // @media ${device.mobileM} {
+  //   height: calc(100vh - 44px);
+  // }
+  // @media ${device.mobileL} {
+  //   height: calc(100vh - 44px);
+  // }
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -77,7 +79,7 @@ const InfoRow = styled.div`
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
-  box-sizing: border-box;
+  //box-sizing: border-box;
   overflow: hidden;
   //max-width: 85rem;
   //margin-left: 2%;
@@ -94,7 +96,6 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
-  //padding: 30px;
   @media ${device.mobileS} {
     padding: 15px;
   }
@@ -126,17 +127,18 @@ const Column2 = styled.div`
   grid-area: col2;
   justify-content: center;
   width: 100%;
-  // background: black;
+  //background: black;
 `;
 
 const TextWrapper = styled.div`
-  flex-direction: row;
-  max-width: 600px;
-  //width: 100%;
+  display: flex;
+  flex-direction: column;
+  //max-width: 600px;
+  width: 100%;
   justify-content: center;
   align-self: center;
   padding: 15px;
-  max-width: 80vh;
+  //max-width: 700px;
 `;
 const ImgWrap = styled.div`
   position: relative;
