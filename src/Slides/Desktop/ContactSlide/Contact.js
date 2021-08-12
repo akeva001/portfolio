@@ -42,8 +42,8 @@ const ContactWrapper = styled.div`
   align-self: center;
   font-family: "AvenirLight";
   text-align: center;
-  min-width:20vw;
-
+  max-width: 700px;
+  
   }
 `;
 

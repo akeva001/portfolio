@@ -28,7 +28,30 @@ const HeaderContainer = styled.div`
   justify-content: center;
   font-size: 50px;
   color: black;
-  padding-top: 50px;
+  padding: 20px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 35px;
+  }
+  @media ${device.mobileL} {
+    font-size: 30px;
+  }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  @media ${device.laptop} {
+    font-size: 60px;
+  }
+  @media ${device.laptopL} {
+    font-size: 70px;
+  }
+  @media ${device.desktop} {
+    font-size: 80px;
+  }
 `;
 const InfoContainer = styled.div`
   color: #fff;
@@ -42,6 +65,7 @@ const InfoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 `;
 
 const InfoWrapper = styled.div`
@@ -56,8 +80,8 @@ const InfoWrapper = styled.div`
   max-width: 1380px;
   border-radius: 20px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  margin: 30px;
+  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  //margin: 30px;
   //min-height: calc(100vh - 44px);
   // @media ${device.mobileS} {
   //   height: calc(100vh - 44px);
@@ -151,7 +175,7 @@ class Experience extends Component {
     super(props);
     this.experienceDetails = [
       {
-        projectName: "RMate",
+        projectName: "MyCampusMate",
         year: "July 2019-Present",
         projectDesc:
           "IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
@@ -170,7 +194,7 @@ class Experience extends Component {
     return (
       <>
         <InfoContainer id={"experience"}>
-          {/* <HeaderContainer>Experience</HeaderContainer> */}
+          <HeaderContainer>Experience</HeaderContainer>
           {this.experienceDetails.map((experiences) => (
             <InfoWrapper key={experiences}>
               <InfoRow imgStart={experiences.imgStart}>

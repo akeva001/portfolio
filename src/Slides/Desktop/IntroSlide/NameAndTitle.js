@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import TitleAnimation from "./TitleAnimation.js";
 import Me from "../../../Assets/Images/Me/Me2.jpg";
+import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const Container = styled.div`
   display: flex;
@@ -12,23 +13,22 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   font-size: 36px;
-  //background: red;
-  //overflow: hidden;
-  //position: absolute;
-  //left: 50%;
-  //top: 50%;
-  //transform: translate(-50%, -50%);
   margin-top: 80px;
 `;
 const Img = styled.img`
   border-radius: 50%;
-  max-height: 250px;
-  //max-width: 250px;
+
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  //box-sizing: border-box;
-  //flex-shrink: 0;
-  //float: right;
-  //height: auto;
+
+  @media ${device.mobileS} {
+    height: 40px;
+  }
+  @media ${device.mobileM} {
+    height: 3px;
+  }
+  @media ${device.mobileL} {
+    max-height: 30px;
+  }
 `;
 const fadeIn = keyframes`
     0%{
@@ -63,7 +63,7 @@ class NameAndTitle extends Component {
     return (
       <Container>
         <Animation>
-          <Img style={{ minHeight: "350px" }} src={Me} />
+          <Img style={{ minHeight: "250px" }} src={Me} />
         </Animation>
         <TitleAnimation />
       </Container>

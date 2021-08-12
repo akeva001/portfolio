@@ -23,7 +23,7 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  height: 80px;
+  height: 44px;
   z-index: 1;
   width: 100%;
   padding: 0 24px;
@@ -77,7 +77,7 @@ export const NavRightPlaceholder = styled.div`
   }
 `;
 export const NavItem = styled.li`
-  height: 80px;
+  //height: 80px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 

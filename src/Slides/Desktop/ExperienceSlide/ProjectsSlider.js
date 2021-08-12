@@ -15,16 +15,51 @@ const Container = styled.div`
 `;
 const ImageBox = styled.div`
   display: flex;
-  justify-content: center;
+  //flex-direction: column;
+  //background: green;
+  justify-content: space-between;
   width: 100%;
-  //padding-top: 50px;
+  padding-top: 10px;
+`;
+const ImageBox2 = styled.div`
+  display: flex;
+  //flex-direction: column;
+  //background: green;
+  justify-content: space-evenly;
+  //width: 100%;
+  padding-top: 40px;
+  min-width: 50%;
 `;
 const HeaderContainer = styled.div`
   display: flex;
+  /background: green;
   justify-content: center;
   font-size: 50px;
   color: black;
-  padding-top: 50px;
+  padding: 25px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 35px;
+  }
+  @media ${device.mobileL} {
+    font-size: 30px;
+  }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  @media ${device.laptop} {
+    font-size: 60px;
+  }
+  @media ${device.laptopL} {
+    font-size: 70px;
+  }
+  @media ${device.desktop} {
+    font-size: 80px;
+  }
 `;
 const InfoContainer = styled.div`
   color: #fff;
@@ -40,6 +75,7 @@ const InfoContainer = styled.div`
   align-items: center;
   //background: black;
   overflow: hidden;
+  margin-bottom: 30px;
 `;
 const InfoContainer2 = styled.section`
   // color: #fff;
@@ -70,6 +106,7 @@ const InfoWrapper = styled.div`
   background-color: rgb(242, 242, 242);
   //max-width: 1380px;
   //margin: 30px;
+  height: 100vh;
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -91,9 +128,11 @@ const InfoRow = styled.div`
 
 const Column1 = styled.div`
   display: flex;
+  flex-direction: column;
   grid-area: col1;
   justify-content: center;
   align-items: center;
+
   @media ${device.mobileS} {
     padding: 20px;
   }
@@ -155,6 +194,7 @@ const TextWrapper = styled.div`
   flex-direction: row;
   //max-width: 600px;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-self: center;
   padding: 15px;
@@ -169,39 +209,40 @@ const Slide = styled.div`
   //height: calc(100vh - 44px);
   // margin-left: 30px;
   // margin-right: 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
 
   ${({ active }) =>
     active &&
     `
     border-radius: 20px;
     box-sizing: border-box;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     opacity: 1;
-    //transition-duration: 1s;
-    //transform: scale(1.08);
+    transition-duration: 1s;
+    //transform: scale(1);
     overflow: hidden;
-    margin-left: 30px;
-    margin-right: 30px;
+    // margin-left: 30px;
+    // margin-right: 30px;
     
     
     
   `}
 `;
 const RightArrow = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 32px;
-  font-size: 3rem;
+  //position: absolute;
+  //right: 12px;
+  font-size: 4rem;
   color: black;
   z-index: 10;
   cursor: pointer;
   user-select: none;
 `;
 const LeftArrow = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 32px;
-  font-size: 3rem;
+  //position: absolute;
+  //top: calc(50vh - 42px);
+  //left: 42px;
+  font-size: 4rem;
   color: black;
   z-index: 10;
   cursor: pointer;
@@ -226,14 +267,7 @@ const ProjectsSlider = ({ slides }) => {
   return (
     <>
       <InfoContainer id={"projects"}>
-        {/* <HeaderContainer>Projects</HeaderContainer> */}
-        <LeftArrow>
-          <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-        </LeftArrow>
-        <RightArrow>
-          <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-        </RightArrow>
-
+        <HeaderContainer>Projects</HeaderContainer>
         {SliderData.map((projects, index) => (
           <Slide key={projects} active={index === current ? true : false}>
             {index === current && (
@@ -247,18 +281,50 @@ const ProjectsSlider = ({ slides }) => {
                       projectType={projects.projectType}
                       roles={projects.roles}
                       image={projects.image}
+                      image2={projects.image2}
                       link={projects.link}
                     />
-                    <ImageBox>
+                    <ImageBox2>
                       <a
-                        style={{ display: "table-cell" }}
+                        style={{
+                          display: "table-cell",
+                          //paddingHorizontal: "30px",
+                        }}
                         href={projects.link}
                         target="_blank"
                       >
                         <img src={projects.image} height={"60px"} />
                       </a>
-                    </ImageBox>
+                      {projects.image2 != null && (
+                        <a
+                          style={{
+                            display: "table-cell",
+                            //paddingHorizontal: "30px",
+                          }}
+                          href={projects.link2}
+                          target="_blank"
+                        >
+                          <img src={projects.image2} height={"60px"} />
+                        </a>
+                      )}
+                    </ImageBox2>
                   </TextWrapper>
+
+                  <ImageBox>
+                    <LeftArrow>
+                      <FaArrowAltCircleLeft
+                        className="left-arrow"
+                        onClick={prevSlide}
+                      />
+                    </LeftArrow>
+
+                    <RightArrow>
+                      <FaArrowAltCircleRight
+                        className="right-arrow"
+                        onClick={nextSlide}
+                      />
+                    </RightArrow>
+                  </ImageBox>
                 </Column1>
                 <Column2>
                   <ImageContent deviceImages={projects.deviceImages} />

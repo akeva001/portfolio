@@ -41,7 +41,7 @@ const ImageBox1 = styled.img`
     height: 700px;
   }
   @media ${device.desktop} {
-    height: 900px;
+    height: 800px;
   }
 
   display: flex;

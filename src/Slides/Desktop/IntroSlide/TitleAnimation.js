@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 export default function TitleAnimation() {
   return (
@@ -80,6 +81,27 @@ const Animation = styled.div`
   padding-bottom: 100px;
   //font-family: "Rubik", sans-serif;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 25px;
+  }
+  @media ${device.mobileL} {
+    font-size: 30px;
+  }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  @media ${device.laptop} {
+    font-size: 30px;
+  }
+  @media ${device.laptopL} {
+    font-size: 30px;
+  }
+  @media ${device.desktop} {
+    font-size: 30px;
+  }
 `;
 
 const First = styled.span`

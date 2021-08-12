@@ -25,6 +25,7 @@ const StyledForm = styled.form`
   max-width: 700px;
   padding: 40px;
   margin-top: 50px;
+
   h2 {
     display: flex;
     justify-content: center;
@@ -102,7 +103,7 @@ function ContactForm() {
     }
     setError("");
 
-    console.log("Succeeded!!!");
+    console.log("Succes!");
   };
 
   const handleInput = (e) => {

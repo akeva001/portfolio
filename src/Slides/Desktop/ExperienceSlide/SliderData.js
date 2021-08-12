@@ -6,6 +6,7 @@ import RMateImage3 from "../../../Assets/Images/RMate/iPhone3.png";
 import NotflixImage1 from "../../../Assets/Images/Notflix/Mac1.png";
 import FoodImage from "../../../Assets/Images/FoodRecipeEngine/Food.png";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
+import GithubImg from "../../../Assets/Images/Sites/Git.png";
 
 export const SliderData = [
   {
@@ -15,6 +16,7 @@ export const SliderData = [
     projectType: "Web App",
     roles: ["Front-end Developer"],
     image: NotflixLink,
+    image2: GithubImg,
     deviceImages: [NotflixImage1],
     link2: ["https://github.com/kadey001/Notflix"],
     link: "https://notflix.tech",
@@ -26,7 +28,12 @@ export const SliderData = [
       "Search food recipies. IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
     projectType: "Web App",
     roles: ["Front-end Developer"],
+    image: GithubImg,
+    image2: null,
     deviceImages: [FoodImage],
+    link2: "",
+    link:
+      "https://github.com/ucr-cs180-fall20/cs180project-022-team-gordon-ramsay",
     imgStart: true,
   },
 ];

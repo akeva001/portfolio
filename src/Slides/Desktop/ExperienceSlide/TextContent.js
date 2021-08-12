@@ -40,6 +40,7 @@ const TextBox = styled.div`
 const ProjectName = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
+  font-weight: 200;
   @media ${device.mobileS} {
     font-size: 40px;
   }
@@ -47,19 +48,71 @@ const ProjectName = styled.div`
     font-size: 25px;
   }
   @media ${device.mobileL} {
-    font-size: 50px;
+    font-size: 30px;
   }
   @media ${device.tablet} {
     font-size: 30px;
   }
   @media ${device.laptop} {
-    font-size: 70px;
+    font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 80px;
+    font-size: 70px;
   }
   @media ${device.desktop} {
-    font-size: 90px;
+    font-size: 80px;
+  }
+`;
+const ProjectRole = styled.div`
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  padding-top: 20px;
+  @media ${device.mobileS} {
+    font-size: 20px;
+  }
+  @media ${device.mobileM} {
+    font-size: 20px;
+  }
+  @media ${device.mobileL} {
+    font-size: 20px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+  @media ${device.laptop} {
+    font-size: 20px;
+  }
+  @media ${device.laptopL} {
+    font-size: 20px;
+  }
+  @media ${device.desktop} {
+    font-size: 30px;
+  }
+`;
+const ProjectDescription = styled.div`
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  padding-top: 10px;
+  @media ${device.mobileS} {
+    font-size: 20px;
+  }
+  @media ${device.mobileM} {
+    font-size: 20px;
+  }
+  @media ${device.mobileL} {
+    font-size: 20px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+  @media ${device.laptop} {
+    font-size: 20px;
+  }
+  @media ${device.laptopL} {
+    font-size: 20px;
+  }
+  @media ${device.desktop} {
+    font-size: 20px;
   }
 `;
 const Button = styled.div`
@@ -71,7 +124,9 @@ class TextContent extends Component {
       projectName,
       projectYear,
       image,
+      image2,
       link,
+      link2,
       projectDesc,
       roles,
       projectType,
@@ -80,23 +135,27 @@ class TextContent extends Component {
       <TextBox>
         <ProjectName>
           <span>{projectName}</span>
-          <span style={{ fontSize: "30px" }}>{projectYear}</span>
         </ProjectName>
-
-        <span>{roles}</span>
-        <span>{projectDesc}</span>
-        <span>{projectType}</span>
+        <ProjectRole>
+          <span>{roles}</span>
+          <span>{projectYear}</span>
+        </ProjectRole>
+        <ProjectDescription>
+          <span>{projectDesc}</span>
+        </ProjectDescription>
       </TextBox>
     );
   }
 }
-TextContent.propTypes = {
-  projectName: PropTypes.string.isRequired,
-  projectYear: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  projectDesc: PropTypes.string.isRequired,
-  projectType: PropTypes.string.isRequired,
-  roles: PropTypes.array.isRequired,
-};
+// TextContent.propTypes = {
+//   projectName: PropTypes.string.isRequired,
+//   projectYear: PropTypes.string.isRequired,
+//   image: PropTypes.string.isRequired,
+//   image2: PropTypes.string.isRequired,
+//   link: PropTypes.string.isRequired,
+//   link2: PropTypes.string.isRequired,
+//   projectDesc: PropTypes.string.isRequired,
+//   projectType: PropTypes.string.isRequired,
+//   roles: PropTypes.array.isRequired,
+// };
 export default TextContent;

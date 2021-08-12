@@ -30,6 +30,36 @@ const InfoWrapper = styled.div`
   //background: blue;
   width: 100%;
 `;
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: black;
+  padding: 20px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 35px;
+  }
+  @media ${device.mobileL} {
+    font-size: 30px;
+  }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  @media ${device.laptop} {
+    font-size: 60px;
+  }
+  @media ${device.laptopL} {
+    font-size: 70px;
+  }
+  @media ${device.desktop} {
+    font-size: 80px;
+  }
+`;
 const InfoRow = styled.div`
   display: flex;
   justify-content: center;
@@ -137,6 +167,9 @@ const TextWrapper = styled.div`
   background-color: rgb(242, 242, 242);
   color: black;
   height: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 const AboutWrapper = styled.div`
   display: flex;
@@ -149,6 +182,9 @@ const AboutWrapper = styled.div`
   color: black;
   margin-bottom: 30px;
   padding: 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   @media ${device.laptop} {
     font-size: 30px;
   }
@@ -163,6 +199,7 @@ class About extends Component {
   render() {
     return (
       <InfoContainer id={"about"}>
+        <HeaderContainer>About me</HeaderContainer>
         <InfoWrapper>
           <InfoRow>
             <AboutWrapper>
