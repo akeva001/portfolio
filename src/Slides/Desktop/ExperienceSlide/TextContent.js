@@ -83,7 +83,7 @@ const ProjectRole = styled.div`
     font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
     font-size: 30px;

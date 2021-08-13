@@ -55,7 +55,7 @@ const HeaderContainer = styled.div`
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 70px;
+    font-size: 60px;
   }
   @media ${device.desktop} {
     font-size: 80px;
@@ -205,7 +205,7 @@ const Slide = styled.div`
   //height: 100vh;
   background-color: rgb(242, 242, 242);
   opacity: 0;
-  transition-duration: 1s ease;
+  //transition-duration: 1s ease;
   //height: calc(100vh - 44px);
   // margin-left: 30px;
   // margin-right: 30px;
@@ -219,7 +219,7 @@ const Slide = styled.div`
     box-sizing: border-box;
     //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition-duration: 1s;
+    //transition-duration: 1s;
     //transform: scale(1);
     overflow: hidden;
     // margin-left: 30px;
@@ -293,7 +293,7 @@ const ProjectsSlider = ({ slides }) => {
                         href={projects.link}
                         target="_blank"
                       >
-                        <img src={projects.image} height={"60px"} />
+                        <img src={projects.image} height={"70px"} />
                       </a>
                       {projects.image2 != null && (
                         <a
@@ -304,7 +304,7 @@ const ProjectsSlider = ({ slides }) => {
                           href={projects.link2}
                           target="_blank"
                         >
-                          <img src={projects.image2} height={"60px"} />
+                          <img src={projects.image2} height={"70px"} />
                         </a>
                       )}
                     </ImageBox2>

@@ -47,7 +47,7 @@ const HeaderContainer = styled.div`
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 70px;
+    font-size: 60px;
   }
   @media ${device.desktop} {
     font-size: 80px;
@@ -74,24 +74,10 @@ const InfoWrapper = styled.div`
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  //overflow: hidden;
-  //margin-bottom: 30px;
   background-color: rgb(242, 242, 242);
   max-width: 1380px;
   border-radius: 20px;
   box-sizing: border-box;
-  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  //margin: 30px;
-  //min-height: calc(100vh - 44px);
-  // @media ${device.mobileS} {
-  //   height: calc(100vh - 44px);
-  // }
-  // @media ${device.mobileM} {
-  //   height: calc(100vh - 44px);
-  // }
-  // @media ${device.mobileL} {
-  //   height: calc(100vh - 44px);
-  // }
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -105,14 +91,9 @@ const InfoRow = styled.div`
   }
   //box-sizing: border-box;
   overflow: hidden;
-  //max-width: 85rem;
-  //margin-left: 2%;
-  //margin-right: 2%;
-  //padding: 70px 0px 65px;
-  //justify-content: space-evenly;
   align-self: center;
   //background: blue;
-  width: 100%;
+  max-width: 1380px;
 `;
 
 const Column1 = styled.div`
@@ -120,6 +101,7 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
+  max-width: 900px;
   @media ${device.mobileS} {
     padding: 15px;
   }
@@ -153,15 +135,26 @@ const Column2 = styled.div`
   width: 100%;
   //background: black;
 `;
-
-const TextWrapper = styled.div`
+const Accomplishments = styled.ul`
+  color: black;
   display: flex;
   flex-direction: column;
   //max-width: 600px;
   width: 100%;
   justify-content: center;
   align-self: center;
-  padding: 15px;
+  padding: 25px;
+  //max-width: 700px;
+  font-size: 20px;
+`;
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  //width: 600px;
+  //max-width: 900px;
+  justify-content: center;
+  align-self: center;
+  padding-left: 15px;
   //max-width: 700px;
 `;
 const ImgWrap = styled.div`
@@ -176,9 +169,9 @@ class Experience extends Component {
     this.experienceDetails = [
       {
         projectName: "MyCampusMate",
-        year: "July 2019-Present",
+        year: "  • July 2019-Present",
         projectDesc:
-          "IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
+          "RMate is a mobile application aimed at organizing and optimizing your access to student tools. RMate is intended for students enrolled at University of California, Riverside. Students are able to find buildings across the campus with ease, create an organized class schedule, keep up with the latest events on campus, and much more! ",
         projectType: "iOS/Android App",
         roles: ["Mobile Developer"],
         image: AppStoreImage,
@@ -209,13 +202,32 @@ class Experience extends Component {
                       image={experiences.image}
                       link={experiences.link}
                     />
+                    <Accomplishments>
+                      <li>
+                        Collaborated with senior developers and product
+                        management.
+                      </li>
+                      <li>
+                        Delivered user-friendly new features for RMate mobile
+                        application using react-native.
+                      </li>
+                      <li>
+                        In charge of submitting all major updates to the
+                        AppStore.
+                      </li>
+                      <li>Fixed major issues and bugs.</li>
+                      <li>
+                        Tested all new features and reduced the number of
+                        crashes and bugs by 80%
+                      </li>
+                    </Accomplishments>
                     <ImageBox>
                       <a
                         style={{ display: "table-cell" }}
                         href={experiences.link}
                         target="_blank"
                       >
-                        <img src={experiences.image} height={"50px"} />
+                        <img src={experiences.image} height={"60px"} />
                       </a>
                     </ImageBox>
                   </TextWrapper>
