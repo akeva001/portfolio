@@ -40,7 +40,7 @@ const TextBox = styled.div`
 const ProjectName = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
-  font-weight: 200;
+  font-weight: lighter;
   @media ${device.mobileS} {
     font-size: 40px;
   }
@@ -67,6 +67,7 @@ const ProjectRole = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   padding-top: 20px;
+  font-weight: bold;
   @media ${device.mobileS} {
     font-size: 20px;
   }
@@ -86,7 +87,7 @@ const ProjectRole = styled.div`
     font-size: 25px;
   }
   @media ${device.desktop} {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 const ProjectDescription = styled.div`

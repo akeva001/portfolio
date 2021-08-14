@@ -163,31 +163,8 @@ const Column2 = styled.div`
   align-items: center;
   grid-area: col2;
   justify-content: center;
-  //min-height: 30vh;
-  @media ${device.mobileS} {
-    height: 30vh;
-  }
-  @media ${device.mobileM} {
-    height: 30vh;
-  }
-  @media ${device.mobileL} {
-    height: 30vh;
-  }
-  @media ${device.tablet} {
-    height: 100%;
-  }
-  @media ${device.laptop} {
-    height: 100%;
-  }
-  @media ${device.laptopM} {
-    height: 100%;
-  }
-  @media ${device.laptopL} {
-    height: 100%;
-  }
-  @media ${device.desktop} {
-    height: 100%;
-  }
+  min-height: 30vh;
+  width: 100%;
 `;
 
 const TextWrapper = styled.div`
@@ -209,13 +186,13 @@ const Slide = styled.div`
   //height: calc(100vh - 44px);
   // margin-left: 30px;
   // margin-right: 30px;
-  border-radius: 20px;
+  border-radius: 40px;
   box-sizing: border-box;
 
   ${({ active }) =>
     active &&
     `
-    border-radius: 20px;
+    border-radius: 40px;
     box-sizing: border-box;
     //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
     opacity: 1;
@@ -247,6 +224,32 @@ const LeftArrow = styled.div`
   z-index: 10;
   cursor: pointer;
   user-select: none;
+`;
+const TechWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  //max-width: 600px;
+  //width: 100%;
+  //height: 100%;
+  //justify-content: center;
+  //align-self: center;
+  //padding: 15px;
+  //max-width: 700px;
+`;
+const Accomplishments = styled.ul`
+  color: black;
+  background: green;
+  display: flex;
+  flex-direction: column;
+  //max-width: 600px;
+  width: 50%;
+  justify-content: center;
+  align-self: center;
+  padding: 25px;
+  //max-width: 700px;
+  font-size: 20px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
 `;
 
 const ProjectsSlider = ({ slides }) => {
@@ -284,6 +287,16 @@ const ProjectsSlider = ({ slides }) => {
                       image2={projects.image2}
                       link={projects.link}
                     />
+                    {/* <TechWrapper>
+                      <Accomplishments>
+                        Frontend
+                        <li>{projects.frontend}</li>
+                      </Accomplishments>
+                      <Accomplishments>
+                        Backend
+                        <li>{projects.backend}</li>
+                      </Accomplishments>
+                    </TechWrapper> */}
                     <ImageBox2>
                       <a
                         style={{

@@ -4,6 +4,7 @@ import TextContent from "./TextContent";
 import ImageContent from "./ImageContent";
 import NotflixLink from "../../../Assets/Images/Sites/ExternalLink.png";
 import AppStoreImage from "../../../Assets/Images/Sites/AppStore.png";
+import GooglePlayImage from "../../../Assets/Images/Sites/GooglePlay2.png";
 import RMateImage1 from "../../../Assets/Images/RMate/iPhone1.png";
 import RMateImage2 from "../../../Assets/Images/RMate/iPhone2.png";
 import RMateImage3 from "../../../Assets/Images/RMate/iPhone3.png";
@@ -19,16 +20,17 @@ const Container = styled.div`
 `;
 const ImageBox = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
-  padding-top: 20px;
+  //padding-top: 20px;
+  //background: green;
 `;
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   font-size: 50px;
   color: black;
-  padding: 20px;
+  padding-bottom: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
@@ -58,7 +60,7 @@ const InfoContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 0;
   }
-  //display: flex;
+  display: flex;
   flex-direction: column;
   min-height: calc(100vh - 44px);
   align-self: center;
@@ -76,7 +78,7 @@ const InfoWrapper = styled.div`
   margin-right: auto;
   background-color: rgb(242, 242, 242);
   max-width: 1380px;
-  border-radius: 20px;
+  border-radius: 40px;
   box-sizing: border-box;
 `;
 const InfoRow = styled.div`
@@ -93,7 +95,7 @@ const InfoRow = styled.div`
   overflow: hidden;
   align-self: center;
   //background: blue;
-  max-width: 1380px;
+  max-width: 1180px;
 `;
 
 const Column1 = styled.div`
@@ -102,6 +104,7 @@ const Column1 = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 900px;
+  //background: green;
   @media ${device.mobileS} {
     padding: 15px;
   }
@@ -115,16 +118,16 @@ const Column1 = styled.div`
     padding: 30px;
   }
   @media ${device.laptop} {
-    padding: 80px;
+    padding: 50px;
   }
   @media ${device.laptopM} {
-    padding: 100px;
+    padding: 50px;
   }
   @media ${device.laptopL} {
-    padding: 100px;
+    padding: 50px;
   }
   @media ${device.desktop} {
-    padding: 100px;
+    padding: 50px;
   }
 `;
 const Column2 = styled.div`
@@ -146,6 +149,8 @@ const Accomplishments = styled.ul`
   padding: 25px;
   //max-width: 700px;
   font-size: 20px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
 `;
 const TextWrapper = styled.div`
   display: flex;
@@ -156,6 +161,7 @@ const TextWrapper = styled.div`
   align-self: center;
   padding-left: 15px;
   //max-width: 700px;
+  //background: red;
 `;
 const ImgWrap = styled.div`
   position: relative;
@@ -175,8 +181,11 @@ class Experience extends Component {
         projectType: "iOS/Android App",
         roles: ["Mobile Developer"],
         image: AppStoreImage,
+        image2: GooglePlayImage,
         deviceImages: [RMateImage2],
         link: "https://apps.apple.com/us/app/rmate/id1418361482",
+        link2:
+          "https://play.google.com/store/apps/details?id=com.mycampusmate.rmate&hl=en_US&gl=US",
         imgStart: false,
         extrapadding: true,
       },
@@ -223,11 +232,23 @@ class Experience extends Component {
                     </Accomplishments>
                     <ImageBox>
                       <a
-                        style={{ display: "table-cell" }}
+                        style={{
+                          display: "table-cell",
+                          //orderRadius: "40px",
+                          boxSizing: "border-box",
+                          //boxShadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2),
+                        }}
                         href={experiences.link}
                         target="_blank"
                       >
-                        <img src={experiences.image} height={"60px"} />
+                        <img src={experiences.image} height={"80px"} />
+                      </a>
+                      <a
+                        style={{ display: "table-cell" }}
+                        href={experiences.link2}
+                        target="_blank"
+                      >
+                        <img src={experiences.image2} height={"80px"} />
                       </a>
                     </ImageBox>
                   </TextWrapper>

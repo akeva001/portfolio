@@ -20,6 +20,8 @@ export const SliderData = [
     deviceImages: [NotflixImage1],
     link2: ["https://github.com/kadey001/Notflix"],
     link: "https://notflix.tech",
+    frontend: ["ReactJS", "Javascript", "CSS", "HTML"],
+    backend: ["Postgres", "ExpressJS/Node", "Typescript", "HDFS", "Pyspark"],
     imgStart: true,
   },
   {
@@ -34,6 +36,8 @@ export const SliderData = [
     link2: "",
     link:
       "https://github.com/ucr-cs180-fall20/cs180project-022-team-gordon-ramsay",
+    frontend: ["ReactJS", "Javascript", "CSS", "HTML"],
+    backend: ["Postgres", "ExpressJS/Node", "Typescript", "HDFS", "Pyspark"],
     imgStart: true,
   },
 ];

@@ -19,7 +19,7 @@ const Navbar = ({ toggle }) => {
           <NavLogo
             to="home"
             smooth={true}
-            duration={600}
+            duration={700}
             spy={true}
             offset={-44}
           >
@@ -33,7 +33,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks
                 to="about"
                 smooth={true}
-                duration={600}
+                duration={700}
                 spy={true}
                 //activeClass={active}
                 offset={-44}
@@ -45,7 +45,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks
                 to="experience"
                 smooth={true}
-                duration={600}
+                duration={700}
                 spy={true}
                 //activeClass={active}
                 offset={-44}
@@ -57,7 +57,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks
                 to="projects"
                 smooth={true}
-                duration={600}
+                duration={700}
                 spy={true}
                 //activeClass={active}
                 offset={-44}
@@ -69,7 +69,7 @@ const Navbar = ({ toggle }) => {
               <NavLinks
                 to="contact"
                 smooth={true}
-                duration={600}
+                duration={700}
                 spy={true}
                 //activeClass={active}
                 offset={-44}
