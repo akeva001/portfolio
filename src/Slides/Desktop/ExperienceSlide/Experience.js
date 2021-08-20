@@ -30,7 +30,7 @@ const HeaderContainer = styled.div`
   justify-content: center;
   font-size: 50px;
   color: black;
-  padding-bottom: 20px;
+  padding: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
@@ -77,9 +77,10 @@ const InfoWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   background-color: rgb(242, 242, 242);
-  max-width: 1380px;
+  max-width: 1050px;
   border-radius: 40px;
   box-sizing: border-box;
+  margin-bottom: 60px;
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -95,7 +96,7 @@ const InfoRow = styled.div`
   overflow: hidden;
   align-self: center;
   //background: blue;
-  max-width: 1180px;
+  //max-width: 1180px;
 `;
 
 const Column1 = styled.div`
@@ -103,10 +104,12 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
-  max-width: 900px;
+  //width: 40vw;
+  //min-width: 50vw;
+
   //background: green;
   @media ${device.mobileS} {
-    padding: 15px;
+    padding-left: 15px;
   }
   @media ${device.mobileM} {
     padding: 15px;
@@ -136,6 +139,7 @@ const Column2 = styled.div`
   grid-area: col2;
   justify-content: center;
   width: 100%;
+  //width: 40%;
   //background: black;
 `;
 const Accomplishments = styled.ul`
@@ -155,18 +159,12 @@ const Accomplishments = styled.ul`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  //width: 600px;
-  //max-width: 900px;
+  //width: 100%;
   justify-content: center;
   align-self: center;
   padding-left: 15px;
   //max-width: 700px;
   //background: red;
-`;
-const ImgWrap = styled.div`
-  position: relative;
-  max-width: 100%;
-  height: 100%;
 `;
 
 class Experience extends Component {
@@ -241,14 +239,14 @@ class Experience extends Component {
                         href={experiences.link}
                         target="_blank"
                       >
-                        <img src={experiences.image} height={"80px"} />
+                        <img src={experiences.image} height={"60px"} />
                       </a>
                       <a
                         style={{ display: "table-cell" }}
                         href={experiences.link2}
                         target="_blank"
                       >
-                        <img src={experiences.image2} height={"80px"} />
+                        <img src={experiences.image2} height={"60px"} />
                       </a>
                     </ImageBox>
                   </TextWrapper>

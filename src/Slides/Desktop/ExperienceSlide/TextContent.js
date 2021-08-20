@@ -51,13 +51,13 @@ const ProjectName = styled.div`
     font-size: 30px;
   }
   @media ${device.tablet} {
-    font-size: 30px;
+    font-size: 50px;
   }
   @media ${device.laptop} {
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 70px;
+    font-size: 80px;
   }
   @media ${device.desktop} {
     font-size: 80px;
@@ -67,24 +67,50 @@ const ProjectRole = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   padding-top: 20px;
-  font-weight: bold;
   @media ${device.mobileS} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.mobileM} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.mobileL} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.laptop} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.laptopL} {
+    font-size: 20px;
+  }
+  @media ${device.desktop} {
     font-size: 25px;
+  }
+`;
+const ProjectYear = styled.span`
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  padding-top: 17px;
+
+  @media ${device.mobileS} {
+    font-size: 17px;
+  }
+  @media ${device.mobileM} {
+    font-size: 17px;
+  }
+  @media ${device.mobileL} {
+    font-size: 17px;
+  }
+  @media ${device.tablet} {
+    font-size: 17px;
+  }
+  @media ${device.laptop} {
+    font-size: 17px;
+  }
+  @media ${device.laptopL} {
+    font-size: 20px;
   }
   @media ${device.desktop} {
     font-size: 25px;
@@ -94,20 +120,21 @@ const ProjectDescription = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   padding-top: 10px;
+  min-height: 150px;
   @media ${device.mobileS} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.mobileM} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.mobileL} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 20px;
+    font-size: 17px;
   }
   @media ${device.laptop} {
-    font-size: 20px;
+    font-size: 18px;
   }
   @media ${device.laptopL} {
     font-size: 20px;
@@ -138,9 +165,10 @@ class TextContent extends Component {
           <span>{projectName}</span>
         </ProjectName>
         <ProjectRole>
-          <span>{roles}</span>
-          <span>{projectYear}</span>
+          <span style={{ fontWeight: "bold" }}>{roles}</span>
+          <ProjectYear>{projectYear}</ProjectYear>
         </ProjectRole>
+
         <ProjectDescription>
           <span>{projectDesc}</span>
         </ProjectDescription>

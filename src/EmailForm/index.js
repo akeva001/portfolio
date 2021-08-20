@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
+import device from "../Assets/Scaling/DisplaySizes.js";
 
 const sharedStyles = css`
   //background-color: #eee;
@@ -86,6 +87,39 @@ const initalState = {
   gender: "",
 };
 
+const Header = styled.p`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  font-size: 50px;
+  color: black;
+  padding: 25px;
+
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 35px;
+  }
+  @media ${device.mobileL} {
+    font-size: 30px;
+  }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
+  @media ${device.laptop} {
+    font-size: 60px;
+  }
+  @media ${device.laptopL} {
+    font-size: 60px;
+  }
+  @media ${device.desktop} {
+    font-size: 80px;
+  }
+`;
 function ContactForm() {
   const [state, setState] = useState(initalState);
   const [error, setError] = useState("");
@@ -117,7 +151,7 @@ function ContactForm() {
     <>
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
-          <h2 style={{ paddingBottom: "30px" }}>Contact</h2>
+          <Header style={{ paddingBottom: "30px" }}>Contact</Header>
           <label htmlFor="name">Name</label>
           <StyledInput
             type="text"

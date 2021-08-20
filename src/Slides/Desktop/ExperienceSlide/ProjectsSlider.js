@@ -1,9 +1,9 @@
 import React, { Component, useState } from "react";
 import styled from "styled-components";
 import TextContent from "./TextContent";
-import ImageContent from "./ImageContent";
+import SliderImageContent from "./SliderImageContent";
 import { SliderData } from "./SliderData";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
 import device from "../../../Assets/Scaling/DisplaySizes.js";
 
@@ -20,6 +20,7 @@ const ImageBox = styled.div`
   justify-content: space-between;
   width: 100%;
   padding-top: 10px;
+  height: 100%;
 `;
 const ImageBox2 = styled.div`
   display: flex;
@@ -27,16 +28,16 @@ const ImageBox2 = styled.div`
   //background: green;
   justify-content: space-evenly;
   //width: 100%;
-  padding-top: 40px;
+  padding-bottom: 20px;
   min-width: 50%;
 `;
 const HeaderContainer = styled.div`
   display: flex;
-  /background: green;
+  //background: white;
   justify-content: center;
   font-size: 50px;
   color: black;
-  padding: 25px;
+  padding: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
@@ -63,6 +64,7 @@ const HeaderContainer = styled.div`
 `;
 const InfoContainer = styled.div`
   color: #fff;
+  overflow-anchor: none;
   @media screen and (max-width: 768px) {
     padding: 0;
   }
@@ -73,9 +75,9 @@ const InfoContainer = styled.div`
   align-self: center;
   justify-content: center;
   align-items: center;
-  //background: black;
+  //background: green;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 `;
 const InfoContainer2 = styled.section`
   // color: #fff;
@@ -124,6 +126,7 @@ const InfoRow = styled.div`
   align-self: center;
   //height: 100%;
   //width: 100%;
+  //max-width: 1180px;
 `;
 
 const Column1 = styled.div`
@@ -132,6 +135,7 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
+  //max-width: 500px;
 
   @media ${device.mobileS} {
     padding: 20px;
@@ -160,60 +164,63 @@ const Column1 = styled.div`
 `;
 const Column2 = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   grid-area: col2;
   justify-content: center;
-  min-height: 30vh;
-  width: 100%;
+  //max-height: 60vh;
+ 
+  @media ${device.mobileS} {
+    width: 100%:
+  }
+  @media ${device.mobileM} {
+    width: 100%:
+  }
+  @media ${device.mobileL} {
+    width: 100%:
+  }
+  @media ${device.tablet} {
+    width: 100%:
+  }
+  @media ${device.laptop} {
+    width: 100%
+  }
+  @media ${device.laptopL} {
+    width: 800px;
+  }
+  @media ${device.desktop} {
+    width: 800px;
+  }
 `;
 
 const TextWrapper = styled.div`
-  flex-direction: row;
-  //max-width: 600px;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-self: center;
-  padding: 15px;
-  //max-width: 700px;
 `;
-const Slide = styled.div`
+const Slide = styled.div``;
+const Slider = styled.section`
+  display: flex;
+  justify-content: center;
+  //position: relative;
   max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
   //height: 100vh;
   background-color: rgb(242, 242, 242);
-  opacity: 0;
-  //transition-duration: 1s ease;
-  //height: calc(100vh - 44px);
-  // margin-left: 30px;
-  // margin-right: 30px;
   border-radius: 40px;
-  box-sizing: border-box;
-
-  ${({ active }) =>
-    active &&
-    `
-    border-radius: 40px;
-    box-sizing: border-box;
-    //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    opacity: 1;
-    //transition-duration: 1s;
-    //transform: scale(1);
-    overflow: hidden;
-    // margin-left: 30px;
-    // margin-right: 30px;
-    
-    
-    
-  `}
+  margin-bottom: 60px;
 `;
 const RightArrow = styled.div`
   //position: absolute;
   //right: 12px;
   font-size: 4rem;
   color: black;
-  z-index: 10;
+  //z-index: 10;
   cursor: pointer;
   user-select: none;
+  padding-right: 40px;
 `;
 const LeftArrow = styled.div`
   //position: absolute;
@@ -221,35 +228,54 @@ const LeftArrow = styled.div`
   //left: 42px;
   font-size: 4rem;
   color: black;
-  z-index: 10;
+  //z-index: 10;
   cursor: pointer;
   user-select: none;
+  padding-left: 40px;
 `;
 const TechWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  //max-width: 600px;
-  //width: 100%;
-  //height: 100%;
-  //justify-content: center;
-  //align-self: center;
-  //padding: 15px;
-  //max-width: 700px;
+  max-width: 100%;
+  height: 200px;
+  //background: red;
+  justify-content: space-evenly;
 `;
 const Accomplishments = styled.ul`
   color: black;
-  background: green;
+  //background: green;
   display: flex;
   flex-direction: column;
   //max-width: 600px;
-  width: 50%;
-  justify-content: center;
-  align-self: center;
-  padding: 25px;
+  width: 100%;
+
+  padding-left: 30px;
+  //padding-top: 15px;
   //max-width: 700px;
   font-size: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 15px;
+  }
+  @media ${device.mobileM} {
+    font-size: 15px;
+  }
+  @media ${device.mobileL} {
+    font-size: 20px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+  @media ${device.laptop} {
+    font-size: 20px;
+  }
+  @media ${device.laptopL} {
+    font-size: 20px;
+  }
+  @media ${device.desktop} {
+    font-size: 20px;
+  }
 `;
 
 const ProjectsSlider = ({ slides }) => {
@@ -271,32 +297,56 @@ const ProjectsSlider = ({ slides }) => {
     <>
       <InfoContainer id={"projects"}>
         <HeaderContainer>Projects</HeaderContainer>
-        {SliderData.map((projects, index) => (
-          <Slide key={projects} active={index === current ? true : false}>
-            {index === current && (
-              <InfoRow imgStart={projects.imgStart}>
-                <Column1>
-                  <TextWrapper>
-                    <TextContent
-                      projectName={projects.projectName}
-                      projectYear={projects.year}
-                      projectDesc={projects.projectDesc}
-                      projectType={projects.projectType}
-                      roles={projects.roles}
-                      image={projects.image}
-                      image2={projects.image2}
-                      link={projects.link}
-                    />
-                    {/* <TechWrapper>
-                      <Accomplishments>
-                        Frontend
-                        <li>{projects.frontend}</li>
-                      </Accomplishments>
-                      <Accomplishments>
-                        Backend
-                        <li>{projects.backend}</li>
-                      </Accomplishments>
-                    </TechWrapper> */}
+        <Slider>
+          {SliderData.map((projects, index) => (
+            <Slide key={projects} active={index === current ? true : false}>
+              {index === current && (
+                <InfoRow imgStart={projects.imgStart}>
+                  <Column1>
+                    <TextWrapper>
+                      <TextContent
+                        projectName={projects.projectName}
+                        projectYear={projects.year}
+                        projectDesc={projects.projectDesc}
+                        projectType={projects.projectType}
+                        roles={projects.roles}
+                        image={projects.image}
+                        image2={projects.image2}
+                        link={projects.link}
+                      />
+                      <TechWrapper>
+                        <Accomplishments>
+                          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+                            Frontend
+                          </p>
+
+                          {projects.frontend.map((project, index) => (
+                            <li key={index}>{project}</li>
+                          ))}
+                        </Accomplishments>
+                        <Accomplishments>
+                          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+                            Backend
+                          </p>
+                          {projects.backend.map((project, index) => (
+                            <li key={index}>{project}</li>
+                          ))}
+                        </Accomplishments>
+                      </TechWrapper>
+                    </TextWrapper>
+
+                    <ImageBox>
+                      <LeftArrow>
+                        <IoIosArrowDropleft onClick={prevSlide} />
+                      </LeftArrow>
+
+                      <RightArrow>
+                        <IoIosArrowDropright onClick={nextSlide} />
+                      </RightArrow>
+                    </ImageBox>
+                  </Column1>
+                  <Column2>
+                    <SliderImageContent deviceImages={projects.deviceImages} />
                     <ImageBox2>
                       <a
                         style={{
@@ -321,31 +371,12 @@ const ProjectsSlider = ({ slides }) => {
                         </a>
                       )}
                     </ImageBox2>
-                  </TextWrapper>
-
-                  <ImageBox>
-                    <LeftArrow>
-                      <FaArrowAltCircleLeft
-                        className="left-arrow"
-                        onClick={prevSlide}
-                      />
-                    </LeftArrow>
-
-                    <RightArrow>
-                      <FaArrowAltCircleRight
-                        className="right-arrow"
-                        onClick={nextSlide}
-                      />
-                    </RightArrow>
-                  </ImageBox>
-                </Column1>
-                <Column2>
-                  <ImageContent deviceImages={projects.deviceImages} />
-                </Column2>
-              </InfoRow>
-            )}
-          </Slide>
-        ))}
+                  </Column2>
+                </InfoRow>
+              )}
+            </Slide>
+          ))}
+        </Slider>
       </InfoContainer>
     </>
   );

@@ -7,44 +7,39 @@ import PropTypes from "prop-types";
 const ImageContainer = styled.div`
   //display: flex;
   //flex: 1;
-  justify-content: center;
+  //justify-content: center;
   overflow: hidden;
   //background: red;
   //height: 100%;
 `;
 const ImageBox1 = styled.img`
   @media ${device.mobileS} {
-    height: 400px;
+    height: 200px;
   }
   @media ${device.mobileM} {
-    height: 450px;
+    height: 250px;
   }
   @media ${device.mobileL} {
-    height: 550px;
+    height: 300px;
   }
   @media ${device.tablet} {
-    height: 650px;
+    height: 300px;
   }
   @media ${device.laptop} {
-    height: 650px;
+    height: 400px;
   }
   @media ${device.laptopM} {
-    height: 650px;
+    height: 500px;
   }
   @media ${device.laptopL} {
-    height: 700px;
+    height: 500px;
   }
   @media ${device.desktop} {
-    height: 700px;
+    height: 500px;
   }
-
-  display: flex;
-  //justify-content: center;
-  //align-self: center;
-  //background: green;
 `;
 
-class ImageContent extends Component {
+class SliderImageContent extends Component {
   render() {
     const { deviceImages } = this.props;
 
@@ -56,8 +51,8 @@ class ImageContent extends Component {
   }
 }
 
-ImageContent.propTypes = {
+SliderImageContent.propTypes = {
   deviceImages: PropTypes.array.isRequired,
 };
 
-export default ImageContent;
+export default SliderImageContent;

@@ -13,7 +13,7 @@ const InfoContainer = styled.div`
   min-height: calc(100vh - 44px);
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   //background-color: green;
 `;
 const InfoWrapper = styled.div`
@@ -82,6 +82,7 @@ const InfoRow2 = styled.div`
   grid-gap: 30px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 60px;
   width: 100%;
   //height: 100%;
   overflow: hidden;
@@ -90,7 +91,7 @@ const InfoRow2 = styled.div`
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 700px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
@@ -113,6 +114,7 @@ const Column2 = styled.div`
   //height: 100%;
 `;
 const SchoolName = styled.div`
+  display: flex;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
   padding-top: 2%;
@@ -166,7 +168,30 @@ const TextWrapper = styled.div`
   padding: 35px;
   background-color: rgb(242, 242, 242);
   color: black;
-  height: 100%;
+  @media ${device.mobileS} {
+    height: 400px;
+  }
+  @media ${device.mobileM} {
+    height: 150px;
+  }
+  @media ${device.mobileL} {
+    height: 200px;
+  }
+  @media ${device.tablet} {
+    height: 250px;
+  }
+  @media ${device.laptop} {
+    height: 250px;
+  }
+  @media ${device.laptopM} {
+    height: 250px;
+  }
+  @media ${device.laptopL} {
+    height: 300px;
+  }
+  @media ${device.desktop} {
+    height: 300px;
+  }
   border-radius: 20px;
   box-sizing: border-box;
   //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -195,6 +220,60 @@ const AboutWrapper = styled.div`
     font-size: 30px;
   }
 `;
+const TechWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  align-self: center;
+  background-color: rgb(242, 242, 242);
+  color: black;
+
+  box-sizing: border-box;
+  color: black;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+const Accomplishments = styled.ul`
+  color: black;
+  //background: green;
+  display: flex;
+  flex-direction: column;
+  //max-width: 600px;
+  //width: 100%;
+
+  //padding-left: 55px;
+  //padding-top: 25px;
+  //max-width: 700px;
+  font-size: 20px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 15px;
+  }
+  @media ${device.mobileM} {
+    font-size: 15px;
+  }
+  @media ${device.mobileL} {
+    font-size: 20px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+  @media ${device.laptop} {
+    font-size: 20px;
+  }
+  @media ${device.laptopL} {
+    font-size: 30px;
+  }
+  @media ${device.desktop} {
+    font-size: 20px;
+  }
+`;
+const School = styled.div`
+  display: flex;
+  justify-conent: center;
+  flex-direction: column;
+  align-self: center;
+`;
 class About extends Component {
   render() {
     return (
@@ -215,22 +294,33 @@ class About extends Component {
           <InfoRow2>
             <Column1>
               <TextWrapper>
-                <Title>Education</Title>
-                <SchoolName>University of California, Riverside</SchoolName>
-                <Major>B.S., Computer Science • 2018-2021</Major>
+                <School>
+                  <Title>Education</Title>
+                  <SchoolName>University of California, Riverside</SchoolName>
+                  <Major>B.S., Computer Science • 2018-2021</Major>
 
-                <SchoolName>Glendale Community College</SchoolName>
-                <Major>Computer Science • 2014-2018</Major>
+                  <SchoolName>Glendale Community College</SchoolName>
+                  <Major>Computer Science • 2014-2018</Major>
+                </School>
               </TextWrapper>
             </Column1>
             <Column2>
               <TextWrapper>
-                <Title>Skills</Title>
-                <SchoolName>University of California, Riverside</SchoolName>
-                <Major>B.S., Computer Science • 2018-2021</Major>
-
-                <SchoolName>Glendale Community College</SchoolName>
-                <Major>Computer Science • 2014-2018</Major>
+                <Title> Skills</Title>
+                <TechWrapper>
+                  <Accomplishments>
+                    <li>ReactJS</li>
+                    <li>React Native</li>
+                    <li>ReactJS</li>
+                    <li>ReactJS</li>
+                  </Accomplishments>
+                  <Accomplishments>
+                    <li>ReactJS</li>
+                    <li>ReactJS</li>
+                    <li>ReactJS</li>
+                    <li>ReactJS</li>
+                  </Accomplishments>
+                </TechWrapper>
               </TextWrapper>
             </Column2>
           </InfoRow2>
