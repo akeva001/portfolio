@@ -120,12 +120,13 @@ const ProjectDescription = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   padding-top: 10px;
-  min-height: 150px;
+  //min-height: 100px;
   @media ${device.mobileS} {
     font-size: 17px;
   }
   @media ${device.mobileM} {
     font-size: 17px;
+    //min-height: 130px;
   }
   @media ${device.mobileL} {
     font-size: 17px;
@@ -176,15 +177,5 @@ class TextContent extends Component {
     );
   }
 }
-// TextContent.propTypes = {
-//   projectName: PropTypes.string.isRequired,
-//   projectYear: PropTypes.string.isRequired,
-//   image: PropTypes.string.isRequired,
-//   image2: PropTypes.string.isRequired,
-//   link: PropTypes.string.isRequired,
-//   link2: PropTypes.string.isRequired,
-//   projectDesc: PropTypes.string.isRequired,
-//   projectType: PropTypes.string.isRequired,
-//   roles: PropTypes.array.isRequired,
-// };
+
 export default TextContent;

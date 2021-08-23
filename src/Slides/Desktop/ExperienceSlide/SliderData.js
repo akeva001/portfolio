@@ -26,7 +26,7 @@ export const SliderData = [
     imgStart: true,
   },
   {
-    projectName: "Food Recipe",
+    projectName: "Ramsay",
     projectDesc:
       "Search food recipies. IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
     projectType: "Web App",

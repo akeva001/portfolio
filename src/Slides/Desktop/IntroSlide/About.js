@@ -20,7 +20,9 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   //justify-content: center;
-  max-width: 1380px;
+  max-width: 1100px;
+  padding-left: 25px;
+  padding-right: 25px;
   align-self: center;
   //background: red;
   margin-left: auto;
@@ -28,7 +30,7 @@ const InfoWrapper = styled.div`
   overflow: hidden;
   //min-height: 50vh;
   //background: blue;
-  width: 100%;
+  //width: 100%;
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -84,14 +86,11 @@ const InfoRow2 = styled.div`
   justify-content: center;
   margin-bottom: 60px;
   width: 100%;
-  //height: 100%;
   overflow: hidden;
-  //background-color: black;
-  //height: calc(50vh - 22px);
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 900px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
@@ -118,14 +117,26 @@ const SchoolName = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
   padding-top: 2%;
+  @media ${device.mobileS} {
+    font-size: 16px;
+  }
+  @media ${device.mobileM} {
+    font-size: 16px;
+  }
+  @media ${device.mobileL} {
+    font-size: 22px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
   @media ${device.laptop} {
-    font-size: 30px;
+    font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 const Title = styled.div`
@@ -134,12 +145,24 @@ const Title = styled.div`
   //padding-top: 2%;
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  @media ${device.mobileS} {
+    font-size: 16px;
+  }
+  @media ${device.mobileM} {
+    font-size: 16px;
+  }
+  @media ${device.mobileL} {
+    font-size: 22px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
   @media ${device.laptop} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.laptopL} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
     font-size: 30px;
@@ -149,49 +172,63 @@ const Title = styled.div`
 const Major = styled.div`
   padding-top: 2%;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 16px;
+  }
+  @media ${device.mobileM} {
+    font-size: 16px;
+  }
+  @media ${device.mobileL} {
+    font-size: 20px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
   @media ${device.laptop} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 25px;
+    font-size: 24px;
   }
   @media ${device.desktop} {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: center;
+  //justify-content: space-between;
   align-self: center;
   padding: 35px;
   background-color: rgb(242, 242, 242);
+  height: 100%;
   color: black;
-  @media ${device.mobileS} {
-    height: 400px;
-  }
-  @media ${device.mobileM} {
-    height: 150px;
-  }
-  @media ${device.mobileL} {
-    height: 200px;
-  }
-  @media ${device.tablet} {
-    height: 250px;
-  }
-  @media ${device.laptop} {
-    height: 250px;
-  }
-  @media ${device.laptopM} {
-    height: 250px;
-  }
-  @media ${device.laptopL} {
-    height: 300px;
-  }
-  @media ${device.desktop} {
-    height: 300px;
-  }
+  max-height: 250px;
+  // @media ${device.mobileS} {
+  //   height: 100px;
+  // }
+  // @media ${device.mobileM} {
+  //   height: 200px;
+  // }
+  // @media ${device.mobileL} {
+  //   height: 220px;
+  // }
+  // @media ${device.tablet} {
+  //   height: 250px;
+  // }
+  // @media ${device.laptop} {
+  //   height: 250px;
+  // }
+  // @media ${device.laptopM} {
+  //   height: 250px;
+  // }
+  // @media ${device.laptopL} {
+  //   height: 250px;
+  // }
+  // @media ${device.desktop} {
+  //   height: 300px;
+  // }
   border-radius: 20px;
   box-sizing: border-box;
   //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -209,12 +246,23 @@ const AboutWrapper = styled.div`
   padding: 30px;
   border-radius: 20px;
   box-sizing: border-box;
-  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  @media ${device.mobileS} {
+    font-size: 18px;
+  }
+  @media ${device.mobileM} {
+    font-size: 18px;
+  }
+  @media ${device.mobileL} {
+    font-size: 25px;
+  }
+  @media ${device.tablet} {
+    font-size: 25px;
+  }
   @media ${device.laptop} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.laptopL} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
     font-size: 30px;
@@ -224,48 +272,43 @@ const TechWrapper = styled.div`
   display: flex;
   width: 100%;
   align-self: center;
-  background-color: rgb(242, 242, 242);
+  //background-color: rgb(242, 242, 242);
   color: black;
 
   box-sizing: border-box;
-  color: black;
+  //color: black;
   flex-direction: row;
   justify-content: space-evenly;
 `;
 const Accomplishments = styled.ul`
   color: black;
-  //background: green;
   display: flex;
   flex-direction: column;
-  //max-width: 600px;
-  //width: 100%;
-
-  //padding-left: 55px;
-  //padding-top: 25px;
-  //max-width: 700px;
+  //padding-left: 25px;
+  //padding-right: 25px;
   font-size: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
-    font-size: 15px;
+    font-size: 17px;
   }
   @media ${device.mobileM} {
-    font-size: 15px;
+    font-size: 17px;
   }
   @media ${device.mobileL} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.tablet} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.laptop} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.laptopL} {
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 20px;
+    font-size: 30px;
   }
 `;
 const School = styled.div`
@@ -273,14 +316,24 @@ const School = styled.div`
   justify-conent: center;
   flex-direction: column;
   align-self: center;
+  height: 100%;
+  //padding: 10px;
+`;
+const Wrapper = styled.div`
+  display: flex;
+  justify-conent: center;
+  flex-direction: column;
+  align-self: center;
+  height: 100%;
+  //background-color: red;
 `;
 class About extends Component {
   render() {
     return (
       <InfoContainer id={"about"}>
         <HeaderContainer>About me</HeaderContainer>
-        <InfoWrapper>
-          <InfoRow>
+        <Wrapper>
+          <InfoWrapper>
             <AboutWrapper>
               During my final years as an undergraduate student in Computer
               Science, I discovered my obsession for Front-end development. If I
@@ -288,43 +341,42 @@ class About extends Component {
               and elegant features for our mobile application RMate, while
               maintaining my part time job as a tennis coach.
             </AboutWrapper>
-          </InfoRow>
-        </InfoWrapper>
-        <InfoWrapper>
-          <InfoRow2>
-            <Column1>
-              <TextWrapper>
-                <School>
-                  <Title>Education</Title>
-                  <SchoolName>University of California, Riverside</SchoolName>
-                  <Major>B.S., Computer Science • 2018-2021</Major>
 
-                  <SchoolName>Glendale Community College</SchoolName>
-                  <Major>Computer Science • 2014-2018</Major>
-                </School>
-              </TextWrapper>
-            </Column1>
-            <Column2>
-              <TextWrapper>
-                <Title> Skills</Title>
-                <TechWrapper>
-                  <Accomplishments>
-                    <li>ReactJS</li>
-                    <li>React Native</li>
-                    <li>ReactJS</li>
-                    <li>ReactJS</li>
-                  </Accomplishments>
-                  <Accomplishments>
-                    <li>ReactJS</li>
-                    <li>ReactJS</li>
-                    <li>ReactJS</li>
-                    <li>ReactJS</li>
-                  </Accomplishments>
-                </TechWrapper>
-              </TextWrapper>
-            </Column2>
-          </InfoRow2>
-        </InfoWrapper>
+            <InfoRow2>
+              <Column1>
+                <TextWrapper>
+                  <School>
+                    <Title>Education</Title>
+                    <SchoolName>University of California, Riverside</SchoolName>
+                    <Major>B.S., Computer Science • 2018-2021</Major>
+
+                    <SchoolName>Glendale Community College</SchoolName>
+                    <Major>Computer Science • 2014-2018</Major>
+                  </School>
+                </TextWrapper>
+              </Column1>
+              <Column2>
+                <TextWrapper>
+                  <Title> Skills</Title>
+                  <TechWrapper>
+                    <Accomplishments>
+                      <li>ReactJS</li>
+                      <li>React Native</li>
+                      <li>ReactJS</li>
+                      <li>ReactJS</li>
+                    </Accomplishments>
+                    <Accomplishments>
+                      <li>ReactJS</li>
+                      <li>ReactJS</li>
+                      <li>ReactJS</li>
+                      <li>ReactJS</li>
+                    </Accomplishments>
+                  </TechWrapper>
+                </TextWrapper>
+              </Column2>
+            </InfoRow2>
+          </InfoWrapper>
+        </Wrapper>
       </InfoContainer>
     );
   }

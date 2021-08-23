@@ -19,7 +19,7 @@ const ImageBox = styled.div`
   //background: green;
   justify-content: space-between;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 40px;
   height: 100%;
 `;
 const ImageBox2 = styled.div`
@@ -192,18 +192,49 @@ const Column2 = styled.div`
     width: 800px;
   }
 `;
-
+const DescriptionWrapper = styled.div`
+  display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  align-self: center;
+  //background-color: blue;
+  @media ${device.mobileS} {
+    height: 100px;
+  }
+  @media ${device.mobileM} {
+    height: 200px;
+  }
+  @media ${device.mobileL} {
+    height: 200px;
+  }
+  @media ${device.tablet} {
+    height: 200px;
+  }
+  @media ${device.laptop} {
+    height: 250px;
+  }
+  @media ${device.laptopM} {
+    height: 200px;
+  }
+  @media ${device.laptopL} {
+    height: 260px;
+  }
+  @media ${device.desktop} {
+    height: 300px;
+  }
+`;
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  //justify-content: space-between;
   align-self: center;
+  //background-color: green;
 `;
 const Slide = styled.div``;
 const Slider = styled.section`
   display: flex;
   justify-content: center;
-  //position: relative;
+  position: relative;
   max-width: 1380px;
   margin-left: auto;
   margin-right: auto;
@@ -211,6 +242,8 @@ const Slider = styled.section`
   background-color: rgb(242, 242, 242);
   border-radius: 40px;
   margin-bottom: 60px;
+  margin-left: 25px;
+  margin-right: 25px;
 `;
 const RightArrow = styled.div`
   //position: absolute;
@@ -237,41 +270,70 @@ const TechWrapper = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 100%;
-  height: 200px;
+  //height: 150px;
   //background: red;
   justify-content: space-evenly;
+  @media ${device.mobileS} {
+    height: 100px;
+  }
+  @media ${device.mobileM} {
+    height: 100px;
+  }
+  @media ${device.mobileL} {
+    height: 200px;
+  }
+  @media ${device.tablet} {
+    height: 200px;
+  }
+  @media ${device.laptop} {
+    height: 150px;
+  }
+  @media ${device.laptopM} {
+    height: 150px;
+  }
+  @media ${device.laptopL} {
+    height: 150px;
+  }
+  @media ${device.desktop} {
+    height: 300px;
+  }
 `;
 const Accomplishments = styled.ul`
   color: black;
   //background: green;
   display: flex;
   flex-direction: column;
-  //max-width: 600px;
-  width: 100%;
 
-  padding-left: 30px;
-  //padding-top: 15px;
-  //max-width: 700px;
+  padding-top: 20px;
+  padding-left: 20px;
+  //padding-right: 20px;
   font-size: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
     font-size: 15px;
+    width: 200px;
   }
   @media ${device.mobileM} {
     font-size: 15px;
+    width: 200px;
   }
   @media ${device.mobileL} {
     font-size: 20px;
+    height: 200px;
+    width: 150px;
   }
   @media ${device.tablet} {
     font-size: 20px;
+    width: 150px;
   }
   @media ${device.laptop} {
     font-size: 20px;
+    width: 150px;
   }
   @media ${device.laptopL} {
     font-size: 20px;
+    width: 160px;
   }
   @media ${device.desktop} {
     font-size: 20px;
@@ -304,16 +366,18 @@ const ProjectsSlider = ({ slides }) => {
                 <InfoRow imgStart={projects.imgStart}>
                   <Column1>
                     <TextWrapper>
-                      <TextContent
-                        projectName={projects.projectName}
-                        projectYear={projects.year}
-                        projectDesc={projects.projectDesc}
-                        projectType={projects.projectType}
-                        roles={projects.roles}
-                        image={projects.image}
-                        image2={projects.image2}
-                        link={projects.link}
-                      />
+                      <DescriptionWrapper>
+                        <TextContent
+                          projectName={projects.projectName}
+                          projectYear={projects.year}
+                          projectDesc={projects.projectDesc}
+                          projectType={projects.projectType}
+                          roles={projects.roles}
+                          image={projects.image}
+                          image2={projects.image2}
+                          link={projects.link}
+                        />
+                      </DescriptionWrapper>
                       <TechWrapper>
                         <Accomplishments>
                           <p style={{ fontSize: "20px", fontWeight: "bold" }}>
@@ -351,7 +415,6 @@ const ProjectsSlider = ({ slides }) => {
                       <a
                         style={{
                           display: "table-cell",
-                          //paddingHorizontal: "30px",
                         }}
                         href={projects.link}
                         target="_blank"
@@ -362,7 +425,6 @@ const ProjectsSlider = ({ slides }) => {
                         <a
                           style={{
                             display: "table-cell",
-                            //paddingHorizontal: "30px",
                           }}
                           href={projects.link2}
                           target="_blank"

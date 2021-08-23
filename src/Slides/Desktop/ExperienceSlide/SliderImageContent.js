@@ -17,10 +17,10 @@ const ImageBox1 = styled.img`
     height: 200px;
   }
   @media ${device.mobileM} {
-    height: 250px;
+    height: 200px;
   }
   @media ${device.mobileL} {
-    height: 300px;
+    height: 250px;
   }
   @media ${device.tablet} {
     height: 300px;
@@ -29,10 +29,10 @@ const ImageBox1 = styled.img`
     height: 400px;
   }
   @media ${device.laptopM} {
-    height: 500px;
+    height: 450px;
   }
   @media ${device.laptopL} {
-    height: 500px;
+    height: 450px;
   }
   @media ${device.desktop} {
     height: 500px;

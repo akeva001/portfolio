@@ -81,6 +81,8 @@ const InfoWrapper = styled.div`
   border-radius: 40px;
   box-sizing: border-box;
   margin-bottom: 60px;
+  margin-left: 25px;
+  margin-right: 25px;
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -150,9 +152,9 @@ const Accomplishments = styled.ul`
   width: 100%;
   justify-content: center;
   align-self: center;
-  padding: 25px;
+  padding: 20px;
   //max-width: 700px;
-  font-size: 20px;
+  font-size: 15px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
 `;
@@ -173,7 +175,7 @@ class Experience extends Component {
     this.experienceDetails = [
       {
         projectName: "MyCampusMate",
-        year: "  • July 2019-Present",
+        year: "  • July 2019 - Present",
         projectDesc:
           "RMate is a mobile application aimed at organizing and optimizing your access to student tools. RMate is intended for students enrolled at University of California, Riverside. Students are able to find buildings across the campus with ease, create an organized class schedule, keep up with the latest events on campus, and much more! ",
         projectType: "iOS/Android App",
@@ -212,17 +214,17 @@ class Experience extends Component {
                     <Accomplishments>
                       <li>
                         Collaborated with senior developers and product
-                        management.
+                        management
                       </li>
                       <li>
                         Delivered user-friendly new features for RMate mobile
-                        application using react-native.
+                        application using react-native
                       </li>
                       <li>
                         In charge of submitting all major updates to the
-                        AppStore.
+                        AppStore
                       </li>
-                      <li>Fixed major issues and bugs.</li>
+                      <li>Fixed major issues and bugs</li>
                       <li>
                         Tested all new features and reduced the number of
                         crashes and bugs by 80%
