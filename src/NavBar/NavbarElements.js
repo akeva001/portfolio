@@ -40,6 +40,8 @@ export const NavLogo = styled(LinkScroll)`
   //margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
 `;
 
 export const MobileIcon = styled.div`

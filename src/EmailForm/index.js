@@ -2,126 +2,19 @@ import React, { useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 import device from "../Assets/Scaling/DisplaySizes.js";
 
-const sharedStyles = css`
-  //background-color: #eee;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  margin: 10px 0 20px 0;
-  padding: 20px;
-  box-sizing: border-box;
-`;
-
-const StyledFormWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //height: 100vh;
-  padding: 0 30px;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-`;
-
-const StyledForm = styled.form`
-  width: 100%;
-  max-width: 700px;
-  padding: 40px;
-  margin-top: 50px;
-
-  h2 {
-    display: flex;
-    justify-content: center;
-  }
-`;
-
-const StyledInput = styled.input`
-  display: block;
-  width: 100%;
-  ${sharedStyles}
-`;
-
-const StyledTextArea = styled.textarea`
-  width: 100%;
-  min-height: 100px;
-  resize: none;
-  ${sharedStyles}
-`;
-const StyledButton = styled.button`
-  display: block;
-  background-color: black;
-  color: #fff;
-  font-size: 0.9rem;
-  border: 0;
-  border-radius: 5px;
-  height: 40px;
-  padding: 0 20px;
-  cursor: pointer;
-  box-sizing: border-box;
-`;
-
-const StyledFieldset = styled.fieldset`
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 20px 0;
-  legend {
-    padding: 0 10px;
-  }
-  label {
-    padding-right: 20px;
-  }
-  input {
-    margin-right: 10px;
-  }
-`;
-
-const StyledError = styled.div`
-  color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
-`;
-
-const initalState = {
-  name: "",
-  email: "",
-  message: "",
-  gender: "",
-};
-
-const Header = styled.p`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-self: center;
-  font-size: 50px;
-  color: black;
-  padding: 25px;
-
-  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
-  @media ${device.mobileS} {
-    font-size: 40px;
-  }
-  @media ${device.mobileM} {
-    font-size: 35px;
-  }
-  @media ${device.mobileL} {
-    font-size: 30px;
-  }
-  @media ${device.tablet} {
-    font-size: 30px;
-  }
-  @media ${device.laptop} {
-    font-size: 60px;
-  }
-  @media ${device.laptopL} {
-    font-size: 60px;
-  }
-  @media ${device.desktop} {
-    font-size: 80px;
-  }
-`;
+import {
+  initialState,
+  StyledFormWrapper,
+  StyledForm,
+  Header,
+  StyledInput,
+  StyledTextArea,
+  StyledButton,
+  StyledError,
+  SubmitWrapper,
+} from "./EmailFormElements";
 function ContactForm() {
-  const [state, setState] = useState(initalState);
+  const [state, setState] = useState(initialState);
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -173,12 +66,13 @@ function ContactForm() {
             value={state.message}
             onChange={handleInput}
           />
-          {error && (
-            <StyledError>
-              <p>{error}</p>
-            </StyledError>
-          )}
-          <StyledButton type="submit">Send Message</StyledButton>
+
+          <StyledError>
+            <p>{error}</p>
+          </StyledError>
+          <SubmitWrapper>
+            <StyledButton type="submit">Send Message</StyledButton>
+          </SubmitWrapper>
         </StyledForm>
       </StyledFormWrapper>
     </>

@@ -7,12 +7,6 @@ import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
 import device from "../../../Assets/Scaling/DisplaySizes.js";
 
-const Container = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  overflow: hidden;
-`;
 const ImageBox = styled.div`
   display: flex;
   //flex-direction: column;
@@ -47,10 +41,10 @@ const HeaderContainer = styled.div`
     font-size: 35px;
   }
   @media ${device.mobileL} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.tablet} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.laptop} {
     font-size: 60px;
@@ -79,37 +73,7 @@ const InfoContainer = styled.div`
   overflow: hidden;
   margin-bottom: 50px;
 `;
-const InfoContainer2 = styled.section`
-  // color: #fff;
-  @media screen and (max-width: 768px) {
-    padding: 0;
-  }
 
-  // align-self: center;
-  position: relative;
-
-  //width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  //background: black;
-  min-height: calc(100vh - 44px);
-  margin-bottom: 30px;
-`;
-const InfoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  //margin-bottom: 30px;
-  background-color: rgb(242, 242, 242);
-  //max-width: 1380px;
-  //margin: 30px;
-  height: 100vh;
-`;
 const InfoRow = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
@@ -156,7 +120,7 @@ const Column1 = styled.div`
     padding: 70px;
   }
   @media ${device.laptopL} {
-    padding: 70px;
+    padding: 50px;
   }
   @media ${device.desktop} {
     padding: 70px;
@@ -202,22 +166,22 @@ const DescriptionWrapper = styled.div`
     height: 100px;
   }
   @media ${device.mobileM} {
-    height: 200px;
+    height: 250px;
   }
   @media ${device.mobileL} {
     height: 200px;
   }
   @media ${device.tablet} {
-    height: 200px;
+    height: 230px;
   }
   @media ${device.laptop} {
-    height: 250px;
+    height: 270px;
   }
   @media ${device.laptopM} {
-    height: 200px;
+    height: 230px;
   }
   @media ${device.laptopL} {
-    height: 260px;
+    height: 300px;
   }
   @media ${device.desktop} {
     height: 300px;
@@ -254,6 +218,11 @@ const RightArrow = styled.div`
   cursor: pointer;
   user-select: none;
   padding-right: 40px;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 const LeftArrow = styled.div`
   //position: absolute;
@@ -265,6 +234,11 @@ const LeftArrow = styled.div`
   cursor: pointer;
   user-select: none;
   padding-left: 40px;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 const TechWrapper = styled.div`
   display: flex;
@@ -274,10 +248,10 @@ const TechWrapper = styled.div`
   //background: red;
   justify-content: space-evenly;
   @media ${device.mobileS} {
-    height: 100px;
+    height: 120px;
   }
   @media ${device.mobileM} {
-    height: 100px;
+    height: 150px;
   }
   @media ${device.mobileL} {
     height: 200px;
@@ -295,7 +269,7 @@ const TechWrapper = styled.div`
     height: 150px;
   }
   @media ${device.desktop} {
-    height: 300px;
+    height: 160px;
   }
 `;
 const Accomplishments = styled.ul`
@@ -304,28 +278,33 @@ const Accomplishments = styled.ul`
   display: flex;
   flex-direction: column;
 
-  padding-top: 20px;
-  padding-left: 20px;
+  //padding-left: 20px;
   //padding-right: 20px;
   font-size: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
     font-size: 15px;
-    width: 200px;
+    width: 100px;
+    height: 200px;
+    padding-top: 10px;
   }
   @media ${device.mobileM} {
     font-size: 15px;
-    width: 200px;
+    width: 100px;
+    height: 150px;
+    padding-top: 10px;
   }
   @media ${device.mobileL} {
     font-size: 20px;
-    height: 200px;
+    height: 250px;
     width: 150px;
+    padding-top: 10px;
   }
   @media ${device.tablet} {
     font-size: 20px;
     width: 150px;
+    padding-top: 10px;
   }
   @media ${device.laptop} {
     font-size: 20px;
@@ -334,10 +313,20 @@ const Accomplishments = styled.ul`
   @media ${device.laptopL} {
     font-size: 20px;
     width: 160px;
+    height: 160px;
   }
   @media ${device.desktop} {
     font-size: 20px;
+    width: 160px;
+    height: 160px;
   }
+`;
+const Button = styled.img`
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const ProjectsSlider = ({ slides }) => {
@@ -419,7 +408,7 @@ const ProjectsSlider = ({ slides }) => {
                         href={projects.link}
                         target="_blank"
                       >
-                        <img src={projects.image} height={"70px"} />
+                        <Button src={projects.image} height={"70px"} />
                       </a>
                       {projects.image2 != null && (
                         <a
@@ -429,7 +418,7 @@ const ProjectsSlider = ({ slides }) => {
                           href={projects.link2}
                           target="_blank"
                         >
-                          <img src={projects.image2} height={"70px"} />
+                          <Button src={projects.image2} height={"70px"} />
                         </a>
                       )}
                     </ImageBox2>

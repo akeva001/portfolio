@@ -20,7 +20,7 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   //justify-content: center;
-  max-width: 1100px;
+  max-width: 1300px;
   padding-left: 25px;
   padding-right: 25px;
   align-self: center;
@@ -47,10 +47,10 @@ const HeaderContainer = styled.div`
     font-size: 35px;
   }
   @media ${device.mobileL} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.tablet} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.laptop} {
     font-size: 60px;
@@ -90,7 +90,7 @@ const InfoRow2 = styled.div`
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 950px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
@@ -142,7 +142,6 @@ const SchoolName = styled.div`
 const Title = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
-  //padding-top: 2%;
   display: flex;
   justify-content: center;
   padding-bottom: 10px;
@@ -172,26 +171,34 @@ const Title = styled.div`
 const Major = styled.div`
   padding-top: 2%;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
   @media ${device.mobileS} {
     font-size: 16px;
+    padding-bottom: 10px;
   }
   @media ${device.mobileM} {
     font-size: 16px;
+    padding-bottom: 10px;
   }
   @media ${device.mobileL} {
     font-size: 20px;
+    padding-bottom: 10px;
   }
   @media ${device.tablet} {
     font-size: 20px;
+    padding-bottom: 10px;
   }
   @media ${device.laptop} {
     font-size: 20px;
+    padding-bottom: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 24px;
+    font-size: 25px;
+    padding-bottom: 20px;
   }
   @media ${device.desktop} {
     font-size: 25px;
+    padding-bottom: 20px;
   }
 `;
 const TextWrapper = styled.div`
@@ -200,38 +207,73 @@ const TextWrapper = styled.div`
   width: 100%;
   //justify-content: space-between;
   align-self: center;
-  padding: 35px;
+  padding: 20px;
   background-color: rgb(242, 242, 242);
   height: 100%;
   color: black;
-  max-height: 250px;
-  // @media ${device.mobileS} {
-  //   height: 100px;
-  // }
-  // @media ${device.mobileM} {
-  //   height: 200px;
-  // }
-  // @media ${device.mobileL} {
-  //   height: 220px;
-  // }
-  // @media ${device.tablet} {
-  //   height: 250px;
-  // }
-  // @media ${device.laptop} {
-  //   height: 250px;
-  // }
-  // @media ${device.laptopM} {
-  //   height: 250px;
-  // }
-  // @media ${device.laptopL} {
-  //   height: 250px;
-  // }
-  // @media ${device.desktop} {
-  //   height: 300px;
-  // }
+  //max-height: 250px;
+
   border-radius: 20px;
   box-sizing: border-box;
   //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  @media ${device.mobileS} {
+    height: 100%;
+  }
+  @media ${device.mobileM} {
+    height: 100%;
+  }
+  @media ${device.mobileL} {
+    height: 100%;
+  }
+  @media ${device.tablet} {
+    height: 220px;
+  }
+  @media ${device.laptop} {
+    height: 220px;
+  }
+  @media ${device.laptopL} {
+    height: 260px;
+  }
+  @media ${device.desktop} {
+    height: 300px;
+  }
+`;
+const TextWrapper2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  //justify-content: space-between;
+  align-self: center;
+  padding: 20px;
+  background-color: rgb(242, 242, 242);
+  height: 100%;
+  color: black;
+  //max-height: 250px;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  @media ${device.mobileS} {
+    height: 100%;
+  }
+  @media ${device.mobileM} {
+    height: 100%;
+  }
+  @media ${device.mobileL} {
+    height: 100%;
+  }
+  @media ${device.tablet} {
+    height: 220px;
+  }
+  @media ${device.laptop} {
+    height: 220px;
+  }
+  @media ${device.laptopL} {
+    height: 260px;
+  }
+  @media ${device.desktop} {
+    height: 300px;
+  }
 `;
 const AboutWrapper = styled.div`
   display: flex;
@@ -280,13 +322,15 @@ const TechWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 `;
-const Accomplishments = styled.ul`
+const Skills = styled.ul`
   color: black;
   display: flex;
   flex-direction: column;
-  //padding-left: 25px;
-  //padding-right: 25px;
+  padding-left: 25px;
+  //padding-right: 10px;
   font-size: 20px;
+  //background: green;
+  max-width: 300px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
@@ -296,19 +340,19 @@ const Accomplishments = styled.ul`
     font-size: 17px;
   }
   @media ${device.mobileL} {
-    font-size: 25px;
+    font-size: 19px;
   }
   @media ${device.tablet} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.laptop} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 const School = styled.div`
@@ -331,15 +375,12 @@ class About extends Component {
   render() {
     return (
       <InfoContainer id={"about"}>
-        <HeaderContainer>About me</HeaderContainer>
+        <HeaderContainer>About</HeaderContainer>
         <Wrapper>
           <InfoWrapper>
             <AboutWrapper>
-              During my final years as an undergraduate student in Computer
-              Science, I discovered my obsession for Front-end development. If I
-              was not studying or completing course work, I was developing new
-              and elegant features for our mobile application RMate, while
-              maintaining my part time job as a tennis coach.
+              about
+              me----------------------------------------------------------------------------------------------------------------------
             </AboutWrapper>
 
             <InfoRow2>
@@ -356,23 +397,25 @@ class About extends Component {
                 </TextWrapper>
               </Column1>
               <Column2>
-                <TextWrapper>
+                <TextWrapper2>
                   <Title> Skills</Title>
                   <TechWrapper>
-                    <Accomplishments>
-                      <li>ReactJS</li>
+                    <Skills>
+                      <li>React</li>
                       <li>React Native</li>
-                      <li>ReactJS</li>
-                      <li>ReactJS</li>
-                    </Accomplishments>
-                    <Accomplishments>
-                      <li>ReactJS</li>
-                      <li>ReactJS</li>
-                      <li>ReactJS</li>
-                      <li>ReactJS</li>
-                    </Accomplishments>
+                      <li>Javascript</li>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                    </Skills>
+                    <Skills>
+                      <li>Responsive Design</li>
+                      <li>Application Architecture</li>
+                      <li>Testing {"&"} Debugging</li>
+                      <li>Version Control {"&"} Git</li>
+                      <li>Browser Developer Tools</li>
+                    </Skills>
                   </TechWrapper>
-                </TextWrapper>
+                </TextWrapper2>
               </Column2>
             </InfoRow2>
           </InfoWrapper>

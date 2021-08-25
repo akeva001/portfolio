@@ -45,10 +45,11 @@ const ProjectName = styled.div`
     font-size: 40px;
   }
   @media ${device.mobileM} {
-    font-size: 25px;
+    font-size: 35px;
+    font-weight: 200;
   }
   @media ${device.mobileL} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.tablet} {
     font-size: 50px;

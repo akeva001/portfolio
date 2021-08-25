@@ -1,20 +1,9 @@
+import React, { useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
+import device from "../Assets/Scaling/DisplaySizes.js";
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    height: 100%
-  }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #f05053, #e1eec3);
-    height: 100%;
-    margin: 0;
-    color: #555;
-  }
-`;
-
-const sharedStyles = css`
-  background-color: #eee;
+export const sharedStyles = css`
+  //background-color: #eee;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -23,40 +12,46 @@ const sharedStyles = css`
   box-sizing: border-box;
 `;
 
-const StyledFormWrapper = styled.div`
+export const StyledFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 20px;
+  //height: 100vh;
+  padding: 0 30px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 
-const StyledForm = styled.form`
+export const StyledForm = styled.form`
   width: 100%;
   max-width: 700px;
   padding: 40px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  //margin-top: 50px;
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
 `;
-
-const StyledInput = styled.input`
+export const SubmitWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+`;
+export const StyledInput = styled.input`
   display: block;
   width: 100%;
   ${sharedStyles}
 `;
 
-const StyledTextArea = styled.textarea`
-  background-color: #eee;
+export const StyledTextArea = styled.textarea`
   width: 100%;
   min-height: 100px;
   resize: none;
   ${sharedStyles}
 `;
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   display: block;
-  background-color: #f7797d;
+  background-color: black;
   color: #fff;
   font-size: 0.9rem;
   border: 0;
@@ -67,7 +62,7 @@ const StyledButton = styled.button`
   box-sizing: border-box;
 `;
 
-const StyledFieldset = styled.fieldset`
+export const StyledFieldset = styled.fieldset`
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;
@@ -83,15 +78,51 @@ const StyledFieldset = styled.fieldset`
   }
 `;
 
-const StyledError = styled.div`
+export const StyledError = styled.div`
   color: red;
   font-weight: 800;
   margin: 0 0 40px 0;
+  height: 1px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
 `;
 
-const initalState = {
+export const initialState = {
   name: "",
   email: "",
   message: "",
-  gender: "",
 };
+
+export const Header = styled.p`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  font-size: 50px;
+  color: black;
+  //padding: 25px;
+
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  @media ${device.mobileS} {
+    font-size: 40px;
+  }
+  @media ${device.mobileM} {
+    font-size: 35px;
+  }
+  @media ${device.mobileL} {
+    font-size: 40px;
+  }
+  @media ${device.tablet} {
+    font-size: 40px;
+  }
+  @media ${device.laptop} {
+    font-size: 60px;
+  }
+  @media ${device.laptopL} {
+    font-size: 60px;
+  }
+  @media ${device.desktop} {
+    font-size: 80px;
+  }
+`;

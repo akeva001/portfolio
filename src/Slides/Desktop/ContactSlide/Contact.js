@@ -15,7 +15,7 @@ const Container = styled.section`
   background-color: rgb(242, 242, 242);
   //background-color: green;
   align-self: center;
-  padding-bottom: 100px;
+
   //max-height: calc(100vh - 44px);
   min-height: calc(100vh - 44px);
 `;
@@ -32,6 +32,11 @@ const Image = styled.img`
   @media ${device.tablet} {
     height: 70px;
   }
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const ContactWrapper = styled.div`
@@ -43,7 +48,9 @@ const ContactWrapper = styled.div`
   font-family: "AvenirLight";
   text-align: center;
   max-width: 700px;
-  
+  padding-top: 20px;
+
+
   }
 `;
 
@@ -74,11 +81,7 @@ class Contact extends Component {
           >
             <Image src={EmailImg} height={"100px"} />
           </a>
-          <a
-            style={{ display: "table-cell" }}
-            href={"https://www.linkedin.com/in/alexkevakian/"}
-            target="_blank"
-          >
+          <a style={{ display: "table-cell" }} href={""} target="_blank">
             <Image src={ResumeImg} height={"100px"} margin-right={"110px"} />
           </a>
         </ContactWrapper>

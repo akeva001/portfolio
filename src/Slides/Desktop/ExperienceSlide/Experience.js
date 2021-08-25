@@ -40,10 +40,10 @@ const HeaderContainer = styled.div`
     font-size: 35px;
   }
   @media ${device.mobileL} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.tablet} {
-    font-size: 30px;
+    font-size: 40px;
   }
   @media ${device.laptop} {
     font-size: 60px;
@@ -111,19 +111,19 @@ const Column1 = styled.div`
 
   //background: green;
   @media ${device.mobileS} {
-    padding-left: 15px;
+    padding-left: 20px;
   }
   @media ${device.mobileM} {
-    padding: 15px;
+    padding: 30px;
   }
   @media ${device.mobileL} {
-    padding: 20px;
+    padding: 30px;
   }
   @media ${device.tablet} {
     padding: 30px;
   }
   @media ${device.laptop} {
-    padding: 50px;
+    padding: 40px;
   }
   @media ${device.laptopM} {
     padding: 50px;
@@ -154,7 +154,7 @@ const Accomplishments = styled.ul`
   align-self: center;
   padding: 20px;
   //max-width: 700px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
 `;
@@ -164,9 +164,16 @@ const TextWrapper = styled.div`
   //width: 100%;
   justify-content: center;
   align-self: center;
-  padding-left: 15px;
+  //padding-left: 15px;
   //max-width: 700px;
   //background: red;
+`;
+const Button = styled.img`
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 class Experience extends Component {
@@ -241,14 +248,14 @@ class Experience extends Component {
                         href={experiences.link}
                         target="_blank"
                       >
-                        <img src={experiences.image} height={"60px"} />
+                        <Button src={experiences.image} height={"60px"} />
                       </a>
                       <a
                         style={{ display: "table-cell" }}
                         href={experiences.link2}
                         target="_blank"
                       >
-                        <img src={experiences.image2} height={"60px"} />
+                        <Button src={experiences.image2} height={"60px"} />
                       </a>
                     </ImageBox>
                   </TextWrapper>
