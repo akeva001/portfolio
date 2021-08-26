@@ -378,10 +378,10 @@ class About extends Component {
         <HeaderContainer>About</HeaderContainer>
         <Wrapper>
           <InfoWrapper>
-            <AboutWrapper>
+            {/* <AboutWrapper>
               about
               me----------------------------------------------------------------------------------------------------------------------
-            </AboutWrapper>
+            </AboutWrapper> */}
 
             <InfoRow2>
               <Column1>

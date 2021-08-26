@@ -12,24 +12,69 @@ import {
   StyledButton,
   StyledError,
   SubmitWrapper,
+  StyledMessage,
+  StyledErrorMessage,
 } from "./EmailFormElements";
+
 function ContactForm() {
   const [state, setState] = useState(initialState);
   const [error, setError] = useState("");
+  const email = state;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted!");
-    console.log(state);
 
     for (let key in state) {
       if (state[key] === "") {
-        setError(`You must provide the ${key}`);
+        if (state[key] === "email") {
+          setError(`Please provide an ${key}`);
+        } else {
+          setError(`Please provide a ${key}`);
+        }
+
+        state.emailSent = false;
+        console.log(state);
         return;
       }
     }
+    setState({
+      disabled: true,
+    });
+    //state.disabled = true;
+    //console.log(state);
     setError("");
+    fetch(
+      `http://server.alexkevakian.com/send-email?recipient=alexkevakian@gmail.com&sender=alexkevakian96@gmail.com&topic=Website Contact-${email.name}&mail=Sender: ${email.email}&text= ${email.message}`
+    )
+      .then((res) => {
+        console.log(res);
+        if (res.status) {
+          setState({
+            disabled: true,
+            emailSent: true,
+          });
 
+          console.log(state);
+        } else {
+          setState({
+            disabled: false,
+            emailSent: false,
+          });
+          console.log(state);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+
+        setState({
+          disabled: false,
+          emailSent: false,
+        });
+        console.log(state);
+      });
+
+    //console.log(state);
     console.log("Succes!");
   };
 
@@ -66,12 +111,27 @@ function ContactForm() {
             value={state.message}
             onChange={handleInput}
           />
+          <StyledErrorMessage>
+            <StyledMessage>
+              {state.emailSent && <p>Email Sent, thanks!</p>}
+              {state.disabled === true && !state.emailSent && <p>Sending…</p>}
+              {state.emailSent === false && state.disabled === false && (
+                <p>Email Not Sent </p>
+              )}
+              {error && (
+                <p style={{ color: "black", paddingRight: "5px" }}>{": "}</p>
+              )}
+            </StyledMessage>
 
-          <StyledError>
-            <p>{error}</p>
-          </StyledError>
+            <StyledError>
+              <p> {error}</p>
+            </StyledError>
+          </StyledErrorMessage>
+
           <SubmitWrapper>
-            <StyledButton type="submit">Send Message</StyledButton>
+            <StyledButton disabled={state.disabled} type="submit">
+              Send Message
+            </StyledButton>
           </SubmitWrapper>
         </StyledForm>
       </StyledFormWrapper>

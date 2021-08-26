@@ -48,6 +48,8 @@ export const StyledTextArea = styled.textarea`
   min-height: 100px;
   resize: none;
   ${sharedStyles}
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
 `;
 export const StyledButton = styled.button`
   display: block;
@@ -60,6 +62,10 @@ export const StyledButton = styled.button`
   padding: 0 20px;
   cursor: pointer;
   box-sizing: border-box;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;
 
 export const StyledFieldset = styled.fieldset`
@@ -79,18 +85,64 @@ export const StyledFieldset = styled.fieldset`
 `;
 
 export const StyledError = styled.div`
+  display: flex;
   color: red;
-  font-weight: 800;
+  //font-weight: 800;
   margin: 0 0 40px 0;
   height: 1px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
 `;
+export const StyledMessage = styled.div`
+  display: flex;
+  color: black;
+  //font-weight: 800;
+  margin: 0 0 20px 0;
 
+  height: 1px;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+`;
+export const StyledErrorMessage = styled.div`
+  display: flex;
+  //color: black;
+  //font-weight: 800;
+  padding-left: 10px;
+  margin: 0 0 40px 0;
+  height: 10px;
+  // font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+  //   Arial, sans-serif;
+  @media ${device.mobileS} {
+    flex-direction: column;
+    font-size: 13px;
+  }
+  @media ${device.mobileM} {
+    flex-direction: column;
+    font-size: 13px;
+  }
+  @media ${device.mobileL} {
+    flex-direction: row;
+    font-size: 14px;
+  }
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
+  @media ${device.laptop} {
+    flex-direction: row;
+  }
+  @media ${device.laptopL} {
+    flex-direction: row;
+  }
+  @media ${device.desktop} {
+    flex-direction: row;
+  }
+`;
 export const initialState = {
   name: "",
   email: "",
   message: "",
+  disabled: false,
+  emailSent: null,
 };
 
 export const Header = styled.p`
