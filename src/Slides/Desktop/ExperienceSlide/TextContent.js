@@ -15,27 +15,27 @@ const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   //max-height: 50vh;
-  @media ${device.mobileS} {
-    font-size: 20px;
-  }
-  @media ${device.mobileM} {
-    font-size: 20px;
-  }
-  @media ${device.mobileL} {
-    font-size: 20px;
-  }
-  @media ${device.tablet} {
-    font-size: 20px;
-  }
-  @media ${device.laptop} {
-    font-size: 30px;
-  }
-  @media ${device.laptopL} {
-    font-size: 30px;
-  }
-  @media ${device.desktop} {
-    font-size: 25px;
-  }
+  // @media ${device.mobileS} {
+  //   font-size: 20px;
+  // }
+  // @media ${device.mobileM} {
+  //   font-size: 20px;
+  // }
+  // @media ${device.mobileL} {
+  //   font-size: 20px;
+  // }
+  // @media ${device.tablet} {
+  //   font-size: 20px;
+  // }
+  // @media ${device.laptop} {
+  //   font-size: 30px;
+  // }
+  // @media ${device.laptopL} {
+  //   font-size: 30px;
+  // }
+  // @media ${device.desktop} {
+  //   font-size: 25px;
+  // }
 `;
 const ProjectName = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
@@ -49,10 +49,10 @@ const ProjectName = styled.div`
     font-weight: 200;
   }
   @media ${device.mobileL} {
-    font-size: 40px;
+    font-size: 50px;
   }
   @media ${device.tablet} {
-    font-size: 50px;
+    font-size: 60px;
   }
   @media ${device.laptop} {
     font-size: 60px;
@@ -78,13 +78,13 @@ const ProjectRole = styled.div`
     font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 17px;
+    font-size: 19px;
   }
   @media ${device.laptop} {
-    font-size: 17px;
+    font-size: 19px;
   }
   @media ${device.laptopL} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
     font-size: 25px;
@@ -105,13 +105,13 @@ const ProjectYear = styled.span`
     font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 17px;
+    font-size: 19px;
   }
   @media ${device.laptop} {
-    font-size: 17px;
+    font-size: 19px;
   }
   @media ${device.laptopL} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
     font-size: 25px;
@@ -133,10 +133,10 @@ const ProjectDescription = styled.div`
     font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 17px;
+    font-size: 20px;
   }
   @media ${device.laptop} {
-    font-size: 18px;
+    font-size: 20px;
   }
   @media ${device.laptopL} {
     font-size: 20px;

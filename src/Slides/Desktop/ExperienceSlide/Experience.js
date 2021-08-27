@@ -43,13 +43,13 @@ const HeaderContainer = styled.div`
     font-size: 40px;
   }
   @media ${device.tablet} {
-    font-size: 40px;
+    font-size: 60px;
   }
   @media ${device.laptop} {
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 60px;
+    font-size: 80px;
   }
   @media ${device.desktop} {
     font-size: 80px;
@@ -83,6 +83,12 @@ const InfoWrapper = styled.div`
   margin-bottom: 60px;
   margin-left: 25px;
   margin-right: 25px;
+  @media screen and (max-width: 1439px) {
+    max-width: 850px;
+  }
+  @media screen and (max-width: 900px) {
+    max-width: 500px;
+  }
 `;
 const InfoRow = styled.div`
   display: grid;
@@ -120,13 +126,13 @@ const Column1 = styled.div`
     padding: 30px;
   }
   @media ${device.tablet} {
-    padding: 30px;
+    padding: 40px;
   }
   @media ${device.laptop} {
     padding: 40px;
   }
   @media ${device.laptopM} {
-    padding: 50px;
+    padding: 40px;
   }
   @media ${device.laptopL} {
     padding: 50px;

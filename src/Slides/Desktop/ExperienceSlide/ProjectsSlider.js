@@ -13,7 +13,7 @@ const ImageBox = styled.div`
   //background: green;
   justify-content: space-between;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 20px;
   height: 100%;
 `;
 const ImageBox2 = styled.div`
@@ -50,7 +50,7 @@ const HeaderContainer = styled.div`
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 60px;
+    font-size: 80px;
   }
   @media ${device.desktop} {
     font-size: 80px;
@@ -114,13 +114,13 @@ const Column1 = styled.div`
     padding: 30px;
   }
   @media ${device.laptop} {
-    padding: 40px;
+    padding: 70px;
   }
   @media ${device.laptopM} {
     padding: 70px;
   }
   @media ${device.laptopL} {
-    padding: 50px;
+    padding: 70px;
   }
   @media ${device.desktop} {
     padding: 70px;
@@ -133,21 +133,21 @@ const Column2 = styled.div`
   grid-area: col2;
   justify-content: center;
   //max-height: 60vh;
- 
+
   @media ${device.mobileS} {
-    width: 100%:
+    width: 100%;
   }
   @media ${device.mobileM} {
-    width: 100%:
+    width: 100%;
   }
   @media ${device.mobileL} {
-    width: 100%:
+    width: 100%;
   }
   @media ${device.tablet} {
-    width: 100%:
+    width: 100%;
   }
   @media ${device.laptop} {
-    width: 100%
+    width: 100%;
   }
   @media ${device.laptopL} {
     width: 800px;
@@ -163,22 +163,22 @@ const DescriptionWrapper = styled.div`
   align-self: center;
   //background-color: blue;
   @media ${device.mobileS} {
-    height: 100px;
+    height: 240px;
   }
   @media ${device.mobileM} {
-    height: 250px;
+    height: 220px;
   }
   @media ${device.mobileL} {
     height: 200px;
   }
   @media ${device.tablet} {
-    height: 230px;
-  }
-  @media ${device.laptop} {
     height: 270px;
   }
+  @media ${device.laptop} {
+    height: 290px;
+  }
   @media ${device.laptopM} {
-    height: 230px;
+    height: 290px;
   }
   @media ${device.laptopL} {
     height: 300px;
@@ -208,6 +208,16 @@ const Slider = styled.section`
   margin-bottom: 60px;
   margin-left: 25px;
   margin-right: 25px;
+  // @media screen and (max-width: 1450px) {
+  //   max-width: 900px;
+  // }
+  @media screen and (max-width: 1439px) {
+    max-width: 1100px;
+  }
+
+  @media screen and (max-width: 900px) {
+    max-width: 500px;
+  }
 `;
 const RightArrow = styled.div`
   //position: absolute;
@@ -218,6 +228,9 @@ const RightArrow = styled.div`
   cursor: pointer;
   user-select: none;
   padding-right: 40px;
+  // @media screen and (max-width: 580px) {
+  //   padding-left: 20px;
+  // }
   opacity: 0.5;
   &:hover {
     opacity: 1;
@@ -266,7 +279,7 @@ const TechWrapper = styled.div`
     height: 150px;
   }
   @media ${device.laptopL} {
-    height: 150px;
+    height: 160px;
   }
   @media ${device.desktop} {
     height: 160px;
@@ -286,7 +299,7 @@ const Accomplishments = styled.ul`
   @media ${device.mobileS} {
     font-size: 15px;
     width: 100px;
-    height: 200px;
+    height: 2100px;
     padding-top: 10px;
   }
   @media ${device.mobileM} {
@@ -297,7 +310,7 @@ const Accomplishments = styled.ul`
   }
   @media ${device.mobileL} {
     font-size: 20px;
-    height: 250px;
+    height: 170px;
     width: 150px;
     padding-top: 10px;
   }
@@ -305,10 +318,12 @@ const Accomplishments = styled.ul`
     font-size: 20px;
     width: 150px;
     padding-top: 10px;
+    height: 160px;
   }
   @media ${device.laptop} {
     font-size: 20px;
     width: 150px;
+    height: 160px;
   }
   @media ${device.laptopL} {
     font-size: 20px;

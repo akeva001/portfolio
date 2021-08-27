@@ -23,16 +23,16 @@ const ImageBox1 = styled.img`
     height: 250px;
   }
   @media ${device.tablet} {
-    height: 300px;
+    height: 310px;
   }
   @media ${device.laptop} {
     height: 400px;
   }
   @media ${device.laptopM} {
-    height: 450px;
+    height: 400px;
   }
   @media ${device.laptopL} {
-    height: 450px;
+    height: 500px;
   }
   @media ${device.desktop} {
     height: 500px;
