@@ -45,7 +45,7 @@ function ContactForm() {
     //console.log(state);
     setError("");
     fetch(
-      `http://server.alexkevakian.com/send-email?recipient=alexkevakian@gmail.com&sender=alexkevakian96@gmail.com&topic=Website Contact-${email.name}&mail=Sender: ${email.email}&text= ${email.message}`
+      `https://server.alexkevakian.com/send-email?recipient=alexkevakian@gmail.com&sender=alexkevakian96@gmail.com&topic=Website Contact-${email.name}&mail=Sender: ${email.email}&text= ${email.message}`
     )
       .then((res) => {
         console.log(res);

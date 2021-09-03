@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import MediaQuery from "react-responsive";
 import DesktopExperience from "./Slides/Desktop/ExperienceSlide/Experience.js";

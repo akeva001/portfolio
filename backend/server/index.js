@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 let originAuth = (req, res, next) => {
-  if (req.headers.origin == "https://alexkevakian.com") {
+  if (req.headers.origin == "https://www.alexkevakian.com") {
     return next();
   } else {
     res.status(401).json({
@@ -22,7 +22,7 @@ let originAuth = (req, res, next) => {
 };
 
 app.use((_, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://alexkevakian.com");
+  res.setHeader("Access-Control-Allow-Origin", "https://www.alexkevakian.com");
 
   res.setHeader(
     "Access-Control-Allow-Methods",
