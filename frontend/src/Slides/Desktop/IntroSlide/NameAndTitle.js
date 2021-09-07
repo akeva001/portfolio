@@ -6,7 +6,7 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const Container = styled.div`
   display: flex;
-  //position: absolute;
+
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -45,17 +45,11 @@ const fadeIn = keyframes`
     }
 `;
 const Animation = styled.div`
-  //text-align: center;
-  //text-transform: uppercase;
-  //display: inline-block;
   animation-name: ${fadeIn};
   animation-duration: 3s;
   animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   animation-fill-mode: forwards;
   opacity: 0;
-  //letter-spacing: 1px;
-  //z-index: 1;
-  //padding-top: 100px;
 `;
 
 class NameAndTitle extends Component {

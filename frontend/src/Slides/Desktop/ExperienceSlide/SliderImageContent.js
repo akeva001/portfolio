@@ -5,12 +5,7 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 import PropTypes from "prop-types";
 
 const ImageContainer = styled.div`
-  //display: flex;
-  //flex: 1;
-  //justify-content: center;
   overflow: hidden;
-  //background: red;
-  //height: 100%;
 `;
 const ImageBox1 = styled.img`
   @media ${device.mobileS} {

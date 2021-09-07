@@ -4,22 +4,16 @@ import About from "./About";
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
-  //background: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  //padding 0 30px;
+
   min-height: 100vh;
-  //position: relative;
-  //z-index: 1;
+
   padding-bottom: 100px;
   flex-direction: column;
   background-color: rgb(242, 242, 242);
   margin-bottom: 30px;
-  // max-width: 1380px;
-  // align-self: center;
-  // margin-right: auto;
-  // margin-left: auto;
 `;
 
 const Hero = () => {

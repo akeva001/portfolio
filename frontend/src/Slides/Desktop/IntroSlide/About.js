@@ -14,23 +14,19 @@ const InfoContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 60px;
-  //background-color: green;
 `;
 const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  //justify-content: center;
+
   max-width: 1300px;
   padding-left: 25px;
   padding-right: 25px;
   align-self: center;
-  //background: red;
+
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  //min-height: 50vh;
-  //background: blue;
-  //width: 100%;
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -75,8 +71,6 @@ const InfoRow = styled.div`
   box-sizing: border-box;
   overflow: hidden;
   width: 100%;
-  //height: 50vh;
-  //height: calc(50vh - 22px);
 `;
 const InfoRow2 = styled.div`
   display: grid;
@@ -101,7 +95,6 @@ const Column1 = styled.div`
   padding: 0 15 px;
   grid-area: col1;
   align-items: center;
-  //height: 100%;
 `;
 const Column2 = styled.div`
   display: flex;
@@ -109,8 +102,6 @@ const Column2 = styled.div`
   padding: 0 15 px;
   grid-area: col2;
   justify-content: center;
-  //padding-top: 30px;
-  //height: 100%;
 `;
 const SchoolName = styled.div`
   display: flex;
@@ -205,17 +196,16 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  //justify-content: space-between;
+
   align-self: center;
   padding: 20px;
   background-color: rgb(242, 242, 242);
   height: 100%;
   color: black;
-  //max-height: 250px;
 
   border-radius: 20px;
   box-sizing: border-box;
-  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+
   @media ${device.mobileS} {
     height: 100%;
   }
@@ -242,17 +232,16 @@ const TextWrapper2 = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  //justify-content: space-between;
+
   align-self: center;
   padding: 20px;
   background-color: rgb(242, 242, 242);
   height: 100%;
   color: black;
-  //max-height: 250px;
 
   border-radius: 20px;
   box-sizing: border-box;
-  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+
   @media ${device.mobileS} {
     height: 100%;
   }
@@ -278,7 +267,7 @@ const TextWrapper2 = styled.div`
 const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  //height: 100%;
+
   justify-content: center;
   align-self: center;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -314,11 +303,11 @@ const TechWrapper = styled.div`
   display: flex;
   width: 100%;
   align-self: center;
-  //background-color: rgb(242, 242, 242);
+
   color: black;
 
   box-sizing: border-box;
-  //color: black;
+
   flex-direction: row;
   justify-content: space-evenly;
 `;
@@ -327,9 +316,9 @@ const Skills = styled.ul`
   display: flex;
   flex-direction: column;
   padding-left: 25px;
-  //padding-right: 10px;
+
   font-size: 20px;
-  //background: green;
+
   max-width: 300px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
@@ -361,7 +350,6 @@ const School = styled.div`
   flex-direction: column;
   align-self: center;
   height: 100%;
-  //padding: 10px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -369,7 +357,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-self: center;
   height: 100%;
-  //background-color: red;
 `;
 class About extends Component {
   render() {

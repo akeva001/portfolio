@@ -79,7 +79,7 @@ const Animation = styled.div`
   z-index: 1;
   padding-top: 50px;
   padding-bottom: 100px;
-  //font-family: "Rubik", sans-serif;
+
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   @media ${device.mobileS} {
     font-size: 40px;

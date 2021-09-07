@@ -35,7 +35,6 @@ const Navbar = ({ toggle }) => {
                 smooth={true}
                 duration={700}
                 spy={true}
-                //activeClass={active}
                 offset={-44}
               >
                 About
@@ -47,7 +46,6 @@ const Navbar = ({ toggle }) => {
                 smooth={true}
                 duration={700}
                 spy={true}
-                //activeClass={active}
                 offset={-44}
               >
                 Experience
@@ -59,7 +57,6 @@ const Navbar = ({ toggle }) => {
                 smooth={true}
                 duration={700}
                 spy={true}
-                //activeClass={active}
                 offset={-44}
               >
                 Projects
@@ -71,7 +68,6 @@ const Navbar = ({ toggle }) => {
                 smooth={true}
                 duration={700}
                 spy={true}
-                //activeClass={active}
                 offset={-44}
               >
                 Contact

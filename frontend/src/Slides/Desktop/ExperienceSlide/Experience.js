@@ -22,8 +22,6 @@ const ImageBox = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  //padding-top: 20px;
-  //background: green;
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -100,11 +98,8 @@ const InfoRow = styled.div`
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
-  //box-sizing: border-box;
   overflow: hidden;
   align-self: center;
-  //background: blue;
-  //max-width: 1180px;
 `;
 
 const Column1 = styled.div`
@@ -112,10 +107,7 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
-  //width: 40vw;
-  //min-width: 50vw;
 
-  //background: green;
   @media ${device.mobileS} {
     padding-left: 20px;
   }
@@ -147,19 +139,15 @@ const Column2 = styled.div`
   grid-area: col2;
   justify-content: center;
   width: 100%;
-  //width: 40%;
-  //background: black;
 `;
 const Accomplishments = styled.ul`
   color: black;
   display: flex;
   flex-direction: column;
-  //max-width: 600px;
   width: 100%;
   justify-content: center;
   align-self: center;
   padding: 20px;
-  //max-width: 700px;
   font-size: 17px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
@@ -167,12 +155,8 @@ const Accomplishments = styled.ul`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  //width: 100%;
   justify-content: center;
   align-self: center;
-  //padding-left: 15px;
-  //max-width: 700px;
-  //background: red;
 `;
 const Button = styled.img`
   opacity: 0.5;

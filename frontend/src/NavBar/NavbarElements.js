@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa";
 export const Nav = styled.nav`
   background-color: rgba(0, 0, 0, 0.8);
   height: 44px;
-  //margin-top: -80px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@ export const NavLogo = styled(LinkScroll)`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  //margin-left: 24px;
+
   font-weight: bold;
   text-decoration: none;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
@@ -79,7 +79,6 @@ export const NavRightPlaceholder = styled.div`
   }
 `;
 export const NavItem = styled.li`
-  //height: 80px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 

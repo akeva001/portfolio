@@ -3,7 +3,6 @@ import styled, { createGlobalStyle, css } from "styled-components";
 import device from "../Assets/Scaling/DisplaySizes.js";
 
 export const sharedStyles = css`
-  //background-color: #eee;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -16,7 +15,7 @@ export const StyledFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  //height: 100vh;
+
   padding: 0 30px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `;
@@ -25,7 +24,7 @@ export const StyledForm = styled.form`
   width: 100%;
   max-width: 700px;
   padding: 40px;
-  //margin-top: 50px;
+
   h2 {
     display: flex;
     justify-content: center;
@@ -87,7 +86,7 @@ export const StyledFieldset = styled.fieldset`
 export const StyledError = styled.div`
   display: flex;
   color: red;
-  //font-weight: 800;
+
   margin: 0 0 40px 0;
   height: 1px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
@@ -96,7 +95,7 @@ export const StyledError = styled.div`
 export const StyledMessage = styled.div`
   display: flex;
   color: black;
-  //font-weight: 800;
+
   margin: 0 0 20px 0;
 
   height: 1px;
@@ -105,13 +104,11 @@ export const StyledMessage = styled.div`
 `;
 export const StyledErrorMessage = styled.div`
   display: flex;
-  //color: black;
-  //font-weight: 800;
+
   padding-left: 10px;
   margin: 0 0 40px 0;
   height: 10px;
-  // font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
-  //   Arial, sans-serif;
+
   @media ${device.mobileS} {
     flex-direction: column;
     font-size: 13px;
@@ -152,7 +149,6 @@ export const Header = styled.p`
   align-self: center;
   font-size: 50px;
   color: black;
-  //padding: 25px;
 
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;

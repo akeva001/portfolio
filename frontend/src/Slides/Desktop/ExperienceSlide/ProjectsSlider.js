@@ -9,8 +9,7 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const ImageBox = styled.div`
   display: flex;
-  //flex-direction: column;
-  //background: green;
+
   justify-content: space-between;
   width: 100%;
   padding-top: 20px;
@@ -18,16 +17,15 @@ const ImageBox = styled.div`
 `;
 const ImageBox2 = styled.div`
   display: flex;
-  //flex-direction: column;
-  //background: green;
+
   justify-content: space-evenly;
-  //width: 100%;
+
   padding-bottom: 20px;
   min-width: 50%;
 `;
 const HeaderContainer = styled.div`
   display: flex;
-  //background: white;
+
   justify-content: center;
   font-size: 50px;
   color: black;
@@ -69,7 +67,7 @@ const InfoContainer = styled.div`
   align-self: center;
   justify-content: center;
   align-items: center;
-  //background: green;
+
   overflow: hidden;
   margin-bottom: 50px;
 `;
@@ -84,13 +82,10 @@ const InfoRow = styled.div`
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
-  //box-sizing: border-box;
+
   overflow: hidden;
-  //padding: 70px 0px 65px;
+
   align-self: center;
-  //height: 100%;
-  //width: 100%;
-  //max-width: 1180px;
 `;
 
 const Column1 = styled.div`
@@ -99,7 +94,6 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
-  //max-width: 500px;
 
   @media ${device.mobileS} {
     padding: 20px;
@@ -132,7 +126,6 @@ const Column2 = styled.div`
   align-items: center;
   grid-area: col2;
   justify-content: center;
-  //max-height: 60vh;
 
   @media ${device.mobileS} {
     width: 100%;
@@ -158,10 +151,9 @@ const Column2 = styled.div`
 `;
 const DescriptionWrapper = styled.div`
   display: flex;
-  //flex-direction: column;
-  //justify-content: center;
+
   align-self: center;
-  //background-color: blue;
+
   @media ${device.mobileS} {
     height: 240px;
   }
@@ -190,9 +182,8 @@ const DescriptionWrapper = styled.div`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
+
   align-self: center;
-  //background-color: green;
 `;
 const Slide = styled.div``;
 const Slider = styled.section`
@@ -202,15 +193,13 @@ const Slider = styled.section`
   max-width: 1380px;
   margin-left: auto;
   margin-right: auto;
-  //height: 100vh;
+
   background-color: rgb(242, 242, 242);
   border-radius: 40px;
   margin-bottom: 60px;
   margin-left: 25px;
   margin-right: 25px;
-  // @media screen and (max-width: 1450px) {
-  //   max-width: 900px;
-  // }
+
   @media screen and (max-width: 1439px) {
     max-width: 1100px;
   }
@@ -220,17 +209,13 @@ const Slider = styled.section`
   }
 `;
 const RightArrow = styled.div`
-  //position: absolute;
-  //right: 12px;
   font-size: 4rem;
   color: black;
-  //z-index: 10;
+
   cursor: pointer;
   user-select: none;
   padding-right: 40px;
-  // @media screen and (max-width: 580px) {
-  //   padding-left: 20px;
-  // }
+
   opacity: 0.5;
   &:hover {
     opacity: 1;
@@ -238,12 +223,9 @@ const RightArrow = styled.div`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 const LeftArrow = styled.div`
-  //position: absolute;
-  //top: calc(50vh - 42px);
-  //left: 42px;
   font-size: 4rem;
   color: black;
-  //z-index: 10;
+
   cursor: pointer;
   user-select: none;
   padding-left: 40px;
@@ -257,8 +239,7 @@ const TechWrapper = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 100%;
-  //height: 150px;
-  //background: red;
+
   justify-content: space-evenly;
   @media ${device.mobileS} {
     height: 120px;
@@ -287,12 +268,10 @@ const TechWrapper = styled.div`
 `;
 const Accomplishments = styled.ul`
   color: black;
-  //background: green;
+
   display: flex;
   flex-direction: column;
 
-  //padding-left: 20px;
-  //padding-right: 20px;
   font-size: 20px;
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;

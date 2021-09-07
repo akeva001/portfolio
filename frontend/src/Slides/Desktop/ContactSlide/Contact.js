@@ -8,15 +8,11 @@ import EmailForm from "../../../EmailForm";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
 
 const Container = styled.section`
-  //position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: rgb(242, 242, 242);
-  //background-color: green;
   align-self: center;
-
-  //max-height: calc(100vh - 44px);
   min-height: calc(100vh - 44px);
 `;
 const Image = styled.img`
@@ -49,8 +45,6 @@ const ContactWrapper = styled.div`
   text-align: center;
   max-width: 700px;
   padding-top: 20px;
-
-
   }
 `;
 
