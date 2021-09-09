@@ -9,6 +9,7 @@ export const sharedStyles = css`
   margin: 10px 0 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  font-size: 100%;
 `;
 
 export const StyledFormWrapper = styled.div`
@@ -18,6 +19,7 @@ export const StyledFormWrapper = styled.div`
 
   padding: 0 30px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
 `;
 
 export const StyledForm = styled.form`
@@ -49,6 +51,7 @@ export const StyledTextArea = styled.textarea`
   ${sharedStyles}
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
+  //maximum-scale=1;
 `;
 export const StyledButton = styled.button`
   display: block;

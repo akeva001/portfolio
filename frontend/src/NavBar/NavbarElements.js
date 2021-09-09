@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
-import { FaBars } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background-color: rgba(0, 0, 0, 0.8);

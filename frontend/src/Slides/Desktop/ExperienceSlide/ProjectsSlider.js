@@ -94,6 +94,7 @@ const Column1 = styled.div`
   grid-area: col1;
   justify-content: center;
   align-items: center;
+  //background: green;
 
   @media ${device.mobileS} {
     padding: 20px;
@@ -102,19 +103,21 @@ const Column1 = styled.div`
     padding: 30px;
   }
   @media ${device.mobileL} {
-    padding: 30px;
+    padding: 60px;
   }
   @media ${device.tablet} {
-    padding: 30px;
+    padding: 60px;
   }
   @media ${device.laptop} {
-    padding: 70px;
+    padding: 40px;
+    // width: 450px;
   }
   @media ${device.laptopM} {
-    padding: 70px;
+    padding: 40px;
   }
   @media ${device.laptopL} {
     padding: 70px;
+    width: 550px;
   }
   @media ${device.desktop} {
     padding: 70px;
@@ -137,10 +140,10 @@ const Column2 = styled.div`
     width: 100%;
   }
   @media ${device.tablet} {
-    width: 100%;
+    width: 500px;
   }
   @media ${device.laptop} {
-    width: 100%;
+    width: 650px;
   }
   @media ${device.laptopL} {
     width: 800px;
@@ -151,32 +154,31 @@ const Column2 = styled.div`
 `;
 const DescriptionWrapper = styled.div`
   display: flex;
-
   align-self: center;
 
   @media ${device.mobileS} {
-    height: 240px;
+    height: 250px;
   }
   @media ${device.mobileM} {
-    height: 220px;
+    height: 250px;
   }
   @media ${device.mobileL} {
-    height: 200px;
+    height: 240px;
   }
   @media ${device.tablet} {
-    height: 270px;
+    height: 350px;
   }
   @media ${device.laptop} {
-    height: 290px;
+    height: 350px;
   }
   @media ${device.laptopM} {
-    height: 290px;
+    height: 320px;
   }
   @media ${device.laptopL} {
-    height: 300px;
+    height: 320px;
   }
   @media ${device.desktop} {
-    height: 300px;
+    height: 320px;
   }
 `;
 const TextWrapper = styled.div`
@@ -251,7 +253,7 @@ const TechWrapper = styled.div`
     height: 200px;
   }
   @media ${device.tablet} {
-    height: 200px;
+    height: 150px;
   }
   @media ${device.laptop} {
     height: 150px;
@@ -268,7 +270,7 @@ const TechWrapper = styled.div`
 `;
 const Accomplishments = styled.ul`
   color: black;
-
+  list-style-type: none;
   display: flex;
   flex-direction: column;
 

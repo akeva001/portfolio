@@ -28,7 +28,7 @@ export const SliderData = [
   {
     projectName: "Ramsay",
     projectDesc:
-      "Search food recipies. IOS and Android mobile application aimed at organizing and optimizing your access to student tools. Intended for students enrolled at University of California, Riverside.",
+      "Given a dataset, we created a food recipe analysis engine. Users can find recipes for inspiration, search with different modes, insert and delete database object entries, find what ingredients go well with the given ingredients, and much more!",
     projectType: "Web App",
     roles: ["Front-end Developer"],
     year: "  •  2020",

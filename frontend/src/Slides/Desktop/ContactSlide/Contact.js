@@ -45,6 +45,7 @@ const ContactWrapper = styled.div`
   text-align: center;
   max-width: 700px;
   padding-top: 20px;
+  padding-bottom: 50px;
   }
 `;
 
