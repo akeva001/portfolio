@@ -432,8 +432,7 @@ export const About = () => {
       was 5 years old, and was a competitive tennis player from 9 years old
       through junior college. Tennis has taught me many valuable lessons that
       have built my character into that of a problem solver, leader, and an
-      individual with integrity. I currently am a part tennis coach, teaching
-      students from 4 years old to 15 years old.
+      individual with integrity.
     </MoreContent>
   );
   const linkName = readMore ? " show less" : " ...read more";
@@ -449,26 +448,24 @@ export const About = () => {
               Glendale, California and I currently reside in Hollywood,
               California. I recently graduated from the University of California
               Riverside, with a bachelors degree in Computer Science. During my
-              final years as an undergraduate student in Computer Science, I
-              discovered my obsession for Front-end development. If I was not
-              studying or completing course work, I was developing new and
-              elegant features for our mobile application RMate, while
-              maintaining my part time job as a tennis coach. I have been very
-              fortunate to have the opportunity to play tennis my entire life. I
-              started playing tennis when I was 5 years old, and was a
-              competitive tennis player from 9 years old through junior college.
-              Tennis has taught me many valuable lessons that have built my
-              character into that of a problem solver, leader, and an individual
-              with integrity. I currently am a part tennis coach, teaching
-              students from 4 years old to 15 years old.
+              final years as an undergraduate student, I discovered my obsession
+              for Front-end development. If I was not studying or completing
+              course work, I was developing new and elegant features for our
+              mobile application RMate, while maintaining my part time job as a
+              tennis coach. I have been very fortunate to have the opportunity
+              to play tennis my entire life. I started playing tennis when I was
+              5 years old, and was a competitive tennis player from 9 years old
+              through junior college. Tennis has taught me many valuable lessons
+              that have built my character into that of a problem solver,
+              leader, and an individual with integrity.
             </RegularIcon>
             <DesktopIcon>
               Hello! My name is Alex Kevakian. I was born and raised in
               Glendale, California and I currently reside in Hollywood,
               California. I recently graduated from the University of California
               Riverside, with a bachelors degree in Computer Science. During my
-              final years as an undergraduate student in Computer Science, I
-              discovered my obsession for Front-end development.
+              final years as an undergraduate student, I discovered my obsession
+              for Front-end development.
             </DesktopIcon>
 
             {readMore && extraContent}

@@ -15,10 +15,33 @@ const Container = styled.div`
   font-size: 36px;
   //margin-top: 250px;
 `;
+const svgVariants = {
+  //hidden: { rotate: -180 },
+  visible: {
+    rotate: 0,
+    transition: { duration: 1 },
+  },
+};
+const pathVariants = {
+  hidden: {
+    opacity: 1,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 4,
+      ease: "easeInOut",
+    },
+  },
+};
 const Img = styled.img`
+  box-sizing: border-box;
   border-radius: 50%;
-
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-color: black;
+  border-width: 3px;
+  //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 
   @media ${device.mobileS} {
     height: 40px;
