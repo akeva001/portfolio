@@ -221,10 +221,13 @@ class Experience extends Component {
                         In charge of submitting all major updates to the
                         AppStore
                       </li>
-                      <li>Fixed major issues and bugs</li>
+                      <li>Attended weekly scrum meetings</li>
                       <li>
                         Tested all new features and reduced the number of
                         crashes and bugs by 80%
+                      </li>
+                      <li>
+                        Performed core library updates and regression testing
                       </li>
                     </Accomplishments>
                     <ImageBox>

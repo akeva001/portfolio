@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
+import logo from "../../src/Assets/Images/Logo/logo.png";
 import {
   Nav,
   NavbarContainer,
@@ -23,7 +24,7 @@ const Navbar = ({ toggle }) => {
             spy={true}
             offset={-44}
           >
-            AK{" "}
+            <img src={logo} style={{ height: "30px" }} />
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />

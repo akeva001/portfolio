@@ -72,6 +72,7 @@ const Animation = styled.div`
   display: inline-block;
   animation-name: ${fadeIn};
   animation-duration: 3s;
+  animation-delay: 3s;
   animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   animation-fill-mode: forwards;
   opacity: 0;
@@ -113,6 +114,7 @@ const First = styled.span`
   animation-name: ${secondSpanName};
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+  animation-delay: 4s;
 `;
 const Slide = styled.span`
   display: inline-flex;
@@ -126,4 +128,5 @@ const Second = styled.span`
   animation-name: ${secondSpan};
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+  animation-delay: 3s;
 `;

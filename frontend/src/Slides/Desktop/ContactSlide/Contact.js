@@ -76,7 +76,13 @@ class Contact extends Component {
           >
             <Image src={EmailImg} height={"100px"} />
           </a>
-          <a style={{ display: "table-cell" }} href={""} target="_blank">
+          <a
+            style={{ display: "table-cell" }}
+            href={
+              "https://drive.google.com/file/d/1E4kLzCgAdM3-iiml15BmfcKsSyR4FG02/view?usp=sharing"
+            }
+            target="_blank"
+          >
             <Image src={ResumeImg} height={"100px"} margin-right={"110px"} />
           </a>
         </ContactWrapper>

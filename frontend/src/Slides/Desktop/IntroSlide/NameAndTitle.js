@@ -13,7 +13,7 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   font-size: 36px;
-  margin-top: 80px;
+  //margin-top: 250px;
 `;
 const Img = styled.img`
   border-radius: 50%;
@@ -27,7 +27,7 @@ const Img = styled.img`
     height: 3px;
   }
   @media ${device.mobileL} {
-    max-height: 30px;
+    max-height: 20px;
   }
 `;
 const fadeIn = keyframes`
@@ -46,10 +46,11 @@ const fadeIn = keyframes`
 `;
 const Animation = styled.div`
   animation-name: ${fadeIn};
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   animation-fill-mode: forwards;
   opacity: 0;
+  animation-delay: 3s;
 `;
 
 class NameAndTitle extends Component {

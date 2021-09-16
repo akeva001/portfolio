@@ -96,6 +96,7 @@ const Column1 = styled.div`
   padding: 0 15 px;
   grid-area: col1;
   align-items: center;
+  justify-content: center;
 `;
 const Column2 = styled.div`
   display: flex;
@@ -116,7 +117,7 @@ const SchoolName = styled.div`
     font-size: 16px;
   }
   @media ${device.mobileL} {
-    font-size: 22px;
+    font-size: 18px;
   }
   @media ${device.tablet} {
     font-size: 20px;
@@ -125,7 +126,7 @@ const SchoolName = styled.div`
     font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.desktop} {
     font-size: 25px;
@@ -150,13 +151,13 @@ const Title = styled.div`
     font-size: 20px;
   }
   @media ${device.laptop} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 
@@ -173,7 +174,7 @@ const Major = styled.div`
     padding-bottom: 10px;
   }
   @media ${device.mobileL} {
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 10px;
   }
   @media ${device.tablet} {
@@ -185,7 +186,7 @@ const Major = styled.div`
     padding-bottom: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 25px;
+    font-size: 20px;
     padding-bottom: 20px;
   }
   @media ${device.desktop} {
@@ -206,7 +207,9 @@ const TextWrapper = styled.div`
 
   border-radius: 20px;
   box-sizing: border-box;
-
+  @media screen and (max-width: 950px) {
+    max-width: 500px;
+  }
   @media ${device.mobileS} {
     height: 100%;
   }
@@ -223,7 +226,7 @@ const TextWrapper = styled.div`
     height: 220px;
   }
   @media ${device.laptopL} {
-    height: 280px;
+    height: 220px;
   }
   @media ${device.desktop} {
     height: 280px;
@@ -242,7 +245,9 @@ const TextWrapper2 = styled.div`
 
   border-radius: 20px;
   box-sizing: border-box;
-
+  @media screen and (max-width: 950px) {
+    max-width: 500px;
+  }
   @media ${device.mobileS} {
     height: 100%;
   }
@@ -259,7 +264,7 @@ const TextWrapper2 = styled.div`
     height: 220px;
   }
   @media ${device.laptopL} {
-    height: 280px;
+    height: 220px;
   }
   @media ${device.desktop} {
     height: 280px;
@@ -278,6 +283,13 @@ const AboutWrapper = styled.div`
   border-radius: 20px;
   box-sizing: border-box;
 
+  @media screen and (max-width: 2068px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (max-width: 950px) {
+    max-width: 500px;
+  }
   @media ${device.mobileS} {
     font-size: 18px;
     padding: 30px;
@@ -287,11 +299,11 @@ const AboutWrapper = styled.div`
     padding: 30px;
   }
   @media ${device.mobileL} {
-    font-size: 22px;
+    font-size: 18px;
     padding: 50px;
   }
   @media ${device.tablet} {
-    font-size: 25px;
+    font-size: 20px;
     padding: 50px;
   }
   @media ${device.laptop} {
@@ -301,10 +313,12 @@ const AboutWrapper = styled.div`
   @media ${device.laptopL} {
     font-size: 30px;
     padding: 50px;
+    max-width: 1100px;
   }
   @media ${device.desktop} {
     font-size: 30px;
     padding: 50px;
+    max-width: 1100px;
   }
 `;
 const TechWrapper = styled.div`
@@ -337,7 +351,7 @@ const Skills = styled.ul`
     font-size: 17px;
   }
   @media ${device.mobileL} {
-    font-size: 19px;
+    font-size: 18px;
   }
   @media ${device.tablet} {
     font-size: 20px;
@@ -346,7 +360,7 @@ const Skills = styled.ul`
     font-size: 20px;
   }
   @media ${device.laptopL} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.desktop} {
     font-size: 25px;
@@ -372,7 +386,7 @@ const extraContentWrapper = styled.div`
 const MobileIcon = styled.a`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     display: flex;
     font-size: 1.8rem;
     cursor: pointer;
@@ -382,7 +396,7 @@ const MobileIcon = styled.a`
 const DesktopIcon = styled.p`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     display: inline-block;
     float: left;
     margin: 0;
@@ -391,7 +405,7 @@ const DesktopIcon = styled.p`
 const RegularIcon = styled.p`
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 950px) {
     display: flex;
     font-size: 25px;
   }
@@ -399,7 +413,7 @@ const RegularIcon = styled.p`
 const MoreContent = styled.p`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     display: inline-block;
     float: left;
     margin: 0;
