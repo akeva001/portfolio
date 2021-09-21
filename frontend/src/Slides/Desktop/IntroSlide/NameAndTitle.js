@@ -13,10 +13,9 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
   font-size: 36px;
-  //margin-top: 250px;
+  margin-top: 100px;
 `;
 const svgVariants = {
-  //hidden: { rotate: -180 },
   visible: {
     rotate: 0,
     transition: { duration: 1 },
@@ -42,16 +41,6 @@ const Img = styled.img`
   border-color: black;
   border-width: 3px;
   //box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-
-  @media ${device.mobileS} {
-    height: 40px;
-  }
-  @media ${device.mobileM} {
-    height: 3px;
-  }
-  @media ${device.mobileL} {
-    max-height: 20px;
-  }
 `;
 const fadeIn = keyframes`
     0%{
@@ -74,6 +63,32 @@ const Animation = styled.div`
   animation-fill-mode: forwards;
   opacity: 0;
   animation-delay: 3s;
+  img {
+    @media ${device.mobileS} {
+      height: 180px;
+    }
+    @media ${device.mobileM} {
+      height: 180px;
+    }
+    @media ${device.mobileL} {
+      height: 180px;
+    }
+    @media ${device.tablet} {
+      height: 250px;
+    }
+    @media ${device.laptop} {
+      height: 250px;
+    }
+    @media ${device.laptopM} {
+      height: 250px;
+    }
+    @media ${device.laptopL} {
+      height: 250px;
+    }
+    @media ${device.desktop} {
+      height: 260px;
+    }
+  }
 `;
 
 class NameAndTitle extends Component {
@@ -81,7 +96,7 @@ class NameAndTitle extends Component {
     return (
       <Container>
         <Animation>
-          <Img style={{ minHeight: "250px" }} src={Me} />
+          <Img src={Me} />
         </Animation>
         <TitleAnimation />
       </Container>

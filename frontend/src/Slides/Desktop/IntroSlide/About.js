@@ -448,7 +448,7 @@ export const About = () => {
               Glendale, California and I currently reside in Hollywood,
               California. I recently graduated from the University of California
               Riverside, with a bachelors degree in Computer Science. During my
-              final years as an undergraduate student, I discovered my obsession
+              final years as an undergraduate student, I discovered my passion
               for Front-end development. If I was not studying or completing
               course work, I was developing new and elegant features for our
               mobile application RMate, while maintaining my part time job as a
@@ -464,7 +464,7 @@ export const About = () => {
               Glendale, California and I currently reside in Hollywood,
               California. I recently graduated from the University of California
               Riverside, with a bachelors degree in Computer Science. During my
-              final years as an undergraduate student, I discovered my obsession
+              final years as an undergraduate student, I discovered my passion
               for Front-end development.
             </DesktopIcon>
 

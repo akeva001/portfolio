@@ -8,8 +8,6 @@ export default function TitleAnimation() {
       <secondSpanName>
         <h2>Alex Kevakian</h2>
       </secondSpanName>
-
-      {/* <First>I am a </First> */}
       <Slide>
         <Second>Frontend Developer</Second>
       </Slide>
@@ -27,6 +25,9 @@ const secondSpanName = keyframes`
     100%{
         transform: translateY(0%);
     }
+
+    
+    
 `;
 
 const secondSpan = keyframes`
@@ -78,18 +79,18 @@ const Animation = styled.div`
   opacity: 0;
   letter-spacing: 1px;
   z-index: 1;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 100px;
 
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   @media ${device.mobileS} {
-    font-size: 40px;
+    font-size: 20px;
   }
   @media ${device.mobileM} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.mobileL} {
-    font-size: 30px;
+    font-size: 20px;
   }
   @media ${device.tablet} {
     font-size: 30px;

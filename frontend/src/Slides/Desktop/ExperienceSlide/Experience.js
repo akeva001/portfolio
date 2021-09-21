@@ -109,7 +109,7 @@ const Column1 = styled.div`
   align-items: center;
 
   @media ${device.mobileS} {
-    padding-left: 20px;
+    padding: 20px;
   }
   @media ${device.mobileM} {
     padding: 30px;
