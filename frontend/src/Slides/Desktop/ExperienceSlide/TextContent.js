@@ -18,7 +18,7 @@ const ProjectName = styled.div`
     Arial, sans-serif;
   font-weight: lighter;
   @media ${device.mobileS} {
-    font-size: 40px;
+    font-size: 30px;
   }
   @media ${device.mobileM} {
     font-size: 35px;

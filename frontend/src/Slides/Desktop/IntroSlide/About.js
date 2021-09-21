@@ -109,7 +109,7 @@ const SchoolName = styled.div`
   display: flex;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
-  padding-top: 2%;
+  //padding-top: 2%;
   @media ${device.mobileS} {
     font-size: 16px;
   }

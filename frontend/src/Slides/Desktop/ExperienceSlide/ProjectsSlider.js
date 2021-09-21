@@ -33,7 +33,7 @@ const HeaderContainer = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
-    font-size: 40px;
+    font-size: 35px;
   }
   @media ${device.mobileM} {
     font-size: 35px;
@@ -97,7 +97,7 @@ const Column1 = styled.div`
   //background: green;
 
   @media ${device.mobileS} {
-    padding: 20px;
+    padding: 25px;
   }
   @media ${device.mobileM} {
     padding: 30px;
@@ -131,7 +131,7 @@ const Column2 = styled.div`
   justify-content: center;
 
   @media ${device.mobileS} {
-    width: 100%;
+    width: 100p%;
   }
   @media ${device.mobileM} {
     width: 100%;
@@ -157,7 +157,7 @@ const DescriptionWrapper = styled.div`
   align-self: center;
 
   @media ${device.mobileS} {
-    height: 250px;
+    height: 310px;
   }
   @media ${device.mobileM} {
     height: 250px;
@@ -216,7 +216,7 @@ const RightArrow = styled.div`
 
   cursor: pointer;
   user-select: none;
-  padding-right: 40px;
+  padding-right: 30px;
 
   opacity: 0.5;
   &:hover {
@@ -230,7 +230,7 @@ const LeftArrow = styled.div`
 
   cursor: pointer;
   user-select: none;
-  padding-left: 40px;
+  padding-left: 30px;
   opacity: 0.5;
   &:hover {
     opacity: 1;

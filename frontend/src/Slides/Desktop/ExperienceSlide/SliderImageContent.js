@@ -9,7 +9,7 @@ const ImageContainer = styled.div`
 `;
 const ImageBox1 = styled.img`
   @media ${device.mobileS} {
-    height: 200px;
+    height: 170px;
   }
   @media ${device.mobileM} {
     height: 200px;

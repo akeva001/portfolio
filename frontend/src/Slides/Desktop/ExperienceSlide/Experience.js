@@ -32,7 +32,7 @@ const HeaderContainer = styled.div`
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
-    font-size: 40px;
+    font-size: 35px;
   }
   @media ${device.mobileM} {
     font-size: 35px;
@@ -109,7 +109,7 @@ const Column1 = styled.div`
   align-items: center;
 
   @media ${device.mobileS} {
-    padding: 20px;
+    padding: 25px;
   }
   @media ${device.mobileM} {
     padding: 30px;
