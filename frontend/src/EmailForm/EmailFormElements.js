@@ -171,7 +171,7 @@ export const Header = styled.p`
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 60px;
+    font-size: 80px;
   }
   @media ${device.desktop} {
     font-size: 80px;

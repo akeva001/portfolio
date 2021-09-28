@@ -27,6 +27,7 @@ const pathVariants = {
     },
   },
 };
+
 const fadeIn = keyframes`
     0%{
         opacity: 0;
@@ -77,7 +78,6 @@ const Hero = () => {
     <>
       <HeroContainer id={"home"}>
         <HeroBackground>
-          {/* <img src={logoSVG} /> */}
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="500 800 1000 400"

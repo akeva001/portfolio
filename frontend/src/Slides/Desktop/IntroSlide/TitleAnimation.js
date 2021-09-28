@@ -9,7 +9,7 @@ export default function TitleAnimation() {
         <h2>Alex Kevakian</h2>
       </secondSpanName>
       <Slide>
-        <Second>Frontend Developer</Second>
+        <Second>Front-end Developer</Second>
       </Slide>
     </Animation>
   );
