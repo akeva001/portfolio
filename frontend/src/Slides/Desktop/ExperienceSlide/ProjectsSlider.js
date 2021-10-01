@@ -95,7 +95,7 @@ const Column1 = styled.div`
   justify-content: center;
   align-items: center;
   //background: green;
-
+  width: 100%;
   @media ${device.mobileS} {
     padding: 25px;
   }
@@ -103,14 +103,13 @@ const Column1 = styled.div`
     padding: 30px;
   }
   @media ${device.mobileL} {
-    padding: 60px;
+    padding: 40px;
   }
   @media ${device.tablet} {
-    padding: 60px;
+    padding: 40px;
   }
   @media ${device.laptop} {
     padding: 40px;
-    // width: 450px;
   }
   @media ${device.laptopM} {
     padding: 40px;

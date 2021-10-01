@@ -25,7 +25,7 @@ const ProjectName = styled.div`
     font-weight: 200;
   }
   @media ${device.mobileL} {
-    font-size: 50px;
+    font-size: 40px;
   }
   @media ${device.tablet} {
     font-size: 60px;

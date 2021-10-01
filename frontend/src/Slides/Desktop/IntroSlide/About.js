@@ -449,7 +449,7 @@ export const About = () => {
               California. I recently graduated from the University of California
               Riverside, with a bachelors degree in Computer Science. During my
               final years as an undergraduate student, I discovered my passion
-              for Front-end development. If I was not studying or completing
+              for front-end development. If I was not studying or completing
               course work, I was developing new and elegant features for our
               mobile application RMate, while maintaining my part time job as a
               tennis coach. I have been very fortunate to have the opportunity
@@ -465,7 +465,7 @@ export const About = () => {
               California. I recently graduated from the University of California
               Riverside, with a bachelors degree in Computer Science. During my
               final years as an undergraduate student, I discovered my passion
-              for Front-end development.
+              for front-end development.
             </DesktopIcon>
 
             {readMore && extraContent}

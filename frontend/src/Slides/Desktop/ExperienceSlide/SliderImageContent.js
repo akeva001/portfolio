@@ -15,7 +15,7 @@ const ImageBox1 = styled.img`
     height: 200px;
   }
   @media ${device.mobileL} {
-    height: 250px;
+    height: 230px;
   }
   @media ${device.tablet} {
     height: 320px;
