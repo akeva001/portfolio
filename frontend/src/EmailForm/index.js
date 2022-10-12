@@ -89,7 +89,7 @@ function ContactForm() {
     <>
       <StyledFormWrapper>
         <StyledForm onSubmit={handleSubmit}>
-          <Header style={{ paddingBottom: "30px" }}>Contact</Header>
+          <Header style={{ paddingBottom: "20px" }}>Contact</Header>
           <label htmlFor="name">Name</label>
           <StyledInput
             type="text"

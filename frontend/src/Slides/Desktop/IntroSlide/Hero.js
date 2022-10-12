@@ -3,8 +3,9 @@ import NameAndTitle from "./NameAndTitle";
 import About from "./About";
 import logo from "../../../Assets/Images/Logo/logo.png";
 import logoSVG from "../../../Assets/Images/Logo/logo.svg";
+import device from "../../../Assets/Scaling/DisplaySizes.js";
 import styled, { keyframes } from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 const svgVariants = {
   //hidden: { rotate: -180 },
@@ -51,16 +52,30 @@ const HeroContainer = styled.div`
   //padding-bottom: 100px;
   flex-direction: column;
   margin-bottom: 60px;
+  overflow: hidden;
 
   svg {
-    height: calc(100vh - 230px);
+    
     //width: 100vw;
     overflow: visible;
     stroke: white;
     stroke-width: 8;
     stroke-linejoin: round;
     stroke-linecap: round;
-  }
+
+  
+`;
+const Overlay = styled.div`
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: calc(100vh - 44px);
+  width: 100%;
+  background: #fff;
+  opacity: 0;
+  z-index: 0;
 `;
 const HeroBackground = styled.div`
   display: flex;
@@ -68,24 +83,59 @@ const HeroBackground = styled.div`
   justify-content: center;
   align-items: center;
   align-self: center;
-  min-height: calc(100vh - 44px);
+  height: calc(100vh - 44px);
   width: 100%;
   overflow: hidden;
+  svg {
+    height: 50vw !important;
+    @media ${device.mobileS} {
+      height: 150vw !important;
+    }
+    @media ${device.mobileM} {
+      height: 150vw !important;
+    }
+    @media ${device.mobileL} {
+      height: 150vw !important;
+    }
+    @media ${device.tablet} {
+      height: 70vw !important;
+    }
+    @media ${device.laptop} {
+    }
+    @media ${device.laptopL} {
+    }
+    @media ${device.desktop} {
+    }
+  }
+`;
+const Gradient = styled.div`
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+  z-index: 1;
 `;
 
-const Hero = () => {
+const Hero = ({ motion, scrollYProgress, pathLength }) => {
   return (
     <>
       <HeroContainer id={"home"}>
         <HeroBackground>
+          <Gradient></Gradient>
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="500 800 1000 400"
             variants={svgVariants}
+            //animate="visible"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            //viewport={{ once: true }}
           >
             {/* <rect fill="lime" width="100%" height="100%" /> */}
+
             <motion.path
               fill="none"
               d="M891.64,763.34c3.96-3.48,6.47-8.57,6.47-14.26c0-10.49-8.5-18.99-18.99-18.99c-7.5,0-13.97,4.36-17.05,10.68

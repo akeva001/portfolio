@@ -21,23 +21,23 @@ const ProjectName = styled.div`
     font-size: 30px;
   }
   @media ${device.mobileM} {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 200;
   }
   @media ${device.mobileL} {
     font-size: 40px;
   }
   @media ${device.tablet} {
-    font-size: 60px;
+    font-size: 35px;
   }
   @media ${device.laptop} {
-    font-size: 60px;
+    font-size: 40px;
   }
   @media ${device.laptopL} {
-    font-size: 80px;
+    font-size: 50px;
   }
   @media ${device.desktop} {
-    font-size: 80px;
+    font-size: 50px;
   }
 `;
 const ProjectRole = styled.div`
@@ -54,16 +54,16 @@ const ProjectRole = styled.div`
     font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 19px;
+    font-size: 18px;
   }
   @media ${device.laptop} {
-    font-size: 19px;
+    font-size: 18px;
   }
   @media ${device.laptopL} {
-    font-size: 25px;
+    font-size: 18px;
   }
   @media ${device.desktop} {
-    font-size: 25px;
+    font-size: 20px;
   }
 `;
 const ProjectYear = styled.span`
@@ -81,16 +81,16 @@ const ProjectYear = styled.span`
     font-size: 17px;
   }
   @media ${device.tablet} {
-    font-size: 19px;
+    font-size: 18px;
   }
   @media ${device.laptop} {
-    font-size: 19px;
+    font-size: 18px;
   }
   @media ${device.laptopL} {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media ${device.desktop} {
-    font-size: 25px;
+    font-size: 20px;
   }
 `;
 const ProjectDescription = styled.div`

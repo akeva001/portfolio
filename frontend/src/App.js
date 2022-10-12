@@ -7,13 +7,17 @@ import Sidebar from "./Sidebar";
 import { BrowserRouter as Router } from "react-router-dom";
 import DesktopContact from "./Slides/Desktop/ContactSlide/Contact.js";
 import Home from "./pages/Home";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 function App() {
   return (
     <Router>
       <React.Fragment>
         {/* <MediaQuery query="(min-device-width: 1224px)"> */}
-        <Home />
+        <ParallaxProvider>
+          <Home />
+        </ParallaxProvider>
+
         {/* </MediaQuery> */}
       </React.Fragment>
     </Router>

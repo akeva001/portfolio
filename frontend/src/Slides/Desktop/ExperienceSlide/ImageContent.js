@@ -19,19 +19,19 @@ const ImageBox1 = styled.img`
     height: 550px;
   }
   @media ${device.tablet} {
-    height: 650px;
+    height: 550px;
   }
   @media ${device.laptop} {
-    height: 650px;
+    height: 600px;
   }
   @media ${device.laptopM} {
-    height: 650px;
+    height: 600px;
   }
   @media ${device.laptopL} {
-    height: 700px;
+    height: 600px;
   }
   @media ${device.desktop} {
-    height: 700px;
+    height: 600px;
   }
 
   display: flex;

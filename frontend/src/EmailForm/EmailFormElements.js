@@ -19,14 +19,15 @@ export const StyledFormWrapper = styled.div`
 
   padding: 0 30px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+  z-index: 5;
 `;
 
 export const StyledForm = styled.form`
   width: 100%;
   max-width: 700px;
   padding: 40px;
-
+  filter: drop-shadow(0 0 0.15rem #bebebe);
   h2 {
     display: flex;
     justify-content: center;
@@ -109,7 +110,7 @@ export const StyledErrorMessage = styled.div`
   display: flex;
 
   padding-left: 10px;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
   height: 10px;
 
   @media ${device.mobileS} {
@@ -171,7 +172,7 @@ export const Header = styled.p`
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 80px;
+    font-size: 60px;
   }
   @media ${device.desktop} {
     font-size: 80px;

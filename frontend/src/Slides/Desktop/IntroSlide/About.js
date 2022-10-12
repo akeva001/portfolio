@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import styled from "styled-components";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
+import { Parallax } from "react-scroll-parallax";
 
 const InfoContainer = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const InfoContainer = styled.div`
   flex-direction: column;
   margin-bottom: 60px;
   -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 `;
 const InfoWrapper = styled.div`
   display: flex;
@@ -27,7 +29,7 @@ const InfoWrapper = styled.div`
 
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
+  //overflow: hidden;
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -35,6 +37,8 @@ const HeaderContainer = styled.div`
   font-size: 50px;
   color: black;
   padding: 20px;
+  padding-bottom: 0;
+  transform: translate(0, 10px);
   font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   @media ${device.mobileS} {
@@ -51,12 +55,15 @@ const HeaderContainer = styled.div`
   }
   @media ${device.laptop} {
     font-size: 60px;
+    margin-top: 10vh;
   }
   @media ${device.laptopL} {
-    font-size: 80px;
+    font-size: 60px;
+    margin-top: 15vh;
   }
   @media ${device.desktop} {
     font-size: 80px;
+    margin-top: 20vh;
   }
 `;
 const InfoRow = styled.div`
@@ -75,35 +82,115 @@ const InfoRow = styled.div`
 `;
 const InfoRow2 = styled.div`
   display: grid;
-  grid-auto-columns: minmax(auto, 1fr);
+  grid-auto-columns: minmax(auto);
   grid-gap: 30px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 150px;
   width: 100%;
-  overflow: hidden;
+  // margin-top: 50vh;
+
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
 
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 1250px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+  }
+
+  @media ${device.mobileS} {
+    margin-top: 30vh;
+    margin-bottom: 50px;
+  }
+  @media ${device.mobileM} {
+    margin-top: 30vh;
+    margin-bottom: 50px;
+  }
+  @media ${device.mobileL} {
+    margin-top: 30vh;
+    margin-bottom: 50px;
+  }
+  @media ${device.tablet} {
+    margin-top: 30vh;
+  }
+  @media ${device.laptop} {
+    margin-top: 30vh;
+  }
+  @media ${device.laptopL} {
+    margin-top: 30vh;
+  }
+  @media ${device.desktop} {
+    margin-top: 20vh;
   }
 `;
 
 const Column1 = styled.div`
+  position: relative;
   display: flex;
   padding: 0 15 px;
   grid-area: col1;
   align-items: center;
-  justify-content: center;
+  align-self: center;
+  //justify-content: center;
+  filter: drop-shadow(0 0 0.75rem #bebebe);
+
+  width: 40vw;
+  @media ${device.mobileS} {
+    width: 350px;
+  }
+  @media ${device.mobileM} {
+    width: 380px;
+  }
+  @media ${device.mobileL} {
+    width: 500px;
+  }
+  @media ${device.tablet} {
+    width: 60vw;
+  }
+  @media ${device.laptop} {
+    width: 50vw;
+  }
+
+  @media ${device.laptopL} {
+    width: 40vw;
+  }
+  @media ${device.desktop} {
+    width: 25vw;
+  }
 `;
 const Column2 = styled.div`
   display: flex;
   align-items: center;
   padding: 0 15 px;
   grid-area: col2;
-  justify-content: center;
+  //justify-content: center;
+  //background: black;
+  filter: drop-shadow(0 0 0.75rem #bebebe);
+  //min-width: 450px !important;
+
+  width: 40vw;
+  @media ${device.mobileS} {
+    width: 350px;
+  }
+  @media ${device.mobileM} {
+    width: 380px;
+  }
+  @media ${device.mobileL} {
+    width: 500px;
+  }
+  @media ${device.tablet} {
+    width: 75vw;
+  }
+  @media ${device.laptop} {
+    width: 50vw;
+  }
+
+  @media ${device.laptopL} {
+    width: 40vw;
+  }
+  @media ${device.desktop} {
+    width: 25vw;
+  }
 `;
 const SchoolName = styled.div`
   display: flex;
@@ -120,24 +207,25 @@ const SchoolName = styled.div`
     font-size: 18px;
   }
   @media ${device.tablet} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.laptop} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.laptopL} {
-    font-size: 20px;
+    font-size: 25px;
   }
   @media ${device.desktop} {
     font-size: 25px;
   }
 `;
-const Title = styled.div`
+const TitleEd = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: bold;
   display: flex;
   justify-content: center;
-  padding-bottom: 15px;
+  padding-bottom: 35px;
+
   @media ${device.mobileS} {
     font-size: 16px;
   }
@@ -151,7 +239,36 @@ const Title = styled.div`
     font-size: 20px;
   }
   @media ${device.laptop} {
+    font-size: 25px;
+  }
+  @media ${device.laptopL} {
+    font-size: 25px;
+  }
+  @media ${device.desktop} {
+    font-size: 25px;
+  }
+`;
+const TitleSk = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+
+  @media ${device.mobileS} {
+    font-size: 16px;
+  }
+  @media ${device.mobileM} {
+    font-size: 16px;
+  }
+  @media ${device.mobileL} {
+    font-size: 22px;
+  }
+  @media ${device.tablet} {
     font-size: 20px;
+  }
+  @media ${device.laptop} {
+    font-size: 25px;
   }
   @media ${device.laptopL} {
     font-size: 25px;
@@ -199,7 +316,7 @@ const TextWrapper = styled.div`
   flex-direction: column;
   width: 100%;
 
-  align-self: center;
+  //align-self: center;
   padding: 20px;
   background-color: rgb(242, 242, 242);
   height: 100%;
@@ -212,24 +329,31 @@ const TextWrapper = styled.div`
   }
   @media ${device.mobileS} {
     height: 100%;
+    margin: 20px;
   }
   @media ${device.mobileM} {
     height: 100%;
+    margin: 20px;
   }
   @media ${device.mobileL} {
     height: 100%;
+    margin: 20px;
   }
   @media ${device.tablet} {
-    height: 220px;
+    height: 300px;
+    margin: 20px;
   }
   @media ${device.laptop} {
-    height: 220px;
+    height: 300px;
+    margin: 50px;
   }
   @media ${device.laptopL} {
-    height: 220px;
+    height: 300px;
+    margin: 50px;
   }
   @media ${device.desktop} {
-    height: 280px;
+    height: 300px;
+    width: 100%;
   }
 `;
 const TextWrapper2 = styled.div`
@@ -250,30 +374,38 @@ const TextWrapper2 = styled.div`
   }
   @media ${device.mobileS} {
     height: 100%;
+    margin: 20px;
   }
   @media ${device.mobileM} {
     height: 100%;
+    margin: 20px;
   }
   @media ${device.mobileL} {
     height: 100%;
+    margin: 20px;
   }
   @media ${device.tablet} {
-    height: 220px;
+    height: 300px;
+    margin: 50px;
   }
   @media ${device.laptop} {
-    height: 220px;
+    height: 300px;
+    margin: 50px;
   }
   @media ${device.laptopL} {
-    height: 220px;
+    height: 300px;
+    margin: 50px;
   }
   @media ${device.desktop} {
-    height: 280px;
+    height: 300px;
+    width: 100%;
   }
 `;
 const AboutWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-
+  filter: drop-shadow(0 0 0.75rem #bebebe);
   justify-content: center;
   align-self: center;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -282,6 +414,8 @@ const AboutWrapper = styled.div`
   margin-bottom: 30px;
   border-radius: 20px;
   box-sizing: border-box;
+  margin-top: 30px;
+  margin-bottom: 100px;
 
   @media screen and (max-width: 2068px) {
     max-width: 1000px;
@@ -293,10 +427,12 @@ const AboutWrapper = styled.div`
   @media ${device.mobileS} {
     font-size: 18px;
     padding: 30px;
+    margin: 15px;
   }
   @media ${device.mobileM} {
     font-size: 18px;
     padding: 30px;
+    margin: 15px;
   }
   @media ${device.mobileL} {
     font-size: 18px;
@@ -363,7 +499,7 @@ const Skills = styled.ul`
     font-size: 20px;
   }
   @media ${device.desktop} {
-    font-size: 25px;
+    font-size: 20px;
   }
 `;
 const School = styled.div`
@@ -425,14 +561,14 @@ export const About = () => {
 
   const extraContent = (
     <MoreContent>
+      <br />
       If I was not studying or completing course work, I was developing new and
-      elegant features for our mobile application RMate, while maintaining my
-      part time job as a tennis coach. I have been very fortunate to have the
-      opportunity to play tennis my entire life. I started playing tennis when I
-      was 5 years old, and was a competitive tennis player from 9 years old
-      through junior college. Tennis has taught me many valuable lessons that
-      have built my character into that of a problem solver, leader, and an
-      individual with integrity.
+      elegant features for our mobile application RMate. I have been very
+      fortunate to have the opportunity to play tennis my entire life. I started
+      playing tennis when I was 5 years old, and was a competitive tennis player
+      from 9 years old through junior college. Tennis has taught me many
+      valuable lessons that have built my character into that of a problem
+      solver, leader, and an individual with integrity.
     </MoreContent>
   );
   const linkName = readMore ? " show less" : " ...read more";
@@ -442,85 +578,118 @@ export const About = () => {
       <HeaderContainer>About</HeaderContainer>
       <Wrapper>
         <InfoWrapper>
-          <AboutWrapper>
-            <RegularIcon>
-              Hello! My name is Alex Kevakian. I was born and raised in
-              Glendale, California and I currently reside in Hollywood,
-              California. I recently graduated from the University of California
-              Riverside, with a bachelors degree in Computer Science. During my
-              final years as an undergraduate student, I discovered my passion
-              for front-end development. If I was not studying or completing
-              course work, I was developing new and elegant features for our
-              mobile application RMate, while maintaining my part time job as a
-              tennis coach. I have been very fortunate to have the opportunity
-              to play tennis my entire life. I started playing tennis when I was
-              5 years old, and was a competitive tennis player from 9 years old
-              through junior college. Tennis has taught me many valuable lessons
-              that have built my character into that of a problem solver,
-              leader, and an individual with integrity.
-            </RegularIcon>
-            <DesktopIcon>
-              Hello! My name is Alex Kevakian. I was born and raised in
-              Glendale, California and I currently reside in Hollywood,
-              California. I recently graduated from the University of California
-              Riverside, with a bachelors degree in Computer Science. During my
-              final years as an undergraduate student, I discovered my passion
-              for front-end development.
-            </DesktopIcon>
+          <Parallax
+            translateY={["300px", "-120px"]}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <AboutWrapper>
+              <RegularIcon>
+                Hello! My name is Alex Kevakian and I currently reside in
+                Glendale, California. I recently graduated from the University
+                of California Riverside, with a bachelors degree in Computer
+                Science. During my final years as an undergraduate student, I
+                discovered my passion for front-end development. If I was not
+                studying or completing course work, I was developing new and
+                elegant features for our mobile application RMate.
+                <br />
+                <br /> I have been very fortunate to have the opportunity to
+                play tennis my entire life. I started playing tennis when I was
+                5 years old, and was a competitive tennis player from 9 years
+                old through junior college. Tennis has taught me many valuable
+                lessons that have built my character into that of a problem
+                solver, leader, and an individual with integrity.
+              </RegularIcon>
+              <DesktopIcon>
+                Hello! My name is Alex Kevakian and I currently reside in
+                Glendale, California. I recently graduated from the University
+                of California Riverside, with a bachelors degree in Computer
+                Science. During my final years as an undergraduate student, I
+                discovered my passion for front-end development.
+              </DesktopIcon>
 
-            {readMore && extraContent}
+              {readMore && extraContent}
 
-            <MobileIcon
-              onClick={() => {
-                setReadMore(!readMore);
-              }}
-              style={{
-                flex: 1,
-                opacity: ".5",
-                cursor: "pointer",
-                justifyContent: "center",
-                alignSelf: "center",
-                paddingTop: "20px",
-                fontSize: "20px",
-              }}
-            >
-              {linkName}
-            </MobileIcon>
-          </AboutWrapper>
+              <MobileIcon
+                onClick={() => {
+                  setReadMore(!readMore);
+                }}
+                style={{
+                  flex: 1,
+                  opacity: ".5",
+                  cursor: "pointer",
+                  justifyContent: "center",
+                  alignSelf: "center",
+                  paddingTop: "20px",
+                  fontSize: "20px",
+                }}
+              >
+                {linkName}
+              </MobileIcon>
+            </AboutWrapper>
+          </Parallax>
 
           <InfoRow2>
             <Column1>
-              <TextWrapper>
-                <School>
-                  <Title>Education</Title>
-                  <SchoolName>University of California, Riverside</SchoolName>
-                  <Major>B.S., Computer Science • 2018-2021</Major>
+              <Parallax
+                translateX={["-30vw", "20vw"]}
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  //justifyContent: "center",
+                }}
+              >
+                <TextWrapper>
+                  <School>
+                    <TitleEd>Education</TitleEd>
+                    <SchoolName>University of California, Riverside</SchoolName>
+                    <Major>B.S., Computer Science • 2018-2021</Major>
 
-                  <SchoolName>Glendale Community College</SchoolName>
-                  <Major>Computer Science • 2014-2018</Major>
-                </School>
-              </TextWrapper>
+                    <SchoolName>Glendale Community College</SchoolName>
+                    <Major>Computer Science • 2014-2018</Major>
+                  </School>
+                </TextWrapper>
+              </Parallax>
             </Column1>
+
             <Column2>
-              <TextWrapper2>
-                <Title> Skills</Title>
-                <TechWrapper>
-                  <Skills>
-                    <li>React</li>
-                    <li>React Native</li>
-                    <li>Javascript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                  </Skills>
-                  <Skills>
-                    <li>Responsive Design</li>
-                    <li>Application Architecture</li>
-                    <li>Testing {"&"} Debugging</li>
-                    <li>Version Control {"&"} Git</li>
-                    <li>Browser Developer Tools</li>
-                  </Skills>
-                </TechWrapper>
-              </TextWrapper2>
+              <Parallax
+                translateX={["30vw", "-20vw"]}
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  //justifyContent: "center",
+                }}
+              >
+                <TextWrapper2>
+                  <TitleSk> Skills</TitleSk>
+                  <TechWrapper>
+                    <Skills>
+                      <li>ReactJS</li>
+                      <li>React Native</li>
+                      <li>Node.js</li>
+                      <li>Javascript</li>
+                      <li>Java</li>
+                      <li>Typescript</li>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                    </Skills>
+                    <Skills>
+                      <li>JSON</li>
+                      <li>Redux</li>
+                      <li>Responsive Design</li>
+                      <li>DOM Manipulation</li>
+                      <li>Application Architecture</li>
+                      <li>Unit Testing {"&"} Debugging</li>
+                      <li>Version Control {"&"} Git</li>
+                      <li>Browser Developer Tools</li>
+                    </Skills>
+                  </TechWrapper>
+                </TextWrapper2>
+              </Parallax>
             </Column2>
           </InfoRow2>
         </InfoWrapper>

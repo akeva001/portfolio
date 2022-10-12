@@ -5,9 +5,9 @@ import device from "../../../Assets/Scaling/DisplaySizes.js";
 export default function TitleAnimation() {
   return (
     <Animation>
-      <secondSpanName>
-        <h2>Alex Kevakian</h2>
-      </secondSpanName>
+      {/* <secondSpanName> */}
+      <h2>Alex Kevakian</h2>
+      {/* </secondSpanName> */}
       <Slide>
         <Second>Front-end Developer</Second>
       </Slide>
@@ -79,8 +79,14 @@ const Animation = styled.div`
   opacity: 0;
   letter-spacing: 1px;
   z-index: 1;
-  padding-top: 30px;
-  padding-bottom: 100px;
+  padding-top: 10px;
+
+  h2 {
+    animation-name: ${secondSpanName};
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    animation-fill-mode: forwards;
+  }
 
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   @media ${device.mobileS} {

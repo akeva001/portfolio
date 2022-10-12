@@ -4,8 +4,59 @@ import TextContent from "./TextContent";
 import SliderImageContent from "./SliderImageContent";
 import { SliderData } from "./SliderData";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Mousewheel,
+  Keyboard,
+  EffectCoverflow,
+} from "swiper";
+import "swiper/swiper-bundle.min.css";
+import { EffectFade } from "swiper";
 
+// swiper core styles
+import "swiper/swiper.min.css";
+
+// modules styles
+import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
+
+import { motion } from "framer-motion";
+
+const svgVariants = {
+  //hidden: { rotate: -180 },
+  visible: {
+    rotate: 0,
+    transition: { duration: 1 },
+  },
+};
+const pathVariants = {
+  hidden: {
+    opacity: 1,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 4,
+      ease: "easeInOut",
+    },
+  },
+};
+SwiperCore.use([
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Mousewheel,
+  Keyboard,
+  EffectCoverflow,
+]);
 
 const ImageBox = styled.div`
   display: flex;
@@ -48,7 +99,7 @@ const HeaderContainer = styled.div`
     font-size: 60px;
   }
   @media ${device.laptopL} {
-    font-size: 80px;
+    font-size: 60px;
   }
   @media ${device.desktop} {
     font-size: 80px;
@@ -70,6 +121,7 @@ const InfoContainer = styled.div`
 
   overflow: hidden;
   margin-bottom: 50px;
+  filter: drop-shadow(0 0 0.75rem #bebebe);
 `;
 
 const InfoRow = styled.div`
@@ -81,10 +133,14 @@ const InfoRow = styled.div`
   @media screen and (max-width: 900px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+
+    height: ${(props) => (!props.readMore ? "520px" : "100%")};
+    padding: 0;
+    padding-bottom: 40px;
   }
 
   overflow: hidden;
-
+  max-width: 1000px;
   align-self: center;
 `;
 
@@ -96,6 +152,7 @@ const Column1 = styled.div`
   align-items: center;
   //background: green;
   width: 100%;
+
   @media ${device.mobileS} {
     padding: 25px;
   }
@@ -106,20 +163,23 @@ const Column1 = styled.div`
     padding: 40px;
   }
   @media ${device.tablet} {
-    padding: 40px;
+    padding-right: 40px;
   }
   @media ${device.laptop} {
-    padding: 40px;
+    padding-right: 40px;
+    //transform: translate(-30px);
   }
   @media ${device.laptopM} {
-    padding: 40px;
+    padding-right: 40px;
+    //transform: translate(-30px);
   }
   @media ${device.laptopL} {
-    padding: 70px;
-    width: 550px;
+    padding-right: 50px;
+    //transform: translate(-30px);
   }
   @media ${device.desktop} {
-    padding: 70px;
+    padding-right: 70px;
+    //transform: translate(-30px);
   }
 `;
 const Column2 = styled.div`
@@ -130,7 +190,7 @@ const Column2 = styled.div`
   justify-content: center;
 
   @media ${device.mobileS} {
-    width: 100p%;
+    width: 100%;
   }
   @media ${device.mobileM} {
     width: 100%;
@@ -142,43 +202,19 @@ const Column2 = styled.div`
     width: 500px;
   }
   @media ${device.laptop} {
-    width: 650px;
+    width: 500px;
   }
   @media ${device.laptopL} {
-    width: 800px;
+    width: 500px;
   }
   @media ${device.desktop} {
-    width: 800px;
+    width: 550px;
   }
 `;
 const DescriptionWrapper = styled.div`
   display: flex;
   align-self: center;
-
-  @media ${device.mobileS} {
-    height: 310px;
-  }
-  @media ${device.mobileM} {
-    height: 250px;
-  }
-  @media ${device.mobileL} {
-    height: 240px;
-  }
-  @media ${device.tablet} {
-    height: 350px;
-  }
-  @media ${device.laptop} {
-    height: 350px;
-  }
-  @media ${device.laptopM} {
-    height: 320px;
-  }
-  @media ${device.laptopL} {
-    height: 320px;
-  }
-  @media ${device.desktop} {
-    height: 320px;
-  }
+  height: 100%;
 `;
 const TextWrapper = styled.div`
   display: flex;
@@ -240,6 +276,7 @@ const TechWrapper = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 100%;
+  margin-top: 20px;
 
   justify-content: space-evenly;
   @media ${device.mobileS} {
@@ -278,41 +315,41 @@ const Accomplishments = styled.ul`
     Arial, sans-serif;
   @media ${device.mobileS} {
     font-size: 15px;
-    width: 100px;
+    width: 120px;
     height: 2100px;
     padding-top: 10px;
   }
   @media ${device.mobileM} {
     font-size: 15px;
-    width: 100px;
+    width: 120px;
     height: 150px;
     padding-top: 10px;
   }
   @media ${device.mobileL} {
     font-size: 20px;
     height: 170px;
-    width: 150px;
+    width: 170px;
     padding-top: 10px;
   }
   @media ${device.tablet} {
     font-size: 20px;
-    width: 150px;
+    width: 170px;
     padding-top: 10px;
     height: 160px;
   }
   @media ${device.laptop} {
     font-size: 20px;
-    width: 150px;
+    width: 200px;
     height: 160px;
   }
   @media ${device.laptopL} {
     font-size: 20px;
-    width: 160px;
+    width: 200px;
     height: 160px;
   }
   @media ${device.desktop} {
     font-size: 20px;
-    width: 160px;
+    width: 170px;
     height: 160px;
   }
 `;
@@ -323,9 +360,54 @@ const Button = styled.img`
   }
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
-
+const ReadMore = styled.div`
+  display: none;
+  @media screen and (max-width: 900px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 40px;
+    background-image: linear-gradient(to bottom, transparent, white);
+    cursor: pointer;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica,
+      Arial, sans-serif;
+  }
+`;
+const Background = styled.div`
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  min-height: calc(100vh - 44px);
+  width: 100%;
+  overflow: hidden;
+  transform: scaleX(-1);
+  //transform: rotate(180deg);
+`;
 const ProjectsSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
+  const [readMore, setReadMore] = useState(false);
+  const [label, setLabel] = useState("Show more");
+  const expand = () => {
+    if (readMore == false) {
+      setReadMore(true);
+      setLabel("Show Less");
+      console.log("Form Submitted");
+    } else {
+      setReadMore(false);
+      setLabel("Show Less");
+    }
+  };
   const length = slides.length;
 
   const nextSlide = () => {
@@ -343,86 +425,132 @@ const ProjectsSlider = ({ slides }) => {
     <>
       <InfoContainer id={"projects"}>
         <HeaderContainer>Projects</HeaderContainer>
-        <Slider>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1.3}
+          centeredSlides
+          // onSlideChange={() => console.log("slide change")}
+          // onSwiper={(swiper) => console.log(swiper)}
+          navigation={{
+            nextEl: ".custom_next",
+            prevEl: ".custom_prev",
+          }}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          keyboard={{ enabled: true }}
+          effect={"coverflow"}
+          coverflowEffect={{
+            rotate: 20,
+            stretch: 25,
+            depth: 350,
+            modifier: 1,
+            slideShadows: false,
+          }}
+          modules={[EffectCoverflow, Pagination]}
+          slideToClickedSlide={true}
+          onClick={function (swiper) {
+            console.log(swiper.clickedIndex, swiper.clickedSlide);
+          }}
+        >
           {SliderData.map((projects, index) => (
-            <Slide key={projects} active={index === current ? true : false}>
-              {index === current && (
-                <InfoRow imgStart={projects.imgStart}>
-                  <Column1>
-                    <TextWrapper>
-                      <DescriptionWrapper>
-                        <TextContent
-                          projectName={projects.projectName}
-                          projectYear={projects.year}
-                          projectDesc={projects.projectDesc}
-                          projectType={projects.projectType}
-                          roles={projects.roles}
-                          image={projects.image}
-                          image2={projects.image2}
-                          link={projects.link}
-                        />
-                      </DescriptionWrapper>
-                      <TechWrapper>
-                        <Accomplishments>
-                          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-                            Frontend
-                          </p>
+            <SwiperSlide>
+              <Slider>
+                <Slide key={projects} active={index === current ? true : false}>
+                  <InfoRow imgStart={projects.imgStart} readMore={readMore}>
+                    <Column1>
+                      <TextWrapper>
+                        <DescriptionWrapper>
+                          <TextContent
+                            projectName={projects.projectName}
+                            projectYear={projects.year}
+                            projectDesc={projects.projectDesc}
+                            projectType={projects.projectType}
+                            roles={projects.roles}
+                            image={projects.image}
+                            image2={projects.image2}
+                            link={projects.link}
+                          />
+                        </DescriptionWrapper>
+                        <TechWrapper>
+                          <Accomplishments>
+                            <p
+                              style={{
+                                fontSize: "20px",
+                                fontWeight: "bold",
+                                marginBottom: "10px",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              Frontend
+                            </p>
 
-                          {projects.frontend.map((project, index) => (
-                            <li key={index}>{project}</li>
-                          ))}
-                        </Accomplishments>
-                        <Accomplishments>
-                          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-                            Backend
-                          </p>
-                          {projects.backend.map((project, index) => (
-                            <li key={index}>{project}</li>
-                          ))}
-                        </Accomplishments>
-                      </TechWrapper>
-                    </TextWrapper>
+                            {projects.frontend.map((project, index) => (
+                              <li key={index}>{project}</li>
+                            ))}
+                          </Accomplishments>
+                          <Accomplishments>
+                            <p
+                              style={{
+                                fontSize: "20px",
+                                fontWeight: "bold",
+                                marginBottom: "10px",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              Backend
+                            </p>
+                            {projects.backend.map((project, index) => (
+                              <li key={index}>{project}</li>
+                            ))}
+                          </Accomplishments>
+                        </TechWrapper>
+                      </TextWrapper>
 
-                    <ImageBox>
-                      <LeftArrow>
-                        <IoIosArrowDropleft onClick={prevSlide} />
-                      </LeftArrow>
+                      {/* <ImageBox>
+                        <LeftArrow>
+                          <IoIosArrowDropleft onClick={prevSlide} />
+                        </LeftArrow>
 
-                      <RightArrow>
-                        <IoIosArrowDropright onClick={nextSlide} />
-                      </RightArrow>
-                    </ImageBox>
-                  </Column1>
-                  <Column2>
-                    <SliderImageContent deviceImages={projects.deviceImages} />
-                    <ImageBox2>
-                      <a
-                        style={{
-                          display: "table-cell",
-                        }}
-                        href={projects.link}
-                        target="_blank"
-                      >
-                        <Button src={projects.image} height={"70px"} />
-                      </a>
-                      {projects.image2 != null && (
-                        <a
-                          style={{
-                            display: "table-cell",
-                          }}
-                          href={projects.link2}
-                          target="_blank"
-                        >
-                          <Button src={projects.image2} height={"70px"} />
-                        </a>
-                      )}
-                    </ImageBox2>
-                  </Column2>
-                </InfoRow>
-              )}
-            </Slide>
+                        <RightArrow>
+                          <IoIosArrowDropright onClick={nextSlide} />
+                        </RightArrow>
+                      </ImageBox> */}
+                    </Column1>
+                    <Column2>
+                      <SliderImageContent
+                        deviceImages={projects.deviceImages}
+                      />
+                      <ImageBox2>
+                        {projects.image2 != null && (
+                          <a
+                            style={{
+                              display: "table-cell",
+                            }}
+                            href={projects.link}
+                            target="_blank"
+                          >
+                            <Button src={projects.image} height={"70px"} />
+                          </a>
+                        )}
+                        {projects.image2 != null && (
+                          <a
+                            style={{
+                              display: "table-cell",
+                            }}
+                            href={projects.link2}
+                            target="_blank"
+                          >
+                            <Button src={projects.image2} height={"70px"} />
+                          </a>
+                        )}
+                      </ImageBox2>
+                    </Column2>
+                    <ReadMore onClick={expand}>{label}</ReadMore>
+                  </InfoRow>
+                </Slide>
+              </Slider>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </InfoContainer>
     </>
   );
