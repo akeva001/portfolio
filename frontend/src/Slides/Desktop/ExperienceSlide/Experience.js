@@ -30,8 +30,8 @@ import { EffectFade } from "swiper";
 import "swiper/swiper.min.css";
 
 // modules styles
-// import "swiper/components/navigation/navigation.min.css";
-// import "swiper/components/pagination/pagination.min.css";
+import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css";
 import { EffectCards } from "swiper";
 
 const svgVariants = {
