@@ -629,19 +629,21 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
                           >
                             <Button src={experiences.image} height={"60px"} />
                           </a> */}
-                          <a
+                          {/* <a
                             style={{ display: "table-cell" }}
                             href={experiences.link2}
                             target="_blank"
                           >
                             <Button src={experiences.image2} height={"60px"} />
-                          </a>
+                          </a> */}
                         </ImageBox>
                       ) : null}
                     </TextWrapper>
                   </Column1>
                   <Column2>
-                    <ImageContent deviceImages={experiences.deviceImages} />
+                    <a href={experiences.link2} target="_blank">
+                      <ImageContent deviceImages={experiences.deviceImages} />
+                    </a>
                     {experiences.sites[0] && (
                       <SiteWrapper>
                         {/* <h2>Some fun projects:</h2> */}
