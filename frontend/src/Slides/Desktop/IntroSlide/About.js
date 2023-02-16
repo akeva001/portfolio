@@ -589,12 +589,12 @@ export const About = () => {
             <AboutWrapper>
               <RegularIcon>
                 Hello! My name is Alex Kevakian and I currently reside in
-                Glendale, California. I recently graduated from the University
-                of California Riverside, with a bachelors degree in Computer
-                Science. During my final years as an undergraduate student, I
-                discovered my passion for front-end development. If I was not
-                studying or completing course work, I was developing new and
-                elegant features for our mobile application RMate.
+                Glendale, California. I graduated from the University of
+                California, Riverside; with a bachelors degree in Computer
+                Science. Over the past 3 years as a Front-end Developer, I have
+                designed, developed, and launched custom, highly responsive
+                websites using React and NextJS. My Front-end experience also
+                extends to building mobile applications using React Native.
                 <br />
                 <br /> I have been very fortunate to have the opportunity to
                 play tennis my entire life. I started playing tennis when I was

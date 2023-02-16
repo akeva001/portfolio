@@ -472,35 +472,33 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
       imgStart: false,
       extrapadding: true,
       accomplishments: [
-        "Built and maintained several projects",
-        "Worked closely with project management and clients to meet project requirements, goals and desired functionality",
-        "Assessed UX and UI designs for technical feasibility",
-        "Optimized all cross-browser and multi-platform compatibility",
+        "Built and maintained 10+ web applications using NextJS framework based on approved designs",
+        "Worked alongside 3 peers and several clients to meet project requirements, and desired functionality",
+        "Tested and optimized 30+ React components for best performance across every device and browser",
+        "Assessed UI/UX designs for technical feasibility",
       ],
       hasLinks: false,
     },
     {
       projectName: "MyCampusMate",
-      year: "  • July 2019 - June 2021",
+      year: "  • July 2019 - Oct 2021",
       projectDesc:
         "RMate is a mobile application aimed at organizing and optimizing your access to student tools. RMate is intended for students enrolled at University of California, Riverside. ",
       projectType: "iOS/Android App",
       roles: ["Mobile Developer"],
-      image: AppStoreImage,
+
       image2: GooglePlayImage,
       deviceImages: [RMateImage2],
       sites: [null, null],
-      link: "https://apps.apple.com/us/app/rmate/id1418361482",
       link2:
         "https://play.google.com/store/apps/details?id=com.mycampusmate.rmate&hl=en_US&gl=US",
       imgStart: false,
       extrapadding: true,
       accomplishments: [
-        "Collaborated with senior developers and product management",
-        "Delivered user-friendly new features for RMate mobile application using React-Native",
-        "Attended weekly scrum meetings",
+        "Collaborated with Senior developers to deliver 15+ user-friendly features using React Native",
+        "Structured reusable UI components based on custom design specifications in order to optimize coding eﬀiciency",
         "Tested all new features and reduced the number of crashes and bugs by 80%",
-        "Performed core library updates and regression testing",
+        "Utilized Redux library for state management of components",
       ],
       hasLinks: true,
     },
@@ -619,7 +617,7 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
                       </Accomplishments>
                       {experiences.hasLinks === true ? (
                         <ImageBox>
-                          <a
+                          {/* <a
                             style={{
                               display: "table-cell",
                               //orderRadius: "40px",
@@ -630,7 +628,7 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
                             target="_blank"
                           >
                             <Button src={experiences.image} height={"60px"} />
-                          </a>
+                          </a> */}
                           <a
                             style={{ display: "table-cell" }}
                             href={experiences.link2}
@@ -646,7 +644,7 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
                     <ImageContent deviceImages={experiences.deviceImages} />
                     {experiences.sites[0] && (
                       <SiteWrapper>
-                        <h2>Some fun projects:</h2>
+                        {/* <h2>Some fun projects:</h2> */}
 
                         <a
                           style={{ display: "table-cell" }}
