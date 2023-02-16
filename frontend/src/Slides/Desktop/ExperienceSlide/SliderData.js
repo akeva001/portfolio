@@ -60,7 +60,7 @@ export const SliderData = [
     image2: null,
     deviceImages: [FoodImage],
     link2: "",
-    link: "https://github.com/ucr-cs180-fall20/cs180project-022-team-gordon-ramsay",
+    link: "",
     frontend: ["ReactJS", "Javascript", "CSS", "HTML"],
     backend: ["Python", "Flask"],
     imgStart: true,

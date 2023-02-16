@@ -443,6 +443,7 @@ const ReadMore = styled.div`
 const Experience = ({ motion, scrollYProgress, pathLength }) => {
   const [readMore, setReadMore] = useState(false);
   const [label, setLabel] = useState("Show More");
+  const [swiperIndex, setSwiperIndex] = useState(0);
 
   const expand = () => {
     if (readMore == false) {
@@ -584,8 +585,11 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
           onClick={function (swiper) {
             console.log(swiper.clickedIndex, swiper.clickedSlide);
           }}
+          onActiveIndexChange={(swiperCore) => {
+            setSwiperIndex(swiperCore.activeIndex);
+          }}
         >
-          {experienceDetails.map((experiences) => (
+          {experienceDetails.map((experiences, index) => (
             <SwiperSlide>
               <InfoWrapper key={experiences}>
                 {/* <FrameWrapper>
@@ -641,10 +645,34 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
                     </TextWrapper>
                   </Column1>
                   <Column2>
-                    <a href={experiences.link2} target="_blank">
+                    {swiperIndex === index ? (
+                      <a href={experiences.link2} target="_blank">
+                        <ImageContent deviceImages={experiences.deviceImages} />
+                      </a>
+                    ) : (
                       <ImageContent deviceImages={experiences.deviceImages} />
-                    </a>
-                    {experiences.sites[0] && (
+                    )}
+                    {experiences.sites[0] && swiperIndex === index && (
+                      <SiteWrapper>
+                        {/* <h2>Some fun projects:</h2> */}
+
+                        <a
+                          style={{ display: "table-cell" }}
+                          href={experiences.link[0]}
+                          target="_blank"
+                        >
+                          <Site src={experiences.sites[0]} />
+                        </a>
+                        <a
+                          style={{ display: "table-cell" }}
+                          href={experiences.link[1]}
+                          target="_blank"
+                        >
+                          <Site src={experiences.sites[1]} />
+                        </a>
+                      </SiteWrapper>
+                    )}
+                    {experiences.sites[0] && swiperIndex != index && (
                       <SiteWrapper>
                         {/* <h2>Some fun projects:</h2> */}
 

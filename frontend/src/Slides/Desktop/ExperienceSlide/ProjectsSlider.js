@@ -397,6 +397,7 @@ const Background = styled.div`
 const ProjectsSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const [readMore, setReadMore] = useState(false);
+  const [swiperIndex, setSwiperIndex] = useState(0);
   const [label, setLabel] = useState("Show more");
   const expand = () => {
     if (readMore == false) {
@@ -449,6 +450,9 @@ const ProjectsSlider = ({ slides }) => {
           slideToClickedSlide={true}
           onClick={function (swiper) {
             console.log(swiper.clickedIndex, swiper.clickedSlide);
+          }}
+          onActiveIndexChange={(swiperCore) => {
+            setSwiperIndex(swiperCore.activeIndex);
           }}
         >
           {SliderData.map((projects, index) => (
@@ -516,10 +520,21 @@ const ProjectsSlider = ({ slides }) => {
                       </ImageBox> */}
                     </Column1>
                     <Column2>
-                      <SliderImageContent
-                        deviceImages={projects.deviceImages}
-                      />
-                      <ImageBox2>
+                      {swiperIndex === index ? (
+                        <a
+                          href={projects.link ? projects.link : null}
+                          target="_blank"
+                        >
+                          <SliderImageContent
+                            deviceImages={projects.deviceImages}
+                          />
+                        </a>
+                      ) : (
+                        <SliderImageContent
+                          deviceImages={projects.deviceImages}
+                        />
+                      )}
+                      {/* <ImageBox2>
                         {projects.image2 != null && (
                           <a
                             style={{
@@ -542,7 +557,7 @@ const ProjectsSlider = ({ slides }) => {
                             <Button src={projects.image2} height={"70px"} />
                           </a>
                         )}
-                      </ImageBox2>
+                      </ImageBox2> */}
                     </Column2>
                     <ReadMore onClick={expand}>{label}</ReadMore>
                   </InfoRow>
