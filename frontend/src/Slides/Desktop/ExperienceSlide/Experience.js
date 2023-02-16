@@ -30,8 +30,8 @@ import { EffectFade } from "swiper";
 import "swiper/swiper.min.css";
 
 // modules styles
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/pagination/pagination.min.css";
+// import "swiper/components/navigation/navigation.min.css";
+// import "swiper/components/pagination/pagination.min.css";
 import { EffectCards } from "swiper";
 
 const svgVariants = {
@@ -517,6 +517,11 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
             variants={svgVariants}
             initial="hidden"
             //animate="visible"
+            transition={{
+              x: { type: "spring", stiffness: 100 },
+              duration: 0.8,
+              delay: 0.2,
+            }}
           >
             {/* <rect fill="lime" width="100%" height="100%" /> */}
             <motion.path
