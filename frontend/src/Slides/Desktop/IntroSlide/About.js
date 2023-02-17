@@ -670,9 +670,9 @@ export const About = () => {
                     <Skills>
                       <li>ReactJS</li>
                       <li>React Native</li>
+                      <li>NextJS</li>
                       <li>Node.js</li>
                       <li>Javascript</li>
-                      <li>Java</li>
                       <li>Typescript</li>
                       <li>HTML</li>
                       <li>CSS</li>
