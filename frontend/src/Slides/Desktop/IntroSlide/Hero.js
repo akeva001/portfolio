@@ -5,7 +5,7 @@ import logo from "../../../Assets/Images/Logo/logo.png";
 import logoSVG from "../../../Assets/Images/Logo/logo.svg";
 import device from "../../../Assets/Scaling/DisplaySizes.js";
 import styled, { keyframes } from "styled-components";
-import { motion, useScroll } from "framer-motion";
+import { motion, useViewportScroll } from "framer-motion";
 
 const svgVariants = {
   //hidden: { rotate: -180 },

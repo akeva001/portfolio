@@ -8,7 +8,7 @@ import Projects from "../Slides/Desktop/ExperienceSlide/ProjectsSlider.js";
 import Contact from "../Slides/Desktop/ContactSlide/Contact.js";
 import About from "../Slides/Desktop/IntroSlide/About.js";
 import SliderData from "../Slides/Desktop/ExperienceSlide/SliderData.js";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useViewportScroll, useSpring } from "framer-motion";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +17,11 @@ const Home = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress } = useViewportScroll({
     offset: ["start 0", "end 0.9"],
   });
 
-  const { scrollYProgressContact } = useScroll({
+  const { scrollYProgressContact } = useViewportScroll({
     offset: ["start start", "end end"],
   });
 
