@@ -8,6 +8,7 @@ import GooglePlayImage from "../../../Assets/Images/Sites/GooglePlay2.png";
 import RMateImage1 from "../../../Assets/Images/RMate/iPhone1.png";
 import RMateImage2 from "../../../Assets/Images/RMate/iPhone2.png";
 import AutioLogo from "../../../Assets/Images/Sites/Autio.png";
+import CureboundLogo from "../../../Assets/Images/Sites/Curebound.png";
 import LoopLogo from "../../../Assets/Images/Sites/Loop Logo TM Centered.png";
 import RMateImage3 from "../../../Assets/Images/RMate/iPhone3.png";
 import NotflixImage1 from "../../../Assets/Images/Notflix/Mac1.png";
@@ -467,9 +468,13 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
       //image: AppStoreImage,
       //image2: GooglePlayImage,
       //deviceImages: [AutioLogo],
-      sites: [AutioLogo, LoopLogo],
+      sites: [AutioLogo, LoopLogo, CureboundLogo],
 
-      link: ["https://www.autio.com", "https://loop.tv"],
+      link: [
+        "https://www.autio.com",
+        "https://loop.tv",
+        "https://www.curebound.org/",
+      ],
       imgStart: false,
       extrapadding: true,
       accomplishments: [
@@ -675,26 +680,24 @@ const Experience = ({ motion, scrollYProgress, pathLength }) => {
                         >
                           <Site src={experiences.sites[1]} />
                         </a>
+                        <a
+                          style={{ display: "table-cell" }}
+                          href={experiences.link[2]}
+                          target="_blank"
+                        >
+                          <Site src={experiences.sites[2]} />
+                        </a>
                       </SiteWrapper>
                     )}
                     {experiences.sites[0] && swiperIndex != index && (
                       <SiteWrapper>
                         {/* <h2>Some fun projects:</h2> */}
 
-                        <a
-                          style={{ display: "table-cell" }}
-                          href={experiences.link[0]}
-                          target="_blank"
-                        >
-                          <Site src={experiences.sites[0]} />
-                        </a>
-                        <a
-                          style={{ display: "table-cell" }}
-                          href={experiences.link[1]}
-                          target="_blank"
-                        >
-                          <Site src={experiences.sites[1]} />
-                        </a>
+                        <Site src={experiences.sites[0]} />
+
+                        <Site src={experiences.sites[1]} />
+
+                        <Site src={experiences.sites[2]} />
                       </SiteWrapper>
                     )}
                   </Column2>
